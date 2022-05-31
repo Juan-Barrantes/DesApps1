@@ -1,0 +1,6 @@
+C:\Users\BSJF\OneDrive\Escritorio\2022\ISIL\III CICLO\desarrollo apss I\S8\entregable2\SistemaAutoServicio\ProyAutoServicio_BE\bin\Debug\ProyAutoServicio_BE.dll
+C:\Users\BSJF\OneDrive\Escritorio\2022\ISIL\III CICLO\desarrollo apss I\S8\entregable2\SistemaAutoServicio\ProyAutoServicio_BE\bin\Debug\ProyAutoServicio_BE.pdb
+C:\Users\BSJF\OneDrive\Escritorio\2022\ISIL\III CICLO\desarrollo apss I\S8\entregable2\SistemaAutoServicio\ProyAutoServicio_BE\obj\Debug\ProyAutoServicio_BE.csproj.AssemblyReference.cache
+C:\Users\BSJF\OneDrive\Escritorio\2022\ISIL\III CICLO\desarrollo apss I\S8\entregable2\SistemaAutoServicio\ProyAutoServicio_BE\obj\Debug\ProyAutoServicio_BE.csproj.CoreCompileInputs.cache
+C:\Users\BSJF\OneDrive\Escritorio\2022\ISIL\III CICLO\desarrollo apss I\S8\entregable2\SistemaAutoServicio\ProyAutoServicio_BE\obj\Debug\ProyAutoServicio_BE.dll
+C:\Users\BSJF\OneDrive\Escritorio\2022\ISIL\III CICLO\desarrollo apss I\S8\entregable2\SistemaAutoServicio\ProyAutoServicio_BE\obj\Debug\ProyAutoServicio_BE.pdb
