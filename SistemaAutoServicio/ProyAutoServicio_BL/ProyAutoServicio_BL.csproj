@@ -42,8 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="ClienteBL.cs" />
     <Compile Include="EmpleadoBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicioBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ProyAutoServicio_ADO\ProyAutoServicio_ADO.csproj">

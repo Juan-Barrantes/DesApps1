@@ -23,12 +23,7 @@ namespace ProyAutoServicios_GUI
             InitializeComponent();
         }
 
-        private void Empleado02_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -57,8 +52,6 @@ namespace ProyAutoServicios_GUI
                 {
                     throw new Exception("Registro NO insertado, comuniquese con IT");
                 }
-
-
             }
             catch (Exception ex)
             {
@@ -66,7 +59,7 @@ namespace ProyAutoServicios_GUI
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }

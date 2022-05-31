@@ -30,8 +30,8 @@ namespace ProyAutoServicios_GUI
         private void InitializeComponent()
         {
             this.grpDatosEmpleado = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.mskTelef = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtDirec = new System.Windows.Forms.TextBox();
@@ -48,8 +48,8 @@ namespace ProyAutoServicios_GUI
             // 
             // grpDatosEmpleado
             // 
-            this.grpDatosEmpleado.Controls.Add(this.button2);
-            this.grpDatosEmpleado.Controls.Add(this.button1);
+            this.grpDatosEmpleado.Controls.Add(this.btnCancelar);
+            this.grpDatosEmpleado.Controls.Add(this.btnGuardar);
             this.grpDatosEmpleado.Controls.Add(this.mskTelef);
             this.grpDatosEmpleado.Controls.Add(this.label6);
             this.grpDatosEmpleado.Controls.Add(this.txtDirec);
@@ -68,23 +68,25 @@ namespace ProyAutoServicios_GUI
             this.grpDatosEmpleado.TabStop = false;
             this.grpDatosEmpleado.Text = "Datos;";
             // 
-            // button2
+            // btnCancelar
             // 
-            this.button2.Location = new System.Drawing.Point(215, 317);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCancelar.Location = new System.Drawing.Point(215, 317);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 15;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // button1
+            // btnGuardar
             // 
-            this.button1.Location = new System.Drawing.Point(58, 318);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnGuardar.Location = new System.Drawing.Point(58, 318);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 14;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // mskTelef
             // 
@@ -191,8 +193,8 @@ namespace ProyAutoServicios_GUI
         #endregion
 
         internal System.Windows.Forms.GroupBox grpDatosEmpleado;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.MaskedTextBox mskTelef;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtDirec;

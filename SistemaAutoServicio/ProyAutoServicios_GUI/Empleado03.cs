@@ -25,7 +25,7 @@ namespace ProyAutoServicios_GUI
 
         private String _Codigo;
 
-        public String Codigo
+        public String CodigoEmp
         {
             get { return _Codigo; }
             set { _Codigo = value; }
@@ -35,17 +35,13 @@ namespace ProyAutoServicios_GUI
         {
             try
             {
-                objEmpleadoBE = objEmpleadoBL.ConsultarEmpleado(this.Codigo);
+                objEmpleadoBE = objEmpleadoBL.ConsultarEmpleado(this.CodigoEmp);
                 lblCod.Text = objEmpleadoBE.Cod_prv;
                 txtCodAg.Text = objEmpleadoBE.CodAg_prv;
                 txtNombre.Text = objEmpleadoBE.Nom_prv;
                 txtApellidos.Text = objEmpleadoBE.Ape_prv;
                 txtDirec.Text = objEmpleadoBE.Direc_prv;
                 mskTelef.Text = objEmpleadoBE.Telf_prv;
-
-
-
-
             }
             catch (Exception ex)
             {
@@ -53,7 +49,7 @@ namespace ProyAutoServicios_GUI
             }
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void btnGuardarAct_Click(object sender, EventArgs e)
         {
             try
             {
@@ -90,9 +86,10 @@ namespace ProyAutoServicios_GUI
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnCancelarAct_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
     }
 }

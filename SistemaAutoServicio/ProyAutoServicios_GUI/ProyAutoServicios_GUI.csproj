@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cliente01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente01.Designer.cs">
+      <DependentUpon>Cliente01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente02.Designer.cs">
+      <DependentUpon>Cliente02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente03.Designer.cs">
+      <DependentUpon>Cliente03.cs</DependentUpon>
+    </Compile>
     <Compile Include="Empleado01.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +96,33 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicio01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Servicio01.Designer.cs">
+      <DependentUpon>Servicio01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Servicio02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Servicio02.Designer.cs">
+      <DependentUpon>Servicio02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Servicio03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Servicio03.Designer.cs">
+      <DependentUpon>Servicio03.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Cliente01.resx">
+      <DependentUpon>Cliente01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente02.resx">
+      <DependentUpon>Cliente02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente03.resx">
+      <DependentUpon>Cliente03.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Empleado01.resx">
       <DependentUpon>Empleado01.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,6 +145,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Servicio01.resx">
+      <DependentUpon>Servicio01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Servicio02.resx">
+      <DependentUpon>Servicio02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Servicio03.resx">
+      <DependentUpon>Servicio03.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

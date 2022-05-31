@@ -34,9 +34,8 @@ namespace ProyAutoServicios_GUI
         {
             try
             {
-                dtgEmpleado.AutoGenerateColumns = false;
-                dtv = objEmpleadoBL.ListarEmpleados().DefaultView;
-                CargarDatos(String.Empty);
+                dtv = new DataView(objEmpleadoBL.ListarEmpleados());
+                CargarDatos("");
             }
             catch (Exception ex)
             {
@@ -46,15 +45,17 @@ namespace ProyAutoServicios_GUI
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-
             try
             {
 
                 Empleado02 obj02 = new Empleado02();
                 obj02.ShowDialog();
 
-                dtv = objEmpleadoBL.ListarEmpleados().DefaultView;
+                dtv = new DataView(objEmpleadoBL.ListarEmpleados());
                 CargarDatos(txtFiltro.Text.Trim());
+                
+                /*dtv = objEmpleadoBL.ListarEmpleados().DefaultView;
+                CargarDatos(txtFiltro.Text.Trim()); */
             }
             catch (Exception ex)
             {
@@ -66,13 +67,14 @@ namespace ProyAutoServicios_GUI
         {
             try
             {
-                String strCod = dtgEmpleado.CurrentRow.Cells[0].Value.ToString();
+                String strCodEmpl = dtgEmpleado.CurrentRow.Cells[0].Value.ToString();
 
                 Empleado03 obj03 = new Empleado03();
-                obj03.Codigo = strCod;
+                obj03.CodigoEmp = strCodEmpl;
                 obj03.ShowDialog();
 
                 //se refresca
+                dtv = new DataView(objEmpleadoBL.ListarEmpleados());
                 dtv = objEmpleadoBL.ListarEmpleados().DefaultView;
                 CargarDatos(txtFiltro.Text.Trim());
 
@@ -85,7 +87,15 @@ namespace ProyAutoServicios_GUI
 
         private void txtFiltro_TextChanged(object sender, EventArgs e)
         {
-            CargarDatos(txtFiltro.Text.Trim());
+            try
+            {
+                CargarDatos(txtFiltro.Text.Trim());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en txtFiltro: " + ex.Message);
+            }
+            
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -97,5 +107,6 @@ namespace ProyAutoServicios_GUI
         {
             btnActualizar.PerformClick();
         }
+
     }
 }

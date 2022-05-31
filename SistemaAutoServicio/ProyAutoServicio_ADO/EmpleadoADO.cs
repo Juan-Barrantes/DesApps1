@@ -78,7 +78,7 @@ namespace ProyAutoServicio_ADO
             }
             catch (SqlException x)
             {
-                throw new Exception(x.Message);
+                throw new Exception(x.Message + " actualizar-empleadoADO");
                 return false;
             }
             finally
@@ -145,7 +145,7 @@ namespace ProyAutoServicio_ADO
                 if (dtr.HasRows == true)
                 {
                     dtr.Read();
-                    objEmpleadoBE.Cod_prv = dtr["cod"].ToString();
+                    objEmpleadoBE.Cod_prv = dtr["codTratante"].ToString();
                     objEmpleadoBE.CodAg_prv = dtr["codAgencia"].ToString();
                     objEmpleadoBE.Nom_prv = dtr["nomTratante"].ToString();
                     objEmpleadoBE.Ape_prv = dtr["apeTratante"].ToString();

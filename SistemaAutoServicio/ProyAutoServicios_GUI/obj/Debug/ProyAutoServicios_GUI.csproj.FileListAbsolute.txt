@@ -18,3 +18,9 @@ C:\Users\BSJF\OneDrive\Escritorio\2022\ISIL\III CICLO\desarrollo apss I\S8\entre
 C:\Users\BSJF\OneDrive\Escritorio\2022\ISIL\III CICLO\desarrollo apss I\S8\entregable2\SistemaAutoServicio\ProyAutoServicios_GUI\obj\Debug\ProyAutoServicios_GUI.csproj.CopyComplete
 C:\Users\BSJF\OneDrive\Escritorio\2022\ISIL\III CICLO\desarrollo apss I\S8\entregable2\SistemaAutoServicio\ProyAutoServicios_GUI\obj\Debug\ProyAutoServicios_GUI.exe
 C:\Users\BSJF\OneDrive\Escritorio\2022\ISIL\III CICLO\desarrollo apss I\S8\entregable2\SistemaAutoServicio\ProyAutoServicios_GUI\obj\Debug\ProyAutoServicios_GUI.pdb
+C:\Users\BSJF\OneDrive\Escritorio\2022\ISIL\III CICLO\desarrollo apss I\S8\entregable2\SistemaAutoServicio\ProyAutoServicios_GUI\obj\Debug\ProyAutoServicios_GUI.Cliente01.resources
+C:\Users\BSJF\OneDrive\Escritorio\2022\ISIL\III CICLO\desarrollo apss I\S8\entregable2\SistemaAutoServicio\ProyAutoServicios_GUI\obj\Debug\ProyAutoServicios_GUI.Cliente02.resources
+C:\Users\BSJF\OneDrive\Escritorio\2022\ISIL\III CICLO\desarrollo apss I\S8\entregable2\SistemaAutoServicio\ProyAutoServicios_GUI\obj\Debug\ProyAutoServicios_GUI.Cliente03.resources
+C:\Users\BSJF\OneDrive\Escritorio\2022\ISIL\III CICLO\desarrollo apss I\S8\entregable2\SistemaAutoServicio\ProyAutoServicios_GUI\obj\Debug\ProyAutoServicios_GUI.Servicio01.resources
+C:\Users\BSJF\OneDrive\Escritorio\2022\ISIL\III CICLO\desarrollo apss I\S8\entregable2\SistemaAutoServicio\ProyAutoServicios_GUI\obj\Debug\ProyAutoServicios_GUI.Servicio02.resources
+C:\Users\BSJF\OneDrive\Escritorio\2022\ISIL\III CICLO\desarrollo apss I\S8\entregable2\SistemaAutoServicio\ProyAutoServicios_GUI\obj\Debug\ProyAutoServicios_GUI.Servicio03.resources

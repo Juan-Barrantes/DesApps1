@@ -32,8 +32,8 @@ namespace ProyAutoServicios_GUI
             this.grpDatosEmpleado = new System.Windows.Forms.GroupBox();
             this.lblCod = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCancelarAct = new System.Windows.Forms.Button();
+            this.btnGuardarAct = new System.Windows.Forms.Button();
             this.mskTelef = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtDirec = new System.Windows.Forms.TextBox();
@@ -52,8 +52,8 @@ namespace ProyAutoServicios_GUI
             // 
             this.grpDatosEmpleado.Controls.Add(this.lblCod);
             this.grpDatosEmpleado.Controls.Add(this.label7);
-            this.grpDatosEmpleado.Controls.Add(this.button2);
-            this.grpDatosEmpleado.Controls.Add(this.btnGuardar);
+            this.grpDatosEmpleado.Controls.Add(this.btnCancelarAct);
+            this.grpDatosEmpleado.Controls.Add(this.btnGuardarAct);
             this.grpDatosEmpleado.Controls.Add(this.mskTelef);
             this.grpDatosEmpleado.Controls.Add(this.label6);
             this.grpDatosEmpleado.Controls.Add(this.txtDirec);
@@ -90,23 +90,25 @@ namespace ProyAutoServicios_GUI
             this.label7.TabIndex = 16;
             this.label7.Text = "Codigo:";
             // 
-            // button2
+            // btnCancelarAct
             // 
-            this.button2.Location = new System.Drawing.Point(227, 376);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCancelarAct.Location = new System.Drawing.Point(227, 376);
+            this.btnCancelarAct.Name = "btnCancelarAct";
+            this.btnCancelarAct.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarAct.TabIndex = 15;
+            this.btnCancelarAct.Text = "Cancelar";
+            this.btnCancelarAct.UseVisualStyleBackColor = true;
+            this.btnCancelarAct.Click += new System.EventHandler(this.btnCancelarAct_Click);
             // 
-            // btnGuardar
+            // btnGuardarAct
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(47, 376);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 14;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardarAct.Location = new System.Drawing.Point(47, 376);
+            this.btnGuardarAct.Name = "btnGuardarAct";
+            this.btnGuardarAct.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarAct.TabIndex = 14;
+            this.btnGuardarAct.Text = "Guardar";
+            this.btnGuardarAct.UseVisualStyleBackColor = true;
+            this.btnGuardarAct.Click += new System.EventHandler(this.btnGuardarAct_Click);
             // 
             // mskTelef
             // 
@@ -204,6 +206,7 @@ namespace ProyAutoServicios_GUI
             this.Controls.Add(this.grpDatosEmpleado);
             this.Name = "Empleado03";
             this.Text = "Actualizar Empleado";
+            this.Load += new System.EventHandler(this.Empleado03_Load);
             this.grpDatosEmpleado.ResumeLayout(false);
             this.grpDatosEmpleado.PerformLayout();
             this.ResumeLayout(false);
@@ -215,8 +218,8 @@ namespace ProyAutoServicios_GUI
         internal System.Windows.Forms.GroupBox grpDatosEmpleado;
         internal System.Windows.Forms.Label lblCod;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnCancelarAct;
+        private System.Windows.Forms.Button btnGuardarAct;
         private System.Windows.Forms.MaskedTextBox mskTelef;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtDirec;

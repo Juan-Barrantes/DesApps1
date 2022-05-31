@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyEmpleados", "ProyEmpleados\ProyEmpleados.csproj", "{20AE3719-BE90-47CC-BB29-D8E949A6E10A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyAutoServicio_ADO", "ProyAutoServicio_ADO\ProyAutoServicio_ADO.csproj", "{9FDF8129-13DF-4786-BD3C-B0F3F2E1B12E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyAutoServicio_BE", "ProyAutoServicio_BE\ProyAutoServicio_BE.csproj", "{164F5196-22C1-476B-A94D-D9DBC8AC6296}"
@@ -19,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{20AE3719-BE90-47CC-BB29-D8E949A6E10A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{20AE3719-BE90-47CC-BB29-D8E949A6E10A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{20AE3719-BE90-47CC-BB29-D8E949A6E10A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{20AE3719-BE90-47CC-BB29-D8E949A6E10A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9FDF8129-13DF-4786-BD3C-B0F3F2E1B12E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9FDF8129-13DF-4786-BD3C-B0F3F2E1B12E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FDF8129-13DF-4786-BD3C-B0F3F2E1B12E}.Release|Any CPU.ActiveCfg = Release|Any CPU
