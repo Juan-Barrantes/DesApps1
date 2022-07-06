@@ -1,0 +1,7 @@
+dentro del archivo BarrantesSoteloJuanFernando.sql
+
+se encuentra el script de creación de la DB, las tablas, inserción de datos
+
+en insertUbigeo.sql, tenemos los datos para la tabla Ubigeo
+
+en tbEmpleado-USP.sql, tenemos los USP solo para la tabla tb_Empleados
