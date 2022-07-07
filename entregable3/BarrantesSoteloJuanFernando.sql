@@ -72,7 +72,7 @@ Create Table tb_Reserva(
 	fechaInicio datetime not null,
 	fechaFinal datetime not null);
 
---drop table tb_Empleado;
+drop table tb_Empleado;
 CREATE TABLE tb_Empleado(
 	codEmpleado smallint not null PRIMARY KEY,
 	codAgencia smallint not null FOREIGN KEY REFERENCES tb_Agencia,
@@ -82,8 +82,8 @@ CREATE TABLE tb_Empleado(
 	dirEmpleado varchar(45) not null,
 	telefono varchar(25) not null,
 	sueldo money,
-	fecini date not null,
-	fecnac date not null,
+	fecini datetime not null,
+	fecnac datetime not null,
 	cargo varchar(20) not null,
 	correo varchar(50) not null,
 	usu_reg varchar(20),

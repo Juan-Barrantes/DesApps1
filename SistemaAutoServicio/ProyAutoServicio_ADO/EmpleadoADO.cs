@@ -34,7 +34,14 @@ namespace ProyAutoServicio_ADO
                 cmd.Parameters.AddWithValue("@nombre", objEmpleadoBE.Nom_prv);
                 cmd.Parameters.AddWithValue("@apellido", objEmpleadoBE.Ape_prv);
                 cmd.Parameters.AddWithValue("@direccion", objEmpleadoBE.Direc_prv);
-                cmd.Parameters.AddWithValue("@phone", objEmpleadoBE.Telf_prv);
+                cmd.Parameters.AddWithValue("@IdUbi", objEmpleadoBE.IdUbi_prv);
+                cmd.Parameters.AddWithValue("@telefono", objEmpleadoBE.Telf_prv);
+                cmd.Parameters.AddWithValue("@sue", objEmpleadoBE.Sueldo_prv);
+                cmd.Parameters.AddWithValue("@fecini", objEmpleadoBE.fecIni);
+                cmd.Parameters.AddWithValue("@fecnac", objEmpleadoBE.fecNac);
+                cmd.Parameters.AddWithValue("@cargo", objEmpleadoBE.Cargo_prv);
+                cmd.Parameters.AddWithValue("@email", objEmpleadoBE.Email_prv);
+                cmd.Parameters.AddWithValue("@usu_reg", objEmpleadoBE.Usu_Registro);                
                 // abrir conexion y ejecutar:
                 cnx.Open();
                 cmd.ExecuteNonQuery();
@@ -65,12 +72,18 @@ namespace ProyAutoServicio_ADO
             //Agregamos los parámetros
             try
             {
-                cmd.Parameters.AddWithValue("@cod", objEmpleadosBE.Cod_prv);
+                cmd.Parameters.AddWithValue("@cod", objEmpleadosBE.Cod_emp);
                 cmd.Parameters.AddWithValue("@codAgen", objEmpleadosBE.CodAg_prv);
                 cmd.Parameters.AddWithValue("@nombre", objEmpleadosBE.Nom_prv);
                 cmd.Parameters.AddWithValue("@apellido", objEmpleadosBE.Ape_prv);
+                cmd.Parameters.AddWithValue("@Id_Ubi", objEmpleadosBE.IdUbi_prv);
                 cmd.Parameters.AddWithValue("@direccion", objEmpleadosBE.Direc_prv);
-                cmd.Parameters.AddWithValue("@phone", objEmpleadosBE.Telf_prv);
+                cmd.Parameters.AddWithValue("@telef", objEmpleadosBE.Telf_prv);
+                cmd.Parameters.AddWithValue("@sue", objEmpleadosBE.Sueldo_prv);
+                cmd.Parameters.AddWithValue("@cargo", objEmpleadosBE.Cargo_prv);
+                cmd.Parameters.AddWithValue("@email", objEmpleadosBE.Email_prv);
+                cmd.Parameters.AddWithValue("@vUsu_ult_mod", objEmpleadosBE.Usu_Ult_Mod);
+
                 //se abre conexión y se ejecuta
                 cnx.Open();
                 cmd.ExecuteNonQuery();
@@ -145,12 +158,15 @@ namespace ProyAutoServicio_ADO
                 if (dtr.HasRows == true)
                 {
                     dtr.Read();
-                    objEmpleadoBE.Cod_prv = dtr["codTratante"].ToString();
+                    objEmpleadoBE.Cod_emp = dtr["codEmpleado"].ToString();
                     objEmpleadoBE.CodAg_prv = dtr["codAgencia"].ToString();
-                    objEmpleadoBE.Nom_prv = dtr["nomTratante"].ToString();
-                    objEmpleadoBE.Ape_prv = dtr["apeTratante"].ToString();
-                    objEmpleadoBE.Direc_prv = dtr["dirTratante"].ToString();
-                    objEmpleadoBE.Telf_prv = dtr["telefono"].ToString();
+                    objEmpleadoBE.Nom_prv = dtr["nomEmpleado"].ToString();
+                    objEmpleadoBE.Ape_prv = dtr["apeEmpleado"].ToString();
+                    objEmpleadoBE.Direc_prv = dtr["dirEmpleado"].ToString();
+                    objEmpleadoBE.Telf_prv = dtr["telefono"].ToString();                    
+                    objEmpleadoBE.Cargo_prv = dtr["cargo"].ToString();
+                    objEmpleadoBE.Email_prv = dtr["correo"].ToString();                    
+                    objEmpleadoBE.IdUbi_prv = dtr["Id_Ubigeo"].ToString();
                 }
                 dtr.Close();
                 return objEmpleadoBE;

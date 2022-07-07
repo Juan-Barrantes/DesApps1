@@ -23,6 +23,37 @@ namespace ProyAutoServicios_GUI
             InitializeComponent();
         }
 
+        private void Empleado02_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                CargarUbigeo("14", "01", "01");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
+            }
+        }
+        private void CargarUbigeo(String IdDepa, String IdProv, String IdDist)
+        {
+            UbigeoBL objUbigeoBL = new UbigeoBL();
+
+            cboDepartamento.DataSource = objUbigeoBL.Ubigeo_Departamentos();
+            cboDepartamento.ValueMember = "IdDepa";
+            cboDepartamento.DisplayMember = "Departamento";
+            cboDepartamento.SelectedValue = IdDepa;
+
+            cboProvincia.DataSource = objUbigeoBL.Ubigeo_ProvinciasDepartamento(IdDepa);
+            cboProvincia.ValueMember = "IdProv";
+            cboProvincia.DisplayMember = "Provincia";
+            cboProvincia.SelectedValue = IdProv;
+
+            cboDistrito.DataSource = objUbigeoBL.Ubigeo_DistritosProvinciaDepartamento(IdDepa, IdProv);
+            cboDistrito.ValueMember = "IdDist";
+            cboDistrito.DisplayMember = "Distrito";
+            cboDistrito.SelectedValue = IdDist;
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
@@ -37,7 +68,7 @@ namespace ProyAutoServicios_GUI
                     throw new Exception("Llene el telefono con 9 digitos");
                 }
 
-                objEmpleadosBE.Cod_prv = "";
+                objEmpleadosBE.Cod_emp = "";
                 objEmpleadosBE.CodAg_prv = txtCodAg.Text.Trim();
                 objEmpleadosBE.Nom_prv = txtNombre.Text.Trim();
                 objEmpleadosBE.Ape_prv = txtApellidos.Text.Trim();
@@ -63,5 +94,7 @@ namespace ProyAutoServicios_GUI
         {
             this.Close();
         }
+
+        
     }
 }

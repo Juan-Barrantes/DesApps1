@@ -24,7 +24,7 @@ namespace ProyAutoServicios_GUI
 
         public void CargarDatos(String strFiltro)
         {
-            dtv.RowFilter = "nomTratante like '%" + strFiltro + "%'";
+            dtv.RowFilter = "nomEmpleado like '%" + strFiltro + "%'";
             dtgEmpleado.DataSource = dtv;
 
             lblTotal.Text = dtgEmpleado.Rows.Count.ToString();
