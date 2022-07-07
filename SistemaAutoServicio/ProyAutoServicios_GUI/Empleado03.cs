@@ -90,6 +90,5 @@ namespace ProyAutoServicios_GUI
         {
             this.Close();
         }
-
     }
 }

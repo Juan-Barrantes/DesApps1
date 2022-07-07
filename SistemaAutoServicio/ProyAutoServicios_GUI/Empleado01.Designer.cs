@@ -45,9 +45,9 @@ namespace ProyAutoServicios_GUI
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(34, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 17);
+            this.label1.Size = new System.Drawing.Size(102, 17);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Ingrese nombre:";
+            this.label1.Text = "N° documento:";
             // 
             // txtFiltro
             // 
@@ -59,7 +59,7 @@ namespace ProyAutoServicios_GUI
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(1039, 35);
+            this.btnCerrar.Location = new System.Drawing.Point(1067, 522);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 14;
@@ -69,7 +69,7 @@ namespace ProyAutoServicios_GUI
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(635, 36);
+            this.btnActualizar.Location = new System.Drawing.Point(939, 522);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(99, 23);
             this.btnActualizar.TabIndex = 13;
@@ -79,7 +79,7 @@ namespace ProyAutoServicios_GUI
             // 
             // btnInsertar
             // 
-            this.btnInsertar.Location = new System.Drawing.Point(528, 36);
+            this.btnInsertar.Location = new System.Drawing.Point(823, 522);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(75, 23);
             this.btnInsertar.TabIndex = 10;
@@ -91,7 +91,7 @@ namespace ProyAutoServicios_GUI
             // 
             this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTotal.Location = new System.Drawing.Point(857, 36);
+            this.lblTotal.Location = new System.Drawing.Point(1031, 47);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(100, 23);
             this.lblTotal.TabIndex = 12;
@@ -99,7 +99,7 @@ namespace ProyAutoServicios_GUI
             // Total
             // 
             this.Total.AutoSize = true;
-            this.Total.Location = new System.Drawing.Point(779, 35);
+            this.Total.Location = new System.Drawing.Point(981, 48);
             this.Total.Name = "Total";
             this.Total.Size = new System.Drawing.Size(44, 17);
             this.Total.TabIndex = 11;
@@ -122,7 +122,7 @@ namespace ProyAutoServicios_GUI
             this.dtgEmpleado.RowHeadersWidth = 51;
             this.dtgEmpleado.RowTemplate.Height = 24;
             this.dtgEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgEmpleado.Size = new System.Drawing.Size(1129, 400);
+            this.dtgEmpleado.Size = new System.Drawing.Size(1129, 418);
             this.dtgEmpleado.TabIndex = 15;
             this.dtgEmpleado.DoubleClick += new System.EventHandler(this.dtgEmpleado_DoubleClick);
             // 
@@ -130,7 +130,7 @@ namespace ProyAutoServicios_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1170, 527);
+            this.ClientSize = new System.Drawing.Size(1170, 557);
             this.Controls.Add(this.dtgEmpleado);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnActualizar);

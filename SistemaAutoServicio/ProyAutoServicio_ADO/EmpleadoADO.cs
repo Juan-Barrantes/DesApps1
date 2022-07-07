@@ -159,13 +159,13 @@ namespace ProyAutoServicio_ADO
                 {
                     dtr.Read();
                     objEmpleadoBE.Cod_emp = dtr["codEmpleado"].ToString();
-                    objEmpleadoBE.CodAg_prv = dtr["codAgencia"].ToString();
                     objEmpleadoBE.Nom_prv = dtr["nomEmpleado"].ToString();
                     objEmpleadoBE.Ape_prv = dtr["apeEmpleado"].ToString();
                     objEmpleadoBE.Direc_prv = dtr["dirEmpleado"].ToString();
                     objEmpleadoBE.Telf_prv = dtr["telefono"].ToString();                    
                     objEmpleadoBE.Cargo_prv = dtr["cargo"].ToString();
-                    objEmpleadoBE.Email_prv = dtr["correo"].ToString();                    
+                    objEmpleadoBE.Email_prv = dtr["correo"].ToString();
+                    objEmpleadoBE.CodAg_prv = dtr["codAgencia"].ToString();
                     objEmpleadoBE.IdUbi_prv = dtr["Id_Ubigeo"].ToString();
                 }
                 dtr.Close();

@@ -25,6 +25,12 @@ namespace ProyAutoServicio_BE
         private DateTime mvarfec_registro;
         private DateTime mvarfec_ult_mod;
         private String mvarusu_ult_mod;
+        private String mvarid_ubigeo;
+        public String Id_Ubigeo
+        {
+            get { return mvarid_ubigeo; }
+            set { mvarid_ubigeo = value; }
+        }
 
         //propiedades
         public String Cod_emp

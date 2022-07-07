@@ -30,6 +30,13 @@ namespace ProyAutoServicios_GUI
         private void InitializeComponent()
         {
             this.grpDatosEmpleado = new System.Windows.Forms.GroupBox();
+            this.cboDistrito = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cboProvincia = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cboDepartamento = new System.Windows.Forms.ComboBox();
+            this.cboAgencia = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.mskTelef = new System.Windows.Forms.MaskedTextBox();
@@ -40,28 +47,32 @@ namespace ProyAutoServicios_GUI
             this.label4 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtCodAg = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.cboDepartamento = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cboProvincia = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cboDistrito = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cboCargo = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.mskFecIni = new System.Windows.Forms.MaskedTextBox();
             this.grpDatosEmpleado.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpDatosEmpleado
             // 
+            this.grpDatosEmpleado.Controls.Add(this.mskFecIni);
+            this.grpDatosEmpleado.Controls.Add(this.label12);
+            this.grpDatosEmpleado.Controls.Add(this.txtEmail);
+            this.grpDatosEmpleado.Controls.Add(this.label11);
+            this.grpDatosEmpleado.Controls.Add(this.cboCargo);
+            this.grpDatosEmpleado.Controls.Add(this.label10);
             this.grpDatosEmpleado.Controls.Add(this.cboDistrito);
             this.grpDatosEmpleado.Controls.Add(this.label9);
             this.grpDatosEmpleado.Controls.Add(this.cboProvincia);
             this.grpDatosEmpleado.Controls.Add(this.label8);
             this.grpDatosEmpleado.Controls.Add(this.label7);
             this.grpDatosEmpleado.Controls.Add(this.cboDepartamento);
-            this.grpDatosEmpleado.Controls.Add(this.comboBox1);
+            this.grpDatosEmpleado.Controls.Add(this.cboAgencia);
             this.grpDatosEmpleado.Controls.Add(this.btnCancelar);
             this.grpDatosEmpleado.Controls.Add(this.btnGuardar);
             this.grpDatosEmpleado.Controls.Add(this.mskTelef);
@@ -72,19 +83,84 @@ namespace ProyAutoServicios_GUI
             this.grpDatosEmpleado.Controls.Add(this.label4);
             this.grpDatosEmpleado.Controls.Add(this.txtNombre);
             this.grpDatosEmpleado.Controls.Add(this.label3);
-            this.grpDatosEmpleado.Controls.Add(this.txtCodAg);
             this.grpDatosEmpleado.Controls.Add(this.label2);
             this.grpDatosEmpleado.Controls.Add(this.label1);
             this.grpDatosEmpleado.Location = new System.Drawing.Point(27, 28);
             this.grpDatosEmpleado.Name = "grpDatosEmpleado";
-            this.grpDatosEmpleado.Size = new System.Drawing.Size(415, 538);
+            this.grpDatosEmpleado.Size = new System.Drawing.Size(778, 403);
             this.grpDatosEmpleado.TabIndex = 1;
             this.grpDatosEmpleado.TabStop = false;
             this.grpDatosEmpleado.Text = "Datos;";
             // 
+            // cboDistrito
+            // 
+            this.cboDistrito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDistrito.FormattingEnabled = true;
+            this.cboDistrito.Location = new System.Drawing.Point(140, 247);
+            this.cboDistrito.Name = "cboDistrito";
+            this.cboDistrito.Size = new System.Drawing.Size(217, 24);
+            this.cboDistrito.TabIndex = 22;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(25, 247);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(60, 17);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Distrito :";
+            // 
+            // cboProvincia
+            // 
+            this.cboProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboProvincia.FormattingEnabled = true;
+            this.cboProvincia.Location = new System.Drawing.Point(140, 209);
+            this.cboProvincia.Name = "cboProvincia";
+            this.cboProvincia.Size = new System.Drawing.Size(217, 24);
+            this.cboProvincia.TabIndex = 20;
+            this.cboProvincia.SelectionChangeCommitted += new System.EventHandler(this.cboProvincia_SelectionChangeCommitted);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(25, 209);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(74, 17);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Provincia: ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(22, 169);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(106, 17);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Departamento :";
+            // 
+            // cboDepartamento
+            // 
+            this.cboDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDepartamento.FormattingEnabled = true;
+            this.cboDepartamento.Location = new System.Drawing.Point(140, 166);
+            this.cboDepartamento.Name = "cboDepartamento";
+            this.cboDepartamento.Size = new System.Drawing.Size(217, 24);
+            this.cboDepartamento.TabIndex = 17;
+            this.cboDepartamento.SelectionChangeCommitted += new System.EventHandler(this.cboDepartamento_SelectionChangeCommitted);
+            // 
+            // cboAgencia
+            // 
+            this.cboAgencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboAgencia.FormattingEnabled = true;
+            this.cboAgencia.Location = new System.Drawing.Point(140, 39);
+            this.cboAgencia.Name = "cboAgencia";
+            this.cboAgencia.Size = new System.Drawing.Size(121, 24);
+            this.cboAgencia.TabIndex = 16;
+            this.cboAgencia.SelectionChangeCommitted += new System.EventHandler(this.cboAgencia_SelectionChangeCommitted);
+            // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(251, 482);
+            this.btnCancelar.Location = new System.Drawing.Point(405, 349);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 15;
@@ -94,7 +170,7 @@ namespace ProyAutoServicios_GUI
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(79, 482);
+            this.btnGuardar.Location = new System.Drawing.Point(271, 349);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 14;
@@ -104,7 +180,7 @@ namespace ProyAutoServicios_GUI
             // 
             // mskTelef
             // 
-            this.mskTelef.Location = new System.Drawing.Point(140, 336);
+            this.mskTelef.Location = new System.Drawing.Point(485, 166);
             this.mskTelef.Mask = "999999999";
             this.mskTelef.Name = "mskTelef";
             this.mskTelef.Size = new System.Drawing.Size(151, 22);
@@ -113,7 +189,7 @@ namespace ProyAutoServicios_GUI
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(31, 341);
+            this.label6.Location = new System.Drawing.Point(399, 166);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 17);
             this.label6.TabIndex = 12;
@@ -121,15 +197,17 @@ namespace ProyAutoServicios_GUI
             // 
             // txtDirec
             // 
-            this.txtDirec.Location = new System.Drawing.Point(140, 167);
+            this.txtDirec.AccessibleRole = System.Windows.Forms.AccessibleRole.SplitButton;
+            this.txtDirec.Location = new System.Drawing.Point(140, 123);
             this.txtDirec.Name = "txtDirec";
-            this.txtDirec.Size = new System.Drawing.Size(217, 22);
+            this.txtDirec.Size = new System.Drawing.Size(606, 22);
             this.txtDirec.TabIndex = 11;
             // 
             // label5
             // 
+            this.label5.AccessibleRole = System.Windows.Forms.AccessibleRole.SplitButton;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(31, 167);
+            this.label5.Location = new System.Drawing.Point(22, 123);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 17);
             this.label5.TabIndex = 10;
@@ -137,15 +215,17 @@ namespace ProyAutoServicios_GUI
             // 
             // txtApellidos
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(140, 119);
+            this.txtApellidos.AccessibleRole = System.Windows.Forms.AccessibleRole.SplitButton;
+            this.txtApellidos.Location = new System.Drawing.Point(485, 83);
             this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(217, 22);
+            this.txtApellidos.Size = new System.Drawing.Size(261, 22);
             this.txtApellidos.TabIndex = 9;
             // 
             // label4
             // 
+            this.label4.AccessibleRole = System.Windows.Forms.AccessibleRole.SplitButton;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 125);
+            this.label4.Location = new System.Drawing.Point(399, 83);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 17);
             this.label4.TabIndex = 8;
@@ -155,7 +235,7 @@ namespace ProyAutoServicios_GUI
             // 
             this.txtNombre.Location = new System.Drawing.Point(140, 80);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(217, 22);
+            this.txtNombre.Size = new System.Drawing.Size(240, 22);
             this.txtNombre.TabIndex = 7;
             // 
             // label3
@@ -166,13 +246,6 @@ namespace ProyAutoServicios_GUI
             this.label3.Size = new System.Drawing.Size(62, 17);
             this.label3.TabIndex = 6;
             this.label3.Text = "Nombre:";
-            // 
-            // txtCodAg
-            // 
-            this.txtCodAg.Location = new System.Drawing.Point(299, 34);
-            this.txtCodAg.Name = "txtCodAg";
-            this.txtCodAg.Size = new System.Drawing.Size(110, 22);
-            this.txtCodAg.TabIndex = 5;
             // 
             // label2
             // 
@@ -190,91 +263,65 @@ namespace ProyAutoServicios_GUI
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 3;
             // 
-            // comboBox1
+            // label10
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20"});
-            this.comboBox1.Location = new System.Drawing.Point(140, 39);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 16;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(399, 205);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(44, 17);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "cargo";
             // 
-            // cboDepartamento
+            // cboCargo
             // 
-            this.cboDepartamento.FormattingEnabled = true;
-            this.cboDepartamento.Location = new System.Drawing.Point(140, 208);
-            this.cboDepartamento.Name = "cboDepartamento";
-            this.cboDepartamento.Size = new System.Drawing.Size(217, 24);
-            this.cboDepartamento.TabIndex = 17;
+            this.cboCargo.FormattingEnabled = true;
+            this.cboCargo.Items.AddRange(new object[] {
+            "--seleccione--",
+            "atención al cliente",
+            "Administrador"});
+            this.cboCargo.Location = new System.Drawing.Point(485, 209);
+            this.cboCargo.Name = "cboCargo";
+            this.cboCargo.Size = new System.Drawing.Size(215, 24);
+            this.cboCargo.TabIndex = 24;
             // 
-            // label7
+            // label11
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(31, 214);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(106, 17);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "Departamento :";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(402, 253);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(41, 17);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "email";
             // 
-            // label8
+            // txtEmail
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(34, 251);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(74, 17);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Provincia: ";
+            this.txtEmail.Location = new System.Drawing.Point(485, 253);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(215, 22);
+            this.txtEmail.TabIndex = 26;
             // 
-            // cboProvincia
+            // label12
             // 
-            this.cboProvincia.FormattingEnabled = true;
-            this.cboProvincia.Location = new System.Drawing.Point(140, 251);
-            this.cboProvincia.Name = "cboProvincia";
-            this.cboProvincia.Size = new System.Drawing.Size(217, 24);
-            this.cboProvincia.TabIndex = 20;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(399, 292);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(94, 17);
+            this.label12.TabIndex = 27;
+            this.label12.Text = "fecha Ingreso";
             // 
-            // label9
+            // mskFecIni
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(38, 289);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 17);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "Distrito :";
-            // 
-            // cboDistrito
-            // 
-            this.cboDistrito.FormattingEnabled = true;
-            this.cboDistrito.Location = new System.Drawing.Point(140, 289);
-            this.cboDistrito.Name = "cboDistrito";
-            this.cboDistrito.Size = new System.Drawing.Size(217, 24);
-            this.cboDistrito.TabIndex = 22;
+            this.mskFecIni.Location = new System.Drawing.Point(514, 292);
+            this.mskFecIni.Mask = "0000/00/00";
+            this.mskFecIni.Name = "mskFecIni";
+            this.mskFecIni.Size = new System.Drawing.Size(100, 22);
+            this.mskFecIni.TabIndex = 28;
             // 
             // Empleado02
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 599);
+            this.ClientSize = new System.Drawing.Size(833, 451);
             this.Controls.Add(this.grpDatosEmpleado);
             this.Name = "Empleado02";
             this.Text = "Insertar Empleado";
@@ -298,15 +345,20 @@ namespace ProyAutoServicios_GUI
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCodAg;
         private System.Windows.Forms.Label label2;
         internal System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboAgencia;
         private System.Windows.Forms.ComboBox cboDepartamento;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cboProvincia;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cboDistrito;
+        private System.Windows.Forms.ComboBox cboCargo;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.MaskedTextBox mskFecIni;
+        private System.Windows.Forms.Label label12;
     }
 }

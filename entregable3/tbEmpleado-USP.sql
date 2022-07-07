@@ -48,11 +48,21 @@ create procedure usp_ActualizarEmpleado
 	@apellido varchar (20),
 	@Id_Ubi nchar(6),
 	@direccion varchar (20),
-	@telef varchar (20),
-	@sue money,
+	@telef varchar (20), --	
 	@cargo varchar(20),
 	@email varchar(50)
 as 
+	DECLARE 
+	@sue money
+	if (@cargo='Administrador')
+	begin
+		set @sue=3000
+	end
+	if (@cargo='atención al cliente')
+	begin
+		set @sue=1200
+	end
+
 	update tb_Empleado
 	set 
 		codAgencia = @codAgen, nomEmpleado = @nombre, apeEmpleado = @apellido,
@@ -62,22 +72,31 @@ as
 go
 
 exec usp_ActualizarEmpleado @cod=1060  , @codAgen=5   ,@nombre='Bridie', @apellido='Bellay Herrera', @Id_Ubi='140120', @direccion='jr Palma 1401',
-	@telef='654321' , @sue='1200', @cargo='atención al cliente', @email='Bridie@gmail.com'
+	@telef='654321' , @cargo='atención al cliente', @email='Bridie@gmail.com'
 
 select * from tb_Empleado where codEmpleado=1060
 --consultar
+go
 	--drop procedure usp_ConsultarEmpleado
 create procedure usp_ConsultarEmpleado
 	@cod smallint
 as 
-		select codEmpleado as 'Codigo Empleado',
-	nomEmpleado as 'Nombre', apeEmpleado as 'Apellido', correo,cargo, sueldo,
-	tb_Agencia.direccion as 'Agencia', 
-	tb_Ubigeo.Departamento,tb_Ubigeo.Distrito, tb_Ubigeo.Provincia
-	from tb_Empleado inner join tb_Agencia
-	on tb_Empleado.codAgencia = tb_Agencia.codAgencia
-	inner join tb_Ubigeo
-	on tb_Empleado.Id_Ubigeo = tb_Ubigeo.Id_Ubigeo
+	select codEmpleado,
+		nomEmpleado,
+		apeEmpleado,
+		correo,
+		cargo, 		
+		codAgencia,
+		direccion , 
+		Id_Ubigeo,
+		Departamento,
+		Distrito, 
+		Provincia,
+		fec_reg,
+		usu_reg,
+		fech_ult_mod,
+		usu_ult_mod	
+	from VW_VistaEmpleados 
 	where codEmpleado=@cod	
 go
 
@@ -91,7 +110,7 @@ create procedure usp_EliminarEmpleado
 as
 	delete from tb_Empleado where codEmpleado =@cod
 go
-exec usp_EliminarEmpleado @cod=1061
+exec usp_EliminarEmpleado @cod=1063
 
 --insertar
 	--drop procedure usp_InsertEmpleado	
@@ -101,14 +120,22 @@ create procedure usp_InsertEmpleado
 	@apellido varchar (20),
 	@direccion varchar (20),
 	@IdUbi nchar(6),
-	@telefono varchar (20),
-	@sue money,
+	@telefono varchar (20),	
 	@fecini date ,
 	@fecnac date ,
 	@cargo varchar(20),
 	@email varchar(50)
-
 as
+	DECLARE 
+	@sue money
+	if (@cargo='Administrador')
+	begin
+		set @sue=3000
+	end
+	if (@cargo='atención al cliente')
+	begin
+		set @sue=1200
+	end
 	DECLARE @codEmpl smallint
 	set @codEmpl = (select top 1 codEmpleado from tb_Empleado order by codEmpleado DESC) +1
 	
@@ -117,8 +144,8 @@ as
 	VALUES(@codEmpl ,@codAgen,@nombre,@apellido,@IdUbi,@direccion , @telefono, @sue,@fecini,@fecnac , @cargo,@email,getdate())
 go
 
-exec usp_InsertEmpleado @codAgen=20,@nombre='José',@apellido='Carranza', @direccion='jr Bayobar 513',@IdUbi='140120',@telefono='98765410',
-	@sue=1200,@fecini='2022-05-06',@fecnac='1995-08-10'  ,@cargo='Atencion al cliente',@email='joseCar@gmail.com'
+exec usp_InsertEmpleado @codAgen=10,@nombre='José',@apellido='Carranza', @direccion='jr Bayobar 513',@IdUbi='140120',@telefono='98765410',
+	@fecini='2022-05-06',@fecnac='1995-08-10'  ,@cargo='atención al cliente',@email='joseCar@gmail.com'
 go
 select * from tb_Empleado order by codEmpleado DESC
 --listar
@@ -135,6 +162,40 @@ as
 	on tb_Empleado.Id_Ubigeo = tb_Ubigeo.Id_Ubigeo
 go
 exec usp_ListarEmpleados
+go
 
 
+-- Creamos vistas 
+--drop view [VW_VistaEmpleados]
+create view [VW_VistaEmpleados]
+as
+select codEmpleado,
+		nomEmpleado,
+		apeEmpleado,
+		correo,
+		cargo, 		
+		tb_Agencia.codAgencia,
+		tb_Agencia.direccion , 
+		tb_Ubigeo.Id_Ubigeo,
+		tb_Ubigeo.Departamento,
+		tb_Ubigeo.Distrito, 
+		tb_Ubigeo.Provincia,
+		fec_reg,
+		usu_reg,
+		fech_ult_mod,
+		usu_ult_mod
 
+from tb_Empleado inner join tb_Agencia
+	on tb_Empleado.codAgencia = tb_Agencia.codAgencia
+	inner join tb_Ubigeo
+	on tb_Empleado.Id_Ubigeo = tb_Ubigeo.Id_Ubigeo
+
+	select codEmpleado,codAgencia,direccion from VW_VistaEmpleados where codEmpleado=1060
+	go
+
+--SP para Agencia y asi cargar la lista de agencias y sus direcciones
+create procedure usp_Agencia_Direccion
+as
+	select codAgencia, direccion from tb_Agencia
+
+exec usp_Agencia_Direccion

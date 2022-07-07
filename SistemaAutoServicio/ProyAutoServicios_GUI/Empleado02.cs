@@ -28,6 +28,7 @@ namespace ProyAutoServicios_GUI
             try
             {
                 CargarUbigeo("14", "01", "01");
+                CargarAgencia(1);
             }
             catch (Exception ex)
             {
@@ -54,26 +55,46 @@ namespace ProyAutoServicios_GUI
             cboDistrito.SelectedValue = IdDist;
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void CargarAgencia(int CodAge)
+        {
+            AgenciaBL objAgenciaBL = new AgenciaBL();            
+
+            cboAgencia.DataSource = objAgenciaBL.Agencia_Direccion();
+            cboAgencia.ValueMember = "codAgencia";
+            cboAgencia.DisplayMember = "direccion";
+            cboAgencia.SelectedValue = CodAge;
+        }
+
+
+            private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
-                if (txtCodAg.Text.Trim() == String.Empty)
-                {
-                    throw new Exception("Ingrese codigo de Agencia");
-                }
-
+              
                 if (mskTelef.MaskFull == false)
                 {
                     throw new Exception("Llene el telefono con 9 digitos");
                 }
+                if (mskFecIni.MaskFull == false)
+                {
+                    throw new Exception("Ingrese la fecha con el formato YYYY/MM/DD");
+                }
 
                 objEmpleadosBE.Cod_emp = "";
-                objEmpleadosBE.CodAg_prv = txtCodAg.Text.Trim();
+                objEmpleadosBE.CodAg_prv = cboAgencia.SelectedValue.ToString();
                 objEmpleadosBE.Nom_prv = txtNombre.Text.Trim();
                 objEmpleadosBE.Ape_prv = txtApellidos.Text.Trim();
                 objEmpleadosBE.Direc_prv = txtDirec.Text.Trim();
                 objEmpleadosBE.Telf_prv = mskTelef.Text;
+                objEmpleadosBE.Cargo_prv = cboCargo.SelectedValue.ToString();
+                objEmpleadosBE.Email_prv = txtEmail.Text.Trim();
+                objEmpleadosBE.fecIni = Convert.ToDateTime(mskFecIni);
+
+                objEmpleadosBE.Id_Ubigeo = cboDepartamento.SelectedValue.ToString() +
+                                                                cboProvincia.SelectedValue.ToString() +
+                                                                cboDistrito.SelectedValue.ToString();
+
+                //objProveedorBE.Usu_Registro = ClsCredenciales.Usuario; //"jleon";// por ahora....
 
                 if (objEmpleadoBL.InsertarEmpleado(objEmpleadosBE) == true)
                 {
@@ -95,6 +116,23 @@ namespace ProyAutoServicios_GUI
             this.Close();
         }
 
-        
+        private void cboDepartamento_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            // Refrescamos 
+            CargarUbigeo(cboDepartamento.SelectedValue.ToString(), "01", "01");
+
+        }
+
+        private void cboProvincia_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            // Refrescamos 
+            CargarUbigeo(cboDepartamento.SelectedValue.ToString(), cboProvincia.SelectedValue.ToString(), "01");
+
+        }
+
+        private void cboAgencia_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            CargarAgencia(cboAgencia.SelectedIndex+1);
+        }
     }
 }
