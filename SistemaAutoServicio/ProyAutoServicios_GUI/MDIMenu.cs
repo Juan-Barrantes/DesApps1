@@ -75,6 +75,7 @@ namespace ProyAutoServicios_GUI
                 salirToolStripMenuItem.Visible = true;
             }else if(clsCredenciales.Nivel == 2)
             {
+                mantenimientosToolStripMenuItem.Visible = false;
                 reportesToolStripMenuItem.Visible = true;
                 salirToolStripMenuItem.Visible = true;
             }
@@ -94,6 +95,11 @@ namespace ProyAutoServicios_GUI
             {
                 e.Cancel = true;
             }
+        }
+
+        private void MDIMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

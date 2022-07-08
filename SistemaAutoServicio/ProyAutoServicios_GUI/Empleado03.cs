@@ -126,7 +126,7 @@ namespace ProyAutoServicios_GUI
                                                               cboProvincia.SelectedValue.ToString() +
                                                               cboDistrito.SelectedValue.ToString();
 
-                objEmpleadoBE.Usu_Registro = "userTest"; //ClsCredenciales.Usuario; 
+                objEmpleadoBE.Usu_Registro = clsCredenciales.Usuario; //ClsCredenciales.Usuario; 
 
                 if (objEmpleadoBL.ActualizarEmpleado(objEmpleadoBE) == true)
                 {

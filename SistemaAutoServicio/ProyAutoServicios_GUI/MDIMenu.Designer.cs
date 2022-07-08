@@ -133,6 +133,7 @@ namespace ProyAutoServicios_GUI
             this.Text = "Módulo de Servicios";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MDIMenu_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MDIMenu_FormClosed);
             this.Load += new System.EventHandler(this.MDIMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
