@@ -37,6 +37,16 @@ namespace ProyAutoServicios_GUI
             this.lblTotal = new System.Windows.Forms.Label();
             this.Total = new System.Windows.Forms.Label();
             this.dtgEmpleado = new System.Windows.Forms.DataGridView();
+            this.codEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dirAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEmpleado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,6 +124,17 @@ namespace ProyAutoServicios_GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgEmpleado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgEmpleado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codEmpleado,
+            this.nombre,
+            this.apellido,
+            this.correo,
+            this.Cargo,
+            this.sueldo,
+            this.dirAge,
+            this.departamento,
+            this.Provincia,
+            this.distrito});
             this.dtgEmpleado.Location = new System.Drawing.Point(13, 86);
             this.dtgEmpleado.Margin = new System.Windows.Forms.Padding(4);
             this.dtgEmpleado.Name = "dtgEmpleado";
@@ -125,6 +146,86 @@ namespace ProyAutoServicios_GUI
             this.dtgEmpleado.Size = new System.Drawing.Size(1129, 418);
             this.dtgEmpleado.TabIndex = 15;
             this.dtgEmpleado.DoubleClick += new System.EventHandler(this.dtgEmpleado_DoubleClick);
+            // 
+            // codEmpleado
+            // 
+            this.codEmpleado.DataPropertyName = "codEmpleado";
+            this.codEmpleado.HeaderText = "Cod. Empleado";
+            this.codEmpleado.MinimumWidth = 6;
+            this.codEmpleado.Name = "codEmpleado";
+            this.codEmpleado.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nomEmpleado";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.MinimumWidth = 6;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // apellido
+            // 
+            this.apellido.DataPropertyName = "apeEmpleado";
+            this.apellido.HeaderText = "Apellidos";
+            this.apellido.MinimumWidth = 6;
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
+            // 
+            // correo
+            // 
+            this.correo.DataPropertyName = "correo";
+            this.correo.HeaderText = "Correo";
+            this.correo.MinimumWidth = 6;
+            this.correo.Name = "correo";
+            this.correo.ReadOnly = true;
+            // 
+            // Cargo
+            // 
+            this.Cargo.DataPropertyName = "cargo";
+            this.Cargo.HeaderText = "Cargo";
+            this.Cargo.MinimumWidth = 6;
+            this.Cargo.Name = "Cargo";
+            this.Cargo.ReadOnly = true;
+            // 
+            // sueldo
+            // 
+            this.sueldo.DataPropertyName = "sueldo";
+            this.sueldo.HeaderText = "Sueldo";
+            this.sueldo.MinimumWidth = 6;
+            this.sueldo.Name = "sueldo";
+            this.sueldo.ReadOnly = true;
+            // 
+            // dirAge
+            // 
+            this.dirAge.DataPropertyName = "direccion";
+            this.dirAge.HeaderText = "Agencia - oficina";
+            this.dirAge.MinimumWidth = 6;
+            this.dirAge.Name = "dirAge";
+            this.dirAge.ReadOnly = true;
+            // 
+            // departamento
+            // 
+            this.departamento.DataPropertyName = "Departamento";
+            this.departamento.HeaderText = "Departamento";
+            this.departamento.MinimumWidth = 6;
+            this.departamento.Name = "departamento";
+            this.departamento.ReadOnly = true;
+            // 
+            // Provincia
+            // 
+            this.Provincia.DataPropertyName = "Provincia";
+            this.Provincia.HeaderText = "Provincia";
+            this.Provincia.MinimumWidth = 6;
+            this.Provincia.Name = "Provincia";
+            this.Provincia.ReadOnly = true;
+            // 
+            // distrito
+            // 
+            this.distrito.DataPropertyName = "Distrito";
+            this.distrito.HeaderText = "Distrito";
+            this.distrito.MinimumWidth = 6;
+            this.distrito.Name = "distrito";
+            this.distrito.ReadOnly = true;
             // 
             // Empleado01
             // 
@@ -158,5 +259,15 @@ namespace ProyAutoServicios_GUI
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label Total;
         private System.Windows.Forms.DataGridView dtgEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn correo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sueldo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dirAge;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Provincia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn distrito;
     }
 }

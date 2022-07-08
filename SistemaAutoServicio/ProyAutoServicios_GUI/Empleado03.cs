@@ -110,11 +110,23 @@ namespace ProyAutoServicios_GUI
                 objEmpleadoBE.Direc_prv = txtDirec.Text.Trim();
                 objEmpleadoBE.Telf_prv = mskTelef.Text.Trim();
                 objEmpleadoBE.Email_prv = txtEmail.Text.Trim();
-                objEmpleadoBE.Cargo_prv = cboCargo.SelectedValue.ToString();                
 
-                objEmpleadoBE.Id_Ubigeo = cboDepartamento.SelectedValue.ToString() +
+                int indexCarg = cboCargo.SelectedIndex;
+                if (indexCarg == 0)
+                {
+                    MessageBox.Show("Elija un cargo");
+                }
+                else
+                {
+                    objEmpleadoBE.Cargo_prv = cboCargo.SelectedItem.ToString();
+                }
+
+
+                objEmpleadoBE.IdUbi_prv = cboDepartamento.SelectedValue.ToString() +
                                                               cboProvincia.SelectedValue.ToString() +
                                                               cboDistrito.SelectedValue.ToString();
+
+                objEmpleadoBE.Usu_Registro = "userTest"; //ClsCredenciales.Usuario; 
 
                 if (objEmpleadoBL.ActualizarEmpleado(objEmpleadoBE) == true)
                 {

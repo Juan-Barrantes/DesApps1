@@ -30,8 +30,11 @@ namespace ProyAutoServicios_GUI
         private void InitializeComponent()
         {
             this.grpDatosEmpleado = new System.Windows.Forms.GroupBox();
+            this.dtpFecNac = new System.Windows.Forms.DateTimePicker();
+            this.dtpFecIni = new System.Windows.Forms.DateTimePicker();
             this.mskFecIni = new System.Windows.Forms.MaskedTextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.dtpCalendar = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.cboCargo = new System.Windows.Forms.ComboBox();
@@ -60,8 +63,11 @@ namespace ProyAutoServicios_GUI
             // 
             // grpDatosEmpleado
             // 
+            this.grpDatosEmpleado.Controls.Add(this.dtpFecNac);
+            this.grpDatosEmpleado.Controls.Add(this.dtpFecIni);
             this.grpDatosEmpleado.Controls.Add(this.mskFecIni);
             this.grpDatosEmpleado.Controls.Add(this.label12);
+            this.grpDatosEmpleado.Controls.Add(this.dtpCalendar);
             this.grpDatosEmpleado.Controls.Add(this.txtEmail);
             this.grpDatosEmpleado.Controls.Add(this.label11);
             this.grpDatosEmpleado.Controls.Add(this.cboCargo);
@@ -87,27 +93,54 @@ namespace ProyAutoServicios_GUI
             this.grpDatosEmpleado.Controls.Add(this.label1);
             this.grpDatosEmpleado.Location = new System.Drawing.Point(27, 28);
             this.grpDatosEmpleado.Name = "grpDatosEmpleado";
-            this.grpDatosEmpleado.Size = new System.Drawing.Size(778, 403);
+            this.grpDatosEmpleado.Size = new System.Drawing.Size(778, 452);
             this.grpDatosEmpleado.TabIndex = 1;
             this.grpDatosEmpleado.TabStop = false;
             this.grpDatosEmpleado.Text = "Datos;";
             // 
+            // dtpFecNac
+            // 
+            this.dtpFecNac.CustomFormat = "yyyy-MM-dd";
+            this.dtpFecNac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecNac.Location = new System.Drawing.Point(165, 292);
+            this.dtpFecNac.Name = "dtpFecNac";
+            this.dtpFecNac.Size = new System.Drawing.Size(120, 22);
+            this.dtpFecNac.TabIndex = 30;
+            // 
+            // dtpFecIni
+            // 
+            this.dtpFecIni.CustomFormat = "yyyy-MM-dd";
+            this.dtpFecIni.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecIni.Location = new System.Drawing.Point(515, 292);
+            this.dtpFecIni.Name = "dtpFecIni";
+            this.dtpFecIni.Size = new System.Drawing.Size(121, 22);
+            this.dtpFecIni.TabIndex = 30;
+            // 
             // mskFecIni
             // 
-            this.mskFecIni.Location = new System.Drawing.Point(514, 292);
-            this.mskFecIni.Mask = "0000/00/00";
+            this.mskFecIni.Location = new System.Drawing.Point(599, 347);
+            this.mskFecIni.Mask = "9999";
             this.mskFecIni.Name = "mskFecIni";
-            this.mskFecIni.Size = new System.Drawing.Size(100, 22);
+            this.mskFecIni.Size = new System.Drawing.Size(156, 22);
             this.mskFecIni.TabIndex = 28;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(399, 292);
+            this.label12.Location = new System.Drawing.Point(22, 297);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(94, 17);
+            this.label12.Size = new System.Drawing.Size(135, 17);
             this.label12.TabIndex = 27;
-            this.label12.Text = "fecha Ingreso";
+            this.label12.Text = "fecha de nacimiento";
+            // 
+            // dtpCalendar
+            // 
+            this.dtpCalendar.AutoSize = true;
+            this.dtpCalendar.Location = new System.Drawing.Point(399, 292);
+            this.dtpCalendar.Name = "dtpCalendar";
+            this.dtpCalendar.Size = new System.Drawing.Size(94, 17);
+            this.dtpCalendar.TabIndex = 27;
+            this.dtpCalendar.Text = "fecha Ingreso";
             // 
             // txtEmail
             // 
@@ -208,13 +241,13 @@ namespace ProyAutoServicios_GUI
             this.cboAgencia.FormattingEnabled = true;
             this.cboAgencia.Location = new System.Drawing.Point(140, 39);
             this.cboAgencia.Name = "cboAgencia";
-            this.cboAgencia.Size = new System.Drawing.Size(121, 24);
+            this.cboAgencia.Size = new System.Drawing.Size(240, 24);
             this.cboAgencia.TabIndex = 16;
             this.cboAgencia.SelectionChangeCommitted += new System.EventHandler(this.cboAgencia_SelectionChangeCommitted);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(405, 349);
+            this.btnCancelar.Location = new System.Drawing.Point(402, 408);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 15;
@@ -224,7 +257,7 @@ namespace ProyAutoServicios_GUI
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(271, 349);
+            this.btnGuardar.Location = new System.Drawing.Point(282, 408);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 14;
@@ -321,7 +354,7 @@ namespace ProyAutoServicios_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(833, 451);
+            this.ClientSize = new System.Drawing.Size(833, 492);
             this.Controls.Add(this.grpDatosEmpleado);
             this.Name = "Empleado02";
             this.Text = "Insertar Empleado";
@@ -359,6 +392,9 @@ namespace ProyAutoServicios_GUI
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.MaskedTextBox mskFecIni;
+        private System.Windows.Forms.Label dtpCalendar;
+        private System.Windows.Forms.DateTimePicker dtpFecIni;
+        private System.Windows.Forms.DateTimePicker dtpFecNac;
         private System.Windows.Forms.Label label12;
     }
 }

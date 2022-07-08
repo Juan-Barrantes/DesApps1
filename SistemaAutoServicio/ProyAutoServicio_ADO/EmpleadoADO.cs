@@ -36,7 +36,7 @@ namespace ProyAutoServicio_ADO
                 cmd.Parameters.AddWithValue("@direccion", objEmpleadoBE.Direc_prv);
                 cmd.Parameters.AddWithValue("@IdUbi", objEmpleadoBE.IdUbi_prv);
                 cmd.Parameters.AddWithValue("@telefono", objEmpleadoBE.Telf_prv);
-                cmd.Parameters.AddWithValue("@sue", objEmpleadoBE.Sueldo_prv);
+                //cmd.Parameters.AddWithValue("@sue", objEmpleadoBE.Sueldo_prv);
                 cmd.Parameters.AddWithValue("@fecini", objEmpleadoBE.fecIni);
                 cmd.Parameters.AddWithValue("@fecnac", objEmpleadoBE.fecNac);
                 cmd.Parameters.AddWithValue("@cargo", objEmpleadoBE.Cargo_prv);
@@ -78,11 +78,10 @@ namespace ProyAutoServicio_ADO
                 cmd.Parameters.AddWithValue("@apellido", objEmpleadosBE.Ape_prv);
                 cmd.Parameters.AddWithValue("@Id_Ubi", objEmpleadosBE.IdUbi_prv);
                 cmd.Parameters.AddWithValue("@direccion", objEmpleadosBE.Direc_prv);
-                cmd.Parameters.AddWithValue("@telef", objEmpleadosBE.Telf_prv);
-                cmd.Parameters.AddWithValue("@sue", objEmpleadosBE.Sueldo_prv);
+                cmd.Parameters.AddWithValue("@telef", objEmpleadosBE.Telf_prv);                
                 cmd.Parameters.AddWithValue("@cargo", objEmpleadosBE.Cargo_prv);
                 cmd.Parameters.AddWithValue("@email", objEmpleadosBE.Email_prv);
-                cmd.Parameters.AddWithValue("@vUsu_ult_mod", objEmpleadosBE.Usu_Ult_Mod);
+                cmd.Parameters.AddWithValue("@usu_ult_mod", objEmpleadosBE.Usu_Registro);
 
                 //se abre conexión y se ejecuta
                 cnx.Open();

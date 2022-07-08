@@ -61,5 +61,39 @@ namespace ProyAutoServicios_GUI
             objSer01.MdiParent = this;
             objSer01.Show();
         }
+
+        private void MDIMenu_Load(object sender, EventArgs e)
+        {
+            ///mostramos al usuario logeado
+            lblUsuario.Text = "Usuario: "+clsCredenciales.Usuario;
+
+            //manejamos la autorizacion
+            if(clsCredenciales.Nivel == 1)
+            {
+                mantenimientosToolStripMenuItem.Visible = true;
+                reportesToolStripMenuItem.Visible = true;
+                salirToolStripMenuItem.Visible = true;
+            }else if(clsCredenciales.Nivel == 2)
+            {
+                reportesToolStripMenuItem.Visible = true;
+                salirToolStripMenuItem.Visible = true;
+            }
+        }
+
+        private void salirToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MDIMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult vrpta;
+            vrpta = MessageBox.Show("¿Seguro de salir de la aplicación", "Confirmar",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (vrpta == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

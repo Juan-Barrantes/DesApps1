@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyAutoServicio_GUI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace ProyAutoServicios_GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MDIMenu());
+            Application.Run(new frmLogin());
         }
     }
 }

@@ -236,7 +236,7 @@ namespace ProyAutoServicios_GUI
             // mskTelef
             // 
             this.mskTelef.Location = new System.Drawing.Point(530, 235);
-            this.mskTelef.Mask = "99999999999";
+            this.mskTelef.Mask = "999999999";
             this.mskTelef.Name = "mskTelef";
             this.mskTelef.Size = new System.Drawing.Size(124, 22);
             this.mskTelef.TabIndex = 13;

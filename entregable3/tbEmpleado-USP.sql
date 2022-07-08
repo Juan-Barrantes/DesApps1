@@ -113,7 +113,7 @@ create procedure usp_EliminarEmpleado
 as
 	delete from tb_Empleado where codEmpleado =@cod
 go
-exec usp_EliminarEmpleado @cod=1063
+exec usp_EliminarEmpleado @cod=1064
 
 --insertar
 	--drop procedure usp_InsertEmpleado	
@@ -127,28 +127,36 @@ create procedure usp_InsertEmpleado
 	@fecini date ,
 	@fecnac date ,
 	@cargo varchar(20),
-	@email varchar(50)
+	@email varchar(50),
+	@usu_reg varchar(20)
 as
 	DECLARE 
-	@sue money
+	@sue money,
+	@nivel_usu int
 	if (@cargo='Administrador')
 	begin
 		set @sue=3000
+		set @nivel_usu =1
 	end
 	if (@cargo='atención al cliente')
 	begin
 		set @sue=1200
+		set @nivel_usu=2
 	end
 	DECLARE @codEmpl smallint
 	set @codEmpl = (select top 1 codEmpleado from tb_Empleado order by codEmpleado DESC) +1
 	
 	INSERT into tb_Empleado 
-		(codEmpleado, codAgencia, nomEmpleado, apeEmpleado, Id_Ubigeo, dirEmpleado, telefono, sueldo,fecini, fecnac, cargo, correo, fec_reg)
-	VALUES(@codEmpl ,@codAgen,@nombre,@apellido,@IdUbi,@direccion , @telefono, @sue,@fecini,@fecnac , @cargo,@email,getdate())
+		(codEmpleado, codAgencia, nomEmpleado, apeEmpleado, Id_Ubigeo, dirEmpleado, telefono, sueldo,fecini, fecnac, cargo, correo, fec_reg,usu_reg)
+	VALUES(@codEmpl ,@codAgen,@nombre,@apellido,@IdUbi,@direccion , @telefono, @sue,@fecini,@fecnac , @cargo,@email,getdate(), @usu_reg)
+
+	INSERT into tb_usuario 
+		(usu_name, usu_pass,usu_nivel,codEmpleado, fech_reg, usu_reg )
+	values( cast(@codEmpl as varchar(20))+@nombre, cast(@codEmpl as varchar(20))+@nombre, @nivel_usu,@codEmpl, getdate(),@usu_reg )
 go
 
-exec usp_InsertEmpleado @codAgen=10,@nombre='José',@apellido='Carranza', @direccion='jr Bayobar 513',@IdUbi='140120',@telefono='98765410',
-	@fecini='2022-05-06',@fecnac='1995-08-10'  ,@cargo='atención al cliente',@email='joseCar@gmail.com'
+exec usp_InsertEmpleado @codAgen=10,@nombre='Maria',@apellido='Hernandez', @direccion='jr Bayobar 513',@IdUbi='140121',@telefono='987653020',
+	@fecini='2022-08-06',@fecnac='1996-08-10'  ,@cargo='atención al cliente',@email='mariHer@gmail.com', @usu_reg='testing'
 go
 select * from tb_Empleado order by codEmpleado DESC
 --listar

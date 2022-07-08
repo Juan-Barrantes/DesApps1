@@ -108,7 +108,7 @@ namespace ProyAutoServicio_BE
             get { return mvarfec_ult_mod; }
             set { mvarfec_ult_mod = value; }
         }
-        public String Usu_Ult_Mod
+        public String Usu_Ult_Mod //--
         {
             get { return mvarusu_ult_mod; }
             set { mvarusu_ult_mod = value; }

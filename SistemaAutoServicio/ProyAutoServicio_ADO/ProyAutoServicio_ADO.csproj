@@ -43,13 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgenciaADO.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="ClienteADO.cs" />
     <Compile Include="ConexionADO.cs" />
     <Compile Include="EmpleadoADO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServicioADO.cs" />
     <Compile Include="UbigeoADO.cs" />
+    <Compile Include="UsuarioADO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ProyAutoServicio_BE\ProyAutoServicio_BE.csproj">

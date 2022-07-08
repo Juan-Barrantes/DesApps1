@@ -2279,3 +2279,43 @@ values ('456478941','10003');
 
 select * from tb_Comprobante
 --delete from tb_Comprobante
+go
+
+
+--Creamos tabla usuario
+--drop table tb_usuario
+create table tb_usuario (
+	usu_name varchar(20) not null primary key,
+	usu_pass varchar(20) not null,
+	codEmpleado smallint not null FOREIGN KEY REFERENCES tb_Empleado,
+	fech_reg datetime,
+	usu_reg varchar(20)
+);
+
+insert into tb_usuario (usu_name, usu_pass, codEmpleado)
+values 
+ ('1001Arnaldo','1001Arnaldo', 1001 ),
+ ('1002Thornton','1002Thornton',1002),
+ ('1003Garth','1003Garth',1003),
+ ('1021Mildrid','1021Mildrid',1021);
+ select * from tb_usuario
+ go
+ --SP de Usuarios:
+ --Consultar Usuario
+-- drop procedure usp_ConsultarUsuario
+ create procedure usp_ConsultarUsuario
+	@usu_name varchar(20)
+ as
+ select 
+		usu_name,
+		usu_pass,
+		tb_Empleado.cargo,
+		fech_reg,
+		tb_usuario.usu_reg
+		
+ from tb_usuario inner join tb_Empleado
+ on tb_usuario.codEmpleado = tb_Empleado.codEmpleado
+ where usu_name=@usu_name
+
+ exec usp_ConsultarUsuario @usu_name='1002Thornton'
+

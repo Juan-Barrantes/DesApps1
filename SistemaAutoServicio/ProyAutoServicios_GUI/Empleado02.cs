@@ -16,7 +16,7 @@ namespace ProyAutoServicios_GUI
     public partial class Empleado02 : Form
     {
         EmpleadoBL objEmpleadoBL = new EmpleadoBL();
-        EmpleadoBE objEmpleadosBE = new EmpleadoBE();
+        EmpleadoBE objEmpleadoBE = new EmpleadoBE();
 
         public Empleado02()
         {
@@ -29,6 +29,7 @@ namespace ProyAutoServicios_GUI
             {
                 CargarUbigeo("14", "01", "01");
                 CargarAgencia(1);
+                cboCargo.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
@@ -75,32 +76,43 @@ namespace ProyAutoServicios_GUI
                 {
                     throw new Exception("Llene el telefono con 9 digitos");
                 }
-                if (mskFecIni.MaskFull == false)
+                /*if (mskFecIni.MaskFull == false)
                 {
                     throw new Exception("Ingrese la fecha con el formato YYYY/MM/DD");
-                }
+                } */
                 if(cboCargo.SelectedIndex == 0)
                 {
                     throw new Exception("Seleccione un cargo");
                 }
 
-                objEmpleadosBE.Cod_emp = "";
-                objEmpleadosBE.CodAg_prv = cboAgencia.SelectedIndex+1;
-                objEmpleadosBE.Nom_prv = txtNombre.Text.Trim();
-                objEmpleadosBE.Ape_prv = txtApellidos.Text.Trim();
-                objEmpleadosBE.Direc_prv = txtDirec.Text.Trim();
-                objEmpleadosBE.Telf_prv = mskTelef.Text;
-                objEmpleadosBE.Cargo_prv = cboCargo.SelectedValue.ToString();
-                objEmpleadosBE.Email_prv = txtEmail.Text.Trim();
-                objEmpleadosBE.fecIni = Convert.ToDateTime(mskFecIni);
+                //objEmpleadosBE.Cod_emp = "";
+                objEmpleadoBE.CodAg_prv = cboAgencia.SelectedIndex+1;
+                objEmpleadoBE.Nom_prv = txtNombre.Text.Trim();
+                objEmpleadoBE.Ape_prv = txtApellidos.Text.Trim();
+                objEmpleadoBE.Direc_prv = txtDirec.Text.Trim();
+                objEmpleadoBE.Telf_prv = mskTelef.Text;
+                objEmpleadoBE.fecIni = Convert.ToDateTime(dtpFecIni.Text);
+                objEmpleadoBE.fecNac = Convert.ToDateTime(dtpFecNac.Text);
+                
+                int indexCarg = cboCargo.SelectedIndex;
+                if(indexCarg == 0)
+                {
+                    MessageBox.Show("Elija un cargo");
+                }
+                else
+                {
+                    objEmpleadoBE.Cargo_prv = cboCargo.SelectedItem.ToString();
+                }      
 
-                objEmpleadosBE.Id_Ubigeo = cboDepartamento.SelectedValue.ToString() +
+                objEmpleadoBE.Email_prv = txtEmail.Text.Trim();
+             
+                objEmpleadoBE.IdUbi_prv = cboDepartamento.SelectedValue.ToString() +
                                                                 cboProvincia.SelectedValue.ToString() +
                                                                 cboDistrito.SelectedValue.ToString();
 
-                //objProveedorBE.Usu_Registro = ClsCredenciales.Usuario; //"jleon";// por ahora....
+                objEmpleadoBE.Usu_Registro = "userTest"; //ClsCredenciales.Usuario; 
 
-                if (objEmpleadoBL.InsertarEmpleado(objEmpleadosBE) == true)
+                if (objEmpleadoBL.InsertarEmpleado(objEmpleadoBE) == true)
                 {
                     this.Close();
                 }
