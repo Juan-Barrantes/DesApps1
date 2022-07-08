@@ -20,7 +20,7 @@ namespace ProyAutoServicio_ADO
 
         // Metodo para Matenimiento 
 
-        public Boolean InsertarEmpleado(EmpleadosBE objEmpleadoBE)
+        public Boolean InsertarEmpleado(EmpleadoBE objEmpleadoBE)
         {
             cnx.ConnectionString = MiConexion.GetCnx();
             cmd.Connection = cnx;
@@ -62,7 +62,7 @@ namespace ProyAutoServicio_ADO
             }
         }
 
-        public Boolean ActualizarEmpleado(EmpleadosBE objEmpleadosBE)
+        public Boolean ActualizarEmpleado(EmpleadoBE objEmpleadosBE)
         {
             cnx.ConnectionString = MiConexion.GetCnx();
             cmd.Connection = cnx;
@@ -138,9 +138,9 @@ namespace ProyAutoServicio_ADO
 
         }
 
-        public EmpleadosBE ConsultarEmpleado(String strCod)
+        public EmpleadoBE ConsultarEmpleado(int strCod)
         {
-            EmpleadosBE objEmpleadoBE = new EmpleadosBE();
+            EmpleadoBE objEmpleadoBE = new EmpleadoBE();
             cnx.ConnectionString = MiConexion.GetCnx();
             cmd.Connection = cnx;
             cmd.CommandType = CommandType.StoredProcedure;
@@ -159,14 +159,16 @@ namespace ProyAutoServicio_ADO
                 {
                     dtr.Read();
                     objEmpleadoBE.Cod_emp = dtr["codEmpleado"].ToString();
-                    objEmpleadoBE.Nom_prv = dtr["nomEmpleado"].ToString();
+                    objEmpleadoBE.Nom_prv = dtr["nomEmpleado"].ToString();                    
                     objEmpleadoBE.Ape_prv = dtr["apeEmpleado"].ToString();
                     objEmpleadoBE.Direc_prv = dtr["dirEmpleado"].ToString();
-                    objEmpleadoBE.Telf_prv = dtr["telefono"].ToString();                    
+                    objEmpleadoBE.Telf_prv = dtr["telefono"].ToString();
                     objEmpleadoBE.Cargo_prv = dtr["cargo"].ToString();
                     objEmpleadoBE.Email_prv = dtr["correo"].ToString();
-                    objEmpleadoBE.CodAg_prv = dtr["codAgencia"].ToString();
-                    objEmpleadoBE.IdUbi_prv = dtr["Id_Ubigeo"].ToString();
+                                        
+                    objEmpleadoBE.CodAg_prv = Convert.ToInt16(dtr["codAgencia"]);
+         
+                    objEmpleadoBE.Id_Ubigeo= dtr["Id_Ubigeo"].ToString();
                 }
                 dtr.Close();
                 return objEmpleadoBE;

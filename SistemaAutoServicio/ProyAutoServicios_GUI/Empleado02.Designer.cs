@@ -30,6 +30,12 @@ namespace ProyAutoServicios_GUI
         private void InitializeComponent()
         {
             this.grpDatosEmpleado = new System.Windows.Forms.GroupBox();
+            this.mskFecIni = new System.Windows.Forms.MaskedTextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cboCargo = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.cboDistrito = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cboProvincia = new System.Windows.Forms.ComboBox();
@@ -49,12 +55,6 @@ namespace ProyAutoServicios_GUI
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cboCargo = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.mskFecIni = new System.Windows.Forms.MaskedTextBox();
             this.grpDatosEmpleado.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,6 +91,60 @@ namespace ProyAutoServicios_GUI
             this.grpDatosEmpleado.TabIndex = 1;
             this.grpDatosEmpleado.TabStop = false;
             this.grpDatosEmpleado.Text = "Datos;";
+            // 
+            // mskFecIni
+            // 
+            this.mskFecIni.Location = new System.Drawing.Point(514, 292);
+            this.mskFecIni.Mask = "0000/00/00";
+            this.mskFecIni.Name = "mskFecIni";
+            this.mskFecIni.Size = new System.Drawing.Size(100, 22);
+            this.mskFecIni.TabIndex = 28;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(399, 292);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(94, 17);
+            this.label12.TabIndex = 27;
+            this.label12.Text = "fecha Ingreso";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(485, 253);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(215, 22);
+            this.txtEmail.TabIndex = 26;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(402, 253);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(41, 17);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "email";
+            // 
+            // cboCargo
+            // 
+            this.cboCargo.FormattingEnabled = true;
+            this.cboCargo.Items.AddRange(new object[] {
+            "--seleccione--",
+            "atención al cliente",
+            "Administrador"});
+            this.cboCargo.Location = new System.Drawing.Point(485, 209);
+            this.cboCargo.Name = "cboCargo";
+            this.cboCargo.Size = new System.Drawing.Size(215, 24);
+            this.cboCargo.TabIndex = 24;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(399, 205);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(44, 17);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "cargo";
             // 
             // cboDistrito
             // 
@@ -252,9 +306,9 @@ namespace ProyAutoServicios_GUI
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(22, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 17);
+            this.label2.Size = new System.Drawing.Size(63, 17);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Codigo Agencia:";
+            this.label2.Text = "Agencia:";
             // 
             // label1
             // 
@@ -262,60 +316,6 @@ namespace ProyAutoServicios_GUI
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 3;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(399, 205);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 17);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "cargo";
-            // 
-            // cboCargo
-            // 
-            this.cboCargo.FormattingEnabled = true;
-            this.cboCargo.Items.AddRange(new object[] {
-            "--seleccione--",
-            "atención al cliente",
-            "Administrador"});
-            this.cboCargo.Location = new System.Drawing.Point(485, 209);
-            this.cboCargo.Name = "cboCargo";
-            this.cboCargo.Size = new System.Drawing.Size(215, 24);
-            this.cboCargo.TabIndex = 24;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(402, 253);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 17);
-            this.label11.TabIndex = 25;
-            this.label11.Text = "email";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(485, 253);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(215, 22);
-            this.txtEmail.TabIndex = 26;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(399, 292);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(94, 17);
-            this.label12.TabIndex = 27;
-            this.label12.Text = "fecha Ingreso";
-            // 
-            // mskFecIni
-            // 
-            this.mskFecIni.Location = new System.Drawing.Point(514, 292);
-            this.mskFecIni.Mask = "0000/00/00";
-            this.mskFecIni.Name = "mskFecIni";
-            this.mskFecIni.Size = new System.Drawing.Size(100, 22);
-            this.mskFecIni.TabIndex = 28;
             // 
             // Empleado02
             // 

@@ -16,7 +16,7 @@ namespace ProyAutoServicios_GUI
     public partial class Empleado02 : Form
     {
         EmpleadoBL objEmpleadoBL = new EmpleadoBL();
-        EmpleadosBE objEmpleadosBE = new EmpleadosBE();
+        EmpleadoBE objEmpleadosBE = new EmpleadoBE();
 
         public Empleado02()
         {
@@ -79,9 +79,13 @@ namespace ProyAutoServicios_GUI
                 {
                     throw new Exception("Ingrese la fecha con el formato YYYY/MM/DD");
                 }
+                if(cboCargo.SelectedIndex == 0)
+                {
+                    throw new Exception("Seleccione un cargo");
+                }
 
                 objEmpleadosBE.Cod_emp = "";
-                objEmpleadosBE.CodAg_prv = cboAgencia.SelectedValue.ToString();
+                objEmpleadosBE.CodAg_prv = cboAgencia.SelectedIndex+1;
                 objEmpleadosBE.Nom_prv = txtNombre.Text.Trim();
                 objEmpleadosBE.Ape_prv = txtApellidos.Text.Trim();
                 objEmpleadosBE.Direc_prv = txtDirec.Text.Trim();

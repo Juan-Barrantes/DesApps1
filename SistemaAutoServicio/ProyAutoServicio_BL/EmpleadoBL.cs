@@ -14,11 +14,11 @@ namespace ProyAutoServicio_BL
     {
         EmpleadoADO objEmpleadoAdo = new EmpleadoADO();
 
-        public Boolean InsertarEmpleado(EmpleadosBE objEmpleadosBE)
+        public Boolean InsertarEmpleado(EmpleadoBE objEmpleadosBE)
         {
             return objEmpleadoAdo.InsertarEmpleado(objEmpleadosBE);
         }
-        public Boolean ActualizarEmpleado(EmpleadosBE objEmpleadosBE)
+        public Boolean ActualizarEmpleado(EmpleadoBE objEmpleadosBE)
         {
             return objEmpleadoAdo.ActualizarEmpleado(objEmpleadosBE);
         }
@@ -27,7 +27,7 @@ namespace ProyAutoServicio_BL
             return objEmpleadoAdo.EliminarEmpleado(strcod);
         }
 
-        public EmpleadosBE ConsultarEmpleado(String strCod)
+        public EmpleadoBE ConsultarEmpleado(int strCod)
         {
             return objEmpleadoAdo.ConsultarEmpleado(strCod);
         }

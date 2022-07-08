@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ProyAutoServicio_BE
 {
-    public class EmpleadosBE
+    public class EmpleadoBE
     {
         //miebros privados
         private String mvarcodEmp_prv;
-        private String mvarcodAg_prv;
+        private int mvarcodAg_prv;
         private String mvarnomEmp_prv;
         private String mvarapeEmp_prv;
         private String mvarIdUbi_prv;
@@ -38,7 +38,7 @@ namespace ProyAutoServicio_BE
             get { return mvarcodEmp_prv; }
             set { mvarcodEmp_prv = value; }
         }
-        public String CodAg_prv
+        public int CodAg_prv
         {
             get { return mvarcodAg_prv; }
             set { mvarcodAg_prv = value; }

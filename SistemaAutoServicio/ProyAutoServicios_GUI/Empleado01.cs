@@ -34,7 +34,10 @@ namespace ProyAutoServicios_GUI
         {
             try
             {
-                dtv = new DataView(objEmpleadoBL.ListarEmpleados());
+
+
+                //dtv = new DataView(objEmpleadoBL.ListarEmpleados());
+                dtv = objEmpleadoBL.ListarEmpleados().DefaultView;
                 CargarDatos("");
             }
             catch (Exception ex)
@@ -67,14 +70,15 @@ namespace ProyAutoServicios_GUI
         {
             try
             {
-                String strCodEmpl = dtgEmpleado.CurrentRow.Cells[0].Value.ToString();
+                //String strCodEmpl = dtgEmpleado.CurrentRow.Cells[0].Value.ToString();
+                int int_CodEmpl = Convert.ToInt16(dtgEmpleado.CurrentRow.Cells[0].Value);
 
                 Empleado03 obj03 = new Empleado03();
-                obj03.CodigoEmp = strCodEmpl;
+                obj03.CodigoEmp = int_CodEmpl;
                 obj03.ShowDialog();
 
                 //se refresca
-                dtv = new DataView(objEmpleadoBL.ListarEmpleados());
+                //dtv = new DataView(objEmpleadoBL.ListarEmpleados());
                 dtv = objEmpleadoBL.ListarEmpleados().DefaultView;
                 CargarDatos(txtFiltro.Text.Trim());
 

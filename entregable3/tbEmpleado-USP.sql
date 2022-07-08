@@ -11,7 +11,7 @@ a nada
 select * from tb_Empleado
 -- drop table tb_Empleado
 
-CREATE TABLE tb_Empleado(
+--CREATE TABLE tb_Empleado(
 	codEmpleado smallint not null PRIMARY KEY,
 	codAgencia smallint not null FOREIGN KEY REFERENCES tb_Agencia,
 	nomEmpleado varchar (20) not null,
@@ -84,10 +84,13 @@ as
 	select codEmpleado,
 		nomEmpleado,
 		apeEmpleado,
+		dirEmpleado,
+		telefono,		
+		cargo, 	
 		correo,
-		cargo, 		
-		codAgencia,
-		direccion , 
+
+		codAgencia,		
+		--direccion , 
 		Id_Ubigeo,
 		Departamento,
 		Distrito, 
@@ -100,7 +103,7 @@ as
 	where codEmpleado=@cod	
 go
 
-exec usp_ConsultarEmpleado @cod=1060
+exec usp_ConsultarEmpleado @cod=1001
 go
 
 --Eliminar
@@ -190,7 +193,7 @@ from tb_Empleado inner join tb_Agencia
 	inner join tb_Ubigeo
 	on tb_Empleado.Id_Ubigeo = tb_Ubigeo.Id_Ubigeo
 
-	select codEmpleado,codAgencia,direccion from VW_VistaEmpleados where codEmpleado=1060
+	select codEmpleado,nomEmpleado, apeEmpleado, dirEmpleado,correo,codAgencia from VW_VistaEmpleados where codEmpleado=1060
 	go
 
 --SP para Agencia y asi cargar la lista de agencias y sus direcciones
@@ -199,3 +202,34 @@ as
 	select codAgencia, direccion from tb_Agencia
 
 exec usp_Agencia_Direccion
+go
+
+alter view [VW_VistaEmpleados] as
+select codEmpleado,
+		nomEmpleado,
+		apeEmpleado,
+		correo,
+		cargo,
+		dirEmpleado,
+		tb_Empleado.telefono,
+		
+		tb_Agencia.codAgencia,		
+		tb_Ubigeo.Id_Ubigeo,
+		tb_Ubigeo.Departamento,
+		tb_Ubigeo.Distrito, 
+		tb_Ubigeo.Provincia,
+		fec_reg,
+		usu_reg,
+		fech_ult_mod,
+		usu_ult_mod
+
+from tb_Empleado inner join tb_Agencia
+	on tb_Empleado.codAgencia = tb_Agencia.codAgencia
+	inner join tb_Ubigeo
+	on tb_Empleado.Id_Ubigeo = tb_Ubigeo.Id_Ubigeo
+
+select * from tb_Empleado
+
+
+-- Borramos los guiones en los numeros telefonicos
+UPDATE tb_Empleado SET telefono = REPLACE(telefono, '-', '')
