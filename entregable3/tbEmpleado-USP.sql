@@ -228,7 +228,7 @@ from tb_Empleado inner join tb_Agencia
 	inner join tb_Ubigeo
 	on tb_Empleado.Id_Ubigeo = tb_Ubigeo.Id_Ubigeo
 
-select * from tb_Empleado
+select * from VW_VistaEmpleados
 
 
 -- Borramos los guiones en los numeros telefonicos
