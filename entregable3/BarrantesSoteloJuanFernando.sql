@@ -2283,33 +2283,35 @@ go
 
 
 --Creamos tabla usuario
---drop table tb_usuario
+ --drop table tb_usuario
 create table tb_usuario (
 	usu_name varchar(20) not null primary key,
 	usu_pass varchar(20) not null,
+	usu_nivel int not null,
 	codEmpleado smallint not null FOREIGN KEY REFERENCES tb_Empleado,
 	fech_reg datetime,
 	usu_reg varchar(20)
 );
-
-insert into tb_usuario (usu_name, usu_pass, codEmpleado)
+--delete tb_usuario
+insert into tb_usuario (usu_name, usu_pass, usu_nivel,fech_reg ,codEmpleado)
 values 
- ('1001Arnaldo','1001Arnaldo', 1001 ),
- ('1002Thornton','1002Thornton',1002),
- ('1003Garth','1003Garth',1003),
- ('1021Mildrid','1021Mildrid',1021);
+ ('1001Arnaldo','1001Arnaldo', 1, '2022-07-08'  ,1001 ),
+ ('1002Thornton','1002Thornton',1,'2022-07-08'  ,1002),
+ ('1003Garth','1003Garth',1, '2022-07-08'  ,1003),
+ ('1021Mildrid','1021Mildrid',2, '2022-07-08' ,1021);
  select * from tb_usuario
  go
  --SP de Usuarios:
  --Consultar Usuario
--- drop procedure usp_ConsultarUsuario
+ --drop procedure usp_ConsultarUsuario
  create procedure usp_ConsultarUsuario
 	@usu_name varchar(20)
  as
  select 
 		usu_name,
 		usu_pass,
-		tb_Empleado.cargo,
+		usu_nivel,	
+		--tb_Empleado.codEmpleado,
 		fech_reg,
 		tb_usuario.usu_reg
 		
@@ -2317,5 +2319,5 @@ values
  on tb_usuario.codEmpleado = tb_Empleado.codEmpleado
  where usu_name=@usu_name
 
- exec usp_ConsultarUsuario @usu_name='1002Thornton'
+ exec usp_ConsultarUsuario @usu_name='1021Mildrid'
 
