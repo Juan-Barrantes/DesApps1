@@ -11,7 +11,14 @@ namespace ProySystemAutoServicioWEB_GUI.Mantenimiento
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
 
+            }
+            catch (Exception ex)
+            {
+                lblMensaje.Text = "Error: " + ex.Message;
+            }
         }
     }
 }
