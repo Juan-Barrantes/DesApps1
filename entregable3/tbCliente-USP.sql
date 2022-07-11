@@ -88,3 +88,30 @@ select
 go
 exec usp_ConsultarCliente @docIdentidad = '451487945'
 
+--Eliminar Cliente
+create procedure usp_EliminarCliente
+	@docIdentidad varchar (15)
+as
+	delete from tb_Cliente where docIdentidad = @docIdentidad
+go
+
+--insertar Cliente
+--drop procedure usp_InsertarCliente
+create procedure usp_InsertarCliente
+	@docIdentidad varchar(15) ,
+	@tipoDocumento varchar(25) ,
+	@apellidos varchar(35) ,
+	@nombre varchar(35),
+	@Id_Ubigeo nchar(6) ,
+	@direccion varchar(75) ,
+	@telefono varchar(25) ,
+	@usu_reg varchar(20),	
+	
+	@estado_cli int
+as
+	insert into tb_Cliente
+	(docIdentidad,tipoDocumento,apellidos,nombre,Id_Ubigeo,direccion,telefono,usu_reg,fec_reg,estado_cli)
+	values 
+		(@docIdentidad,@tipoDocumento,@apellidos,@nombre,@Id_Ubigeo, @direccion,@telefono,@usu_reg,getdate(), @estado_cli)
+go
+exec usp_InsertarCliente '3215405411', 'Pasaporte','Ramirez','Jhonatan','140120','calle Carpenter 1501','897654321', 'testing2',1

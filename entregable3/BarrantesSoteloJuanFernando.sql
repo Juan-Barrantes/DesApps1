@@ -29,10 +29,19 @@ CREATE TABLE tb_Marca(
 	nomMarca varchar(20) not null,
 	paisOrg varchar(20) not null); */
 
+	--borramos tb servicio, comprobante, detalle_servicio
+	select * from tb_Detalle_Servicio	
+
 CREATE TABLE tb_Servicios(
 	codServicio smallint not null PRIMARY KEY,
 	tipoServ varchar(50) not null,
-	precio money not null);
+	precio money not null,
+	--editando
+	usu_reg varchar(20),
+	fec_reg datetime,
+	usu_ult_mod varchar(20),
+	fec_ult_mod datetime
+	);
 	
 
 Create Table tb_Cochera( --cochera dentro de una agencia, borramos direccion
@@ -72,7 +81,7 @@ Create Table tb_Reserva(
 	fechaInicio datetime not null,
 	fechaFinal datetime not null);
 
-drop table tb_Empleado;
+--drop table tb_Empleado;
 CREATE TABLE tb_Empleado(
 	codEmpleado smallint not null PRIMARY KEY,
 	codAgencia smallint not null FOREIGN KEY REFERENCES tb_Agencia,
@@ -91,11 +100,12 @@ CREATE TABLE tb_Empleado(
 	usu_ult_mod varchar(20),
 	fech_ult_mod datetime
 	);
-
+	--drop table tb_Comprobante
+	
 CREATE TABLE tb_Comprobante(
 	codComprobante smallint not null PRIMARY KEY,
 	docIdentidad varchar(15) not null Foreign Key REFERENCES tb_Cliente,
-	codServicio	smallint not null Foreign Key REFERENCES tb_Servicios,
+	--codServicio	smallint not null Foreign Key REFERENCES tb_Servicios,
 	fechaEmision datetime not null,
 	estado int not null,
 	usu_reg varchar(20),
@@ -2066,12 +2076,12 @@ go
 
 
 
-Insert Into tb_Servicios
+Insert Into tb_Servicios (codServicio,tipoServ,precio)
 	Values('10001','Servicio Completo de Afinación','3000'),
 	('10002','Carrocería y Pintura','545'),
 	('10003','Cambiar Líquido de Tranmisión','320'),
 	('10004','Servicio de Dirección Asistida','275'),
-	('10005','Alquiler de Auto','200');
+	(10005,'Alquiler de Auto','200');
 go
 
 Insert Into tb_Cochera

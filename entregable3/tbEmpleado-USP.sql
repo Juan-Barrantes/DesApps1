@@ -1,5 +1,6 @@
 use bd_NegocioAutosA1;
 
+
 select * from tb_Empleado
 /*
 Eliminaremos la tabla Tratante y la cambiaremos por Tabla Empleado
