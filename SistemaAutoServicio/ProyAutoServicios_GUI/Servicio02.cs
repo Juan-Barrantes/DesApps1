@@ -30,9 +30,10 @@ namespace ProyAutoServicios_GUI
                 // Cargamos las propiedades de la entidad de negocios...
 
 
-                objServicioBE.codServicio = txtCS.Text.Trim(); ;
+                
                 objServicioBE.tipoServ = cboTipoServicio.Text.Trim();
                 objServicioBE.precio = txtPrecio.Text.Trim();
+                objServicioBE.usureg = clsCredenciales.Usuario;
 
 
                 if (objProveedorBL.InsertarServicios(objServicioBE) == true)

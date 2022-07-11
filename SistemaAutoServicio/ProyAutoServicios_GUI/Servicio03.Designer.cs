@@ -104,6 +104,7 @@ namespace ProyAutoServicios_GUI
             this.txtCS.Location = new System.Drawing.Point(239, 66);
             this.txtCS.Margin = new System.Windows.Forms.Padding(4);
             this.txtCS.Name = "txtCS";
+            this.txtCS.ReadOnly = true;
             this.txtCS.Size = new System.Drawing.Size(132, 22);
             this.txtCS.TabIndex = 3;
             // 

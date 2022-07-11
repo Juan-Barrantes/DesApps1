@@ -26,5 +26,18 @@ namespace ProyAutoServicio_BE
             get { return mvarprecio; }
             set { mvarprecio = value; }
         }
+
+        private String mvarusureg;
+        public String usureg {
+            get { return mvarusureg; }
+            set { mvarusureg = value; }
+        }
+
+        private String mvarusu_ultMod;
+        public String Usu_UltMod
+        {
+            get { return mvarusu_ultMod; }
+            set { mvarusu_ultMod = value; }
+        }
     }
 }

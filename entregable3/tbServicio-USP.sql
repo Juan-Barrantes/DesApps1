@@ -66,4 +66,13 @@ as
 go
 
 exec usp_InsertarServicio @tipoServ='cambio de aceite',@precio=170, @usu_reg='testing'
-	
+go
+
+create procedure usp_ListarServicios
+as
+	select 
+	codServicio,
+	tipoServ,
+	precio
+	from VW_Servicios
+go

@@ -54,6 +54,7 @@ namespace ProyAutoServicios_GUI
                 objProveedorBE.codServicio = txtCS.Text.Trim(); ;
                 objProveedorBE.tipoServ = cboTipoServicio.Text.Trim();
                 objProveedorBE.precio = txtPrecio.Text.Trim();
+                objProveedorBE.Usu_UltMod = clsCredenciales.Usuario;
 
                 if (objProveedorBL.ActualizarServicios(objProveedorBE) == true)
                 {

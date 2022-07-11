@@ -24,16 +24,17 @@ namespace ProyAutoServicio_ADO
             cnx.ConnectionString = MiConexion.GetCnx();
             cmd.Connection = cnx;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "usp_InsertarServicios";
+            cmd.CommandText = "usp_InsertarServicio";
             cmd.Parameters.Clear();
             //Agregamos parametros 
             try
             {
                 //Codifique
 
-                cmd.Parameters.AddWithValue("@codServicio", objServicioBE.codServicio);
+                
                 cmd.Parameters.AddWithValue("@tipoServ", objServicioBE.tipoServ);
                 cmd.Parameters.AddWithValue("@precio", objServicioBE.precio);
+                cmd.Parameters.AddWithValue("@usu_reg", objServicioBE.usureg);
 
                 // Abro la conexion y ejecutamos....
                 cnx.Open();
@@ -64,7 +65,7 @@ namespace ProyAutoServicio_ADO
             cnx.ConnectionString = MiConexion.GetCnx();
             cmd.Connection = cnx;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "usp_ActualizarServicios";
+            cmd.CommandText = "usp_ActualizarServicio";
             cmd.Parameters.Clear();
             //Agregamos parametros 
             try
@@ -73,6 +74,7 @@ namespace ProyAutoServicio_ADO
                 cmd.Parameters.AddWithValue("@codServicio", objServicioBE.codServicio);
                 cmd.Parameters.AddWithValue("@tipoServ", objServicioBE.tipoServ);
                 cmd.Parameters.AddWithValue("@precio", objServicioBE.precio);
+                cmd.Parameters.AddWithValue("@usu_ult_mod", objServicioBE.Usu_UltMod);
                 // Abro la conexion y ejecutamos....
                 cnx.Open();
                 cmd.ExecuteNonQuery();
@@ -100,13 +102,13 @@ namespace ProyAutoServicio_ADO
             cnx.ConnectionString = MiConexion.GetCnx();
             cmd.Connection = cnx;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "usp_EliminarServicios";
+            cmd.CommandText = "usp_EliminarServicio";
             cmd.Parameters.Clear();
             //Agregamos parametros 
             try
             {
                 //Codifique
-                cmd.Parameters.AddWithValue("codServicio", strcod);
+                cmd.Parameters.AddWithValue("@codServ", strcod);
 
                 cnx.Open();
                 cmd.ExecuteNonQuery();
@@ -136,13 +138,13 @@ namespace ProyAutoServicio_ADO
             cnx.ConnectionString = MiConexion.GetCnx();
             cmd.Connection = cnx;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "usp_ConsultarServicios";
+            cmd.CommandText = "usp_ConsultarServicio";
             cmd.Parameters.Clear();
             try
             {
                 //Codifique
 
-                cmd.Parameters.AddWithValue("@codServicio", strCod);
+                cmd.Parameters.AddWithValue("@codServ", strCod);
 
                 cnx.Open();
                 dtr = cmd.ExecuteReader();
@@ -181,7 +183,7 @@ namespace ProyAutoServicio_ADO
             cnx.ConnectionString = MiConexion.GetCnx();
             cmd.Connection = cnx;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "usp_listarServicios";
+            cmd.CommandText = "usp_ListarServicios";
             cmd.Parameters.Clear();
             try
             {

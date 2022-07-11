@@ -36,8 +36,6 @@ namespace ProyAutoServicios_GUI
             this.label3 = new System.Windows.Forms.Label();
             this.cboTipoServicio = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtCS = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.grpDatos.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,20 +47,18 @@ namespace ProyAutoServicios_GUI
             this.grpDatos.Controls.Add(this.label3);
             this.grpDatos.Controls.Add(this.cboTipoServicio);
             this.grpDatos.Controls.Add(this.label2);
-            this.grpDatos.Controls.Add(this.txtCS);
-            this.grpDatos.Controls.Add(this.label1);
             this.grpDatos.Location = new System.Drawing.Point(13, 13);
             this.grpDatos.Margin = new System.Windows.Forms.Padding(4);
             this.grpDatos.Name = "grpDatos";
             this.grpDatos.Padding = new System.Windows.Forms.Padding(4);
-            this.grpDatos.Size = new System.Drawing.Size(568, 487);
+            this.grpDatos.Size = new System.Drawing.Size(414, 338);
             this.grpDatos.TabIndex = 1;
             this.grpDatos.TabStop = false;
             this.grpDatos.Text = "Datos";
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(453, 437);
+            this.btnCancelar.Location = new System.Drawing.Point(253, 243);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 28);
@@ -73,7 +69,7 @@ namespace ProyAutoServicios_GUI
             // 
             // btnGrabar
             // 
-            this.btnGrabar.Location = new System.Drawing.Point(453, 359);
+            this.btnGrabar.Location = new System.Drawing.Point(253, 165);
             this.btnGrabar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(100, 28);
@@ -84,16 +80,16 @@ namespace ProyAutoServicios_GUI
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(193, 233);
+            this.txtPrecio.Location = new System.Drawing.Point(160, 110);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(173, 22);
+            this.txtPrecio.Size = new System.Drawing.Size(80, 22);
             this.txtPrecio.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(48, 233);
+            this.label3.Location = new System.Drawing.Point(35, 110);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 17);
@@ -105,7 +101,7 @@ namespace ProyAutoServicios_GUI
             this.cboTipoServicio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.cboTipoServicio.DropDownWidth = 280;
             this.cboTipoServicio.FormattingEnabled = true;
-            this.cboTipoServicio.Location = new System.Drawing.Point(193, 124);
+            this.cboTipoServicio.Location = new System.Drawing.Point(160, 49);
             this.cboTipoServicio.Margin = new System.Windows.Forms.Padding(4);
             this.cboTipoServicio.Name = "cboTipoServicio";
             this.cboTipoServicio.Size = new System.Drawing.Size(172, 25);
@@ -114,36 +110,18 @@ namespace ProyAutoServicios_GUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 128);
+            this.label2.Location = new System.Drawing.Point(31, 49);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tipo Servicio:";
             // 
-            // txtCS
-            // 
-            this.txtCS.Location = new System.Drawing.Point(193, 38);
-            this.txtCS.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCS.Name = "txtCS";
-            this.txtCS.Size = new System.Drawing.Size(173, 22);
-            this.txtCS.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 42);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Codigo Servicio:";
-            // 
             // Servicio02
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(610, 529);
+            this.ClientSize = new System.Drawing.Size(456, 372);
             this.Controls.Add(this.grpDatos);
             this.Name = "Servicio02";
             this.Text = "Insertar Servicio";
@@ -162,7 +140,5 @@ namespace ProyAutoServicios_GUI
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboTipoServicio;
         private System.Windows.Forms.Label label2;
-        internal System.Windows.Forms.TextBox txtCS;
-        private System.Windows.Forms.Label label1;
     }
 }
