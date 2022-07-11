@@ -14,27 +14,27 @@ namespace ProyAutoServicio_BL
     {
         ClienteADO objProveedorADO = new ClienteADO();
 
-        public Boolean InsertarProveedor(ClienteBE objProveedorBE)
+        public Boolean InsertarCliente(ClienteBE objProveedorBE)
         {
-            return objProveedorADO.InsertarProveedor(objProveedorBE);
+            return objProveedorADO.InsertarCliente(objProveedorBE);
         }
-        public Boolean ActualizarProveedor(ClienteBE objProveedorBE)
+        public Boolean ActualizarCliente(ClienteBE objProveedorBE)
         {
-            return objProveedorADO.ActualizarProveedor(objProveedorBE);
+            return objProveedorADO.ActualizarCliente(objProveedorBE);
         }
-        public Boolean EliminarProveedor(String strcod)
+        public Boolean EliminarCliente(String strcod)
         {
-            return objProveedorADO.EliminarProveedor(strcod);
-        }
-
-        public ClienteBE ConsultarProveedor(String strcod)
-        {
-            return objProveedorADO.ConsultarProveedor(strcod);
+            return objProveedorADO.EliminarCliente(strcod);
         }
 
-        public DataTable ListarProveedor()
+        public ClienteBE ConsultarCliente(String strcod)
         {
-            return objProveedorADO.ListarProveedor();
+            return objProveedorADO.ConsultarCliente(strcod);
+        }
+
+        public DataTable ListarCliente()
+        {
+            return objProveedorADO.ListarCliente();
         }
 
     }

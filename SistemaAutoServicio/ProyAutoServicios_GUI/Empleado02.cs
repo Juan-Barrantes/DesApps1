@@ -67,7 +67,7 @@ namespace ProyAutoServicios_GUI
         }
 
 
-            private void btnGuardar_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {

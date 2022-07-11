@@ -87,7 +87,7 @@ namespace ProyAutoServicios_GUI
             this.grpDatosEmpleado.Controls.Add(this.label1);
             this.grpDatosEmpleado.Location = new System.Drawing.Point(25, 12);
             this.grpDatosEmpleado.Name = "grpDatosEmpleado";
-            this.grpDatosEmpleado.Size = new System.Drawing.Size(796, 427);
+            this.grpDatosEmpleado.Size = new System.Drawing.Size(820, 427);
             this.grpDatosEmpleado.TabIndex = 2;
             this.grpDatosEmpleado.TabStop = false;
             this.grpDatosEmpleado.Text = "Datos;";
@@ -318,7 +318,7 @@ namespace ProyAutoServicios_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(833, 451);
+            this.ClientSize = new System.Drawing.Size(857, 451);
             this.Controls.Add(this.grpDatosEmpleado);
             this.Name = "Empleado03";
             this.Text = "Actualizar Empleado";

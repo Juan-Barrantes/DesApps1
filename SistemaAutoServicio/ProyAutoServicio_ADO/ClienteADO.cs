@@ -19,12 +19,12 @@ namespace ProyAutoServicio_ADO
         SqlDataReader dtr;
 
          // Metodos de mantenimiento
-        public Boolean InsertarProveedor(ClienteBE objProveedorBE)
+        public Boolean InsertarCliente(ClienteBE objProveedorBE)
         {
             cnx.ConnectionString = MiConexion.GetCnx();
             cmd.Connection = cnx;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "usp_ClienteInsertar";
+            cmd.CommandText = "usp_InsertarCliente";
             cmd.Parameters.Clear();
            
             //Agregamos parametros 
@@ -36,8 +36,11 @@ namespace ProyAutoServicio_ADO
                 cmd.Parameters.AddWithValue("@tipoDocumento", objProveedorBE.tipoDocumento);
                 cmd.Parameters.AddWithValue("@apellidos", objProveedorBE.apellidos);
                 cmd.Parameters.AddWithValue("@nombre", objProveedorBE.nombre);
+                cmd.Parameters.AddWithValue("@Id_Ubigeo", objProveedorBE.IdUbi);
                 cmd.Parameters.AddWithValue("@direccion", objProveedorBE.direccion);
                 cmd.Parameters.AddWithValue("@telefono", objProveedorBE.telefono);
+                cmd.Parameters.AddWithValue("@usu_reg", objProveedorBE.usureg);
+                cmd.Parameters.AddWithValue("@estado_cli", objProveedorBE.est_cli);
                 // Abro la conexion y ejecutamos....
                 cnx.Open();
                 cmd.ExecuteNonQuery();
@@ -60,12 +63,12 @@ namespace ProyAutoServicio_ADO
           
 
         }
-        public Boolean ActualizarProveedor(ClienteBE objProveedorBE)
+        public Boolean ActualizarCliente(ClienteBE objProveedorBE)
         {
             cnx.ConnectionString = MiConexion.GetCnx();
             cmd.Connection = cnx;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "usp_ClienteActualizar";
+            cmd.CommandText = "usp_ActualizarCliente";
             cmd.Parameters.Clear();
             //Agregamos parametros 
             try
@@ -76,8 +79,11 @@ namespace ProyAutoServicio_ADO
                 cmd.Parameters.AddWithValue("@tipoDocumento", objProveedorBE.tipoDocumento);
                 cmd.Parameters.AddWithValue("@apellidos", objProveedorBE.apellidos);
                 cmd.Parameters.AddWithValue("@nombre", objProveedorBE.nombre);
+                cmd.Parameters.AddWithValue("@Id_Ubigeo", objProveedorBE.IdUbi);
                 cmd.Parameters.AddWithValue("@direccion", objProveedorBE.direccion);
                 cmd.Parameters.AddWithValue("@telefono", objProveedorBE.telefono);
+                cmd.Parameters.AddWithValue("@usu_ult_mod", objProveedorBE.Usu_UltMod);
+                cmd.Parameters.AddWithValue("@estado_cli", objProveedorBE.est_cli);
                 // Abro la conexion y ejecutamos....
                 cnx.Open();
                 cmd.ExecuteNonQuery();
@@ -102,12 +108,12 @@ namespace ProyAutoServicio_ADO
 
         }
 
-        public Boolean EliminarProveedor(String strcod)
+        public Boolean EliminarCliente(String strcod)
         {
             cnx.ConnectionString = MiConexion.GetCnx();
             cmd.Connection = cnx;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "usp_ClienteEliminar";
+            cmd.CommandText = "usp_EliminarCliente";
             cmd.Parameters.Clear();
             //Agregamos parametros 
             try
@@ -140,13 +146,13 @@ namespace ProyAutoServicio_ADO
 
         }
 
-        public ClienteBE ConsultarProveedor(String strCod)
+        public ClienteBE ConsultarCliente(String strCod)
         {
-            ClienteBE objProveedorBE = new ClienteBE();
+            ClienteBE objClienteBE = new ClienteBE();
             cnx.ConnectionString = MiConexion.GetCnx();
             cmd.Connection = cnx;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "usp_ClienteListar";
+            cmd.CommandText = "usp_ConsultarCliente";
             cmd.Parameters.Clear();
             try
             {
@@ -160,18 +166,20 @@ namespace ProyAutoServicio_ADO
                 if (dtr.HasRows == true)
                 {
                     dtr.Read();
-                    objProveedorBE.docIdentidad = dtr["docIdentidad"].ToString();
-                    objProveedorBE.tipoDocumento = dtr["tipoDocumento"].ToString();
-                    objProveedorBE.apellidos = dtr["apellidos"].ToString();
-                    objProveedorBE.nombre = dtr["nombre"].ToString();
-                    objProveedorBE.direccion = dtr["direccion"].ToString();
-                    objProveedorBE.telefono = dtr["telefono"].ToString();
+                    objClienteBE.docIdentidad = dtr["docIdentidad"].ToString();
+                    objClienteBE.tipoDocumento = dtr["tipoDocumento"].ToString();
+                    objClienteBE.apellidos = dtr["apellidos"].ToString();
+                    objClienteBE.nombre = dtr["nombre"].ToString();
+                    objClienteBE.IdUbi = dtr["Id_Ubigeo"].ToString();
+                    objClienteBE.est_cli = Convert.ToInt16(dtr["estado_cli"]);
+                    objClienteBE.direccion = dtr["direccion"].ToString();
+                    objClienteBE.telefono = dtr["telefono"].ToString();
                     
 
 
                 }
                 dtr.Close();
-                return objProveedorBE;
+                return objClienteBE;
 
             }
             catch (SqlException ex)
@@ -189,13 +197,13 @@ namespace ProyAutoServicio_ADO
             
         }
 
-        public DataTable ListarProveedor()
+        public DataTable ListarCliente()
         {
             DataSet dts = new DataSet();
             cnx.ConnectionString = MiConexion.GetCnx();
             cmd.Connection = cnx;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "usp_ClienteMostrar";
+            cmd.CommandText = "usp_ListarClientes";
             cmd.Parameters.Clear();
             try
             {

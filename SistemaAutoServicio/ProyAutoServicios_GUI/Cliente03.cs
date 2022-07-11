@@ -14,8 +14,8 @@ namespace ProyAutoServicios_GUI
 {
     public partial class Cliente03 : Form
     {
-        ClienteBL objProveedorBL = new ClienteBL();
-        ClienteBE objProveedorBE = new ClienteBE();
+        ClienteBL objClienteBL = new ClienteBL();
+        ClienteBE objClienteBE = new ClienteBE();
         public Cliente03()
         {
             InitializeComponent();
@@ -40,20 +40,53 @@ namespace ProyAutoServicios_GUI
             {
                 // Codifique...
                 //Mostramos los datos del proveedor que se desea actualizar...
-                objProveedorBE = objProveedorBL.ConsultarProveedor(this._cod);
+                objClienteBE = objClienteBL.ConsultarCliente(this._cod);
 
-                txtDocIdent.Text = objProveedorBE.docIdentidad;
-                txtTipoDoc.Text = objProveedorBE.tipoDocumento;
-                txtApe.Text = objProveedorBE.apellidos;
-                txtNom.Text = objProveedorBE.nombre;
-                textDir.Text = objProveedorBE.direccion;
-                textTel.Text = objProveedorBE.telefono;
+                txtDocIdent.Text = objClienteBE.docIdentidad;
+                txtTipoDoc.Text = objClienteBE.tipoDocumento;
+                txtApe.Text = objClienteBE.apellidos;
+                txtNom.Text = objClienteBE.nombre;
+                textDir.Text = objClienteBE.direccion;
+                mskTelf.Text = objClienteBE.telefono;
+
+                if(objClienteBE.est_cli == 1)
+                {
+                    chkEstado.Checked = true;
+                }
+
+                String id_Ubigeo = objClienteBE.IdUbi;
+
+                CargarUbigeo(id_Ubigeo.Substring(0, 2), id_Ubigeo.Substring(2, 2), id_Ubigeo.Substring(4, 2));
+                
+
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error : " + ex.Message);
             }
+        }
+
+        private void CargarUbigeo(String IdDepa, String IdProv, String IdDist)
+        {
+
+            UbigeoBL objUbigeoBL = new UbigeoBL();
+            cboDepartamento.DataSource = objUbigeoBL.Ubigeo_Departamentos();
+            cboDepartamento.ValueMember = "IdDepa";
+            cboDepartamento.DisplayMember = "Departamento";
+            cboDepartamento.SelectedValue = IdDepa;
+
+            cboProvincia.DataSource = objUbigeoBL.Ubigeo_ProvinciasDepartamento(IdDepa);
+            cboProvincia.ValueMember = "IdProv";
+            cboProvincia.DisplayMember = "Provincia";
+            cboProvincia.SelectedValue = IdProv;
+
+            cboDistrito.DataSource = objUbigeoBL.Ubigeo_DistritosProvinciaDepartamento(IdDepa, IdProv);
+            cboDistrito.ValueMember = "IdDist";
+            cboDistrito.DisplayMember = "Distrito";
+            cboDistrito.SelectedValue = IdDist;
+
+
         }
 
         private void btnGrabar_Click(object sender, EventArgs e)
@@ -65,14 +98,28 @@ namespace ProyAutoServicios_GUI
                     throw new Exception("El documento de identidad es obligatorio");
                 }
 
-                objProveedorBE.docIdentidad = txtDocIdent.Text.Trim();
-                objProveedorBE.tipoDocumento = txtTipoDoc.Text.Trim();
-                objProveedorBE.apellidos = txtApe.Text.Trim();
-                objProveedorBE.nombre = txtNom.Text.Trim();
-                objProveedorBE.direccion = textDir.Text.Trim();
-                objProveedorBE.telefono = textTel.Text.Trim();
+                objClienteBE.docIdentidad = txtDocIdent.Text.Trim();
+                objClienteBE.tipoDocumento = txtTipoDoc.Text.Trim();
+                objClienteBE.apellidos = txtApe.Text.Trim();
+                objClienteBE.nombre = txtNom.Text.Trim();
+                objClienteBE.direccion = textDir.Text.Trim();
+                objClienteBE.telefono = mskTelf.Text.Trim();
+                objClienteBE.Usu_UltMod = clsCredenciales.Usuario;
+                if (chkEstado.Checked == true)
+                {
+                    objClienteBE.est_cli = 1;
+                }
+                else
+                {
+                    objClienteBE.est_cli = 0;
+                }
 
-                if (objProveedorBL.ActualizarProveedor(objProveedorBE) == true)
+                objClienteBE.IdUbi = cboDepartamento.SelectedValue.ToString() +
+                                                             cboProvincia.SelectedValue.ToString() +
+                                                             cboDistrito.SelectedValue.ToString();
+
+
+                if (objClienteBL.ActualizarCliente(objClienteBE) == true)
                 {
                     this.Close();
                 }

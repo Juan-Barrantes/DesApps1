@@ -34,6 +34,13 @@ namespace ProyAutoServicio_BE
             set { mvarnombre = value; }
         }
 
+        private String mvaridUbi;
+        public String IdUbi
+        {
+            get { return mvaridUbi; }
+            set { mvaridUbi = value; }
+        }
+
         private String mvardireccion;
         public String direccion
         {
@@ -46,6 +53,27 @@ namespace ProyAutoServicio_BE
         {
             get { return mvartelefono; }
             set { mvartelefono = value; }
+        }
+
+        private String mvarusu_ult_mod;
+        public String Usu_UltMod
+        {
+            get { return mvarusu_ult_mod; }
+            set { mvarusu_ult_mod = value; }
+        }
+
+        private int mvarEst_cli;
+        public int est_cli
+        {
+            get { return mvarEst_cli; }
+            set { mvarEst_cli = value; }
+        }
+
+        private String mvarusureg;
+        public String usureg
+        {
+            get { return mvarusureg; }
+            set { mvarusureg = value; }
         }
 
         private String mvarmodo;

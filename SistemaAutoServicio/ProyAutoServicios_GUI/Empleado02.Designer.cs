@@ -32,7 +32,6 @@ namespace ProyAutoServicios_GUI
             this.grpDatosEmpleado = new System.Windows.Forms.GroupBox();
             this.dtpFecNac = new System.Windows.Forms.DateTimePicker();
             this.dtpFecIni = new System.Windows.Forms.DateTimePicker();
-            this.mskFecIni = new System.Windows.Forms.MaskedTextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.dtpCalendar = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -65,7 +64,6 @@ namespace ProyAutoServicios_GUI
             // 
             this.grpDatosEmpleado.Controls.Add(this.dtpFecNac);
             this.grpDatosEmpleado.Controls.Add(this.dtpFecIni);
-            this.grpDatosEmpleado.Controls.Add(this.mskFecIni);
             this.grpDatosEmpleado.Controls.Add(this.label12);
             this.grpDatosEmpleado.Controls.Add(this.dtpCalendar);
             this.grpDatosEmpleado.Controls.Add(this.txtEmail);
@@ -115,14 +113,6 @@ namespace ProyAutoServicios_GUI
             this.dtpFecIni.Name = "dtpFecIni";
             this.dtpFecIni.Size = new System.Drawing.Size(121, 22);
             this.dtpFecIni.TabIndex = 30;
-            // 
-            // mskFecIni
-            // 
-            this.mskFecIni.Location = new System.Drawing.Point(599, 347);
-            this.mskFecIni.Mask = "9999";
-            this.mskFecIni.Name = "mskFecIni";
-            this.mskFecIni.Size = new System.Drawing.Size(156, 22);
-            this.mskFecIni.TabIndex = 28;
             // 
             // label12
             // 
@@ -391,7 +381,6 @@ namespace ProyAutoServicios_GUI
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.MaskedTextBox mskFecIni;
         private System.Windows.Forms.Label dtpCalendar;
         private System.Windows.Forms.DateTimePicker dtpFecIni;
         private System.Windows.Forms.DateTimePicker dtpFecNac;

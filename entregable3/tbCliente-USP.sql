@@ -27,7 +27,7 @@ from tb_Cliente inner join tb_Ubigeo
 	on tb_Cliente.Id_Ubigeo = tb_Ubigeo.Id_Ubigeo
 --
 select * from VW_VistaClientes
-
+go
 --◙◙◙ USP
 -- Actualizar Cliente
 
@@ -115,3 +115,25 @@ as
 		(@docIdentidad,@tipoDocumento,@apellidos,@nombre,@Id_Ubigeo, @direccion,@telefono,@usu_reg,getdate(), @estado_cli)
 go
 exec usp_InsertarCliente '3215405411', 'Pasaporte','Ramirez','Jhonatan','140120','calle Carpenter 1501','897654321', 'testing2',1
+go
+
+--listar clientes
+create procedure usp_ListarClientes
+as
+	select
+	docIdentidad,
+	tipoDocumento,
+	apellidos,
+	nombre,
+	tb_Cliente.direccion,
+	tb_Ubigeo.Departamento,	
+	tb_Ubigeo.Provincia,
+	tb_Ubigeo.Distrito
+
+	from tb_Cliente inner join tb_Ubigeo
+		on tb_Cliente.Id_Ubigeo= tb_Ubigeo.Id_Ubigeo
+go
+
+exec usp_ListarClientes
+
+select * from tb_usuario

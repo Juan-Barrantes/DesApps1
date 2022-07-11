@@ -24,7 +24,7 @@ namespace ProyAutoServicios_GUI
         public void CargarDatos(String strFiltro)
         {
 
-            docI.RowFilter = "docIdentidad like '%" + strFiltro + "%'";
+            docI.RowFilter = "nombre like '%" + strFiltro + "%'";
             dtgCliente.DataSource = docI;
 
             lblRegistros.Text = dtgCliente.Rows.Count.ToString();
@@ -36,7 +36,7 @@ namespace ProyAutoServicios_GUI
             {
                 // Codifique
                 // Definimos el dataview...
-                docI = objClientesBL.ListarProveedor().DefaultView;
+                docI = objClientesBL.ListarCliente().DefaultView;
                 CargarDatos(String.Empty);
             }
             catch (Exception ex)
@@ -50,7 +50,7 @@ namespace ProyAutoServicios_GUI
             Cliente02 par02 = new Cliente02();
             par02.ShowDialog();
 
-            docI = objClientesBL.ListarProveedor().DefaultView;
+            docI = objClientesBL.ListarCliente().DefaultView;
             CargarDatos(txtFiltro.Text.Trim());
         }
 
@@ -65,7 +65,7 @@ namespace ProyAutoServicios_GUI
                 obj03.docIdentidad = strDoc;
                 obj03.ShowDialog();
 
-                docI = objClientesBL.ListarProveedor().DefaultView;
+                docI = objClientesBL.ListarCliente().DefaultView;
                 CargarDatos(txtFiltro.Text.Trim());
             }
             catch (Exception ex)
