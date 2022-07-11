@@ -76,3 +76,5 @@ as
 	precio
 	from VW_Servicios
 go
+
+select * from tb_Servicios

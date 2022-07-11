@@ -100,6 +100,7 @@ CREATE TABLE tb_Empleado(
 	usu_ult_mod varchar(20),
 	fech_ult_mod datetime
 	);
+	--drop table tb_Detalle_Servicio
 	--drop table tb_Comprobante
 	
 CREATE TABLE tb_Comprobante(
