@@ -174,7 +174,10 @@ namespace ProyAutoServicio_ADO
                     objClienteBE.est_cli = Convert.ToInt16(dtr["estado_cli"]);
                     objClienteBE.direccion = dtr["direccion"].ToString();
                     objClienteBE.telefono = dtr["telefono"].ToString();
-                    
+                    objClienteBE.Departamento = dtr["Departamento"].ToString();
+                    objClienteBE.Provincia = dtr["Provincia"].ToString();
+                    objClienteBE.Distrito = dtr["Distrito"].ToString();
+
 
 
                 }
@@ -232,6 +235,33 @@ namespace ProyAutoServicio_ADO
             try
             {
                 //Codifique
+                SqlDataAdapter ada = new SqlDataAdapter(cmd);
+                ada.Fill(dts, "tb_Cliente");
+
+                return dts.Tables["tb_Cliente"];
+
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+        }
+
+        public DataTable ConsultarClienteTipDoc(String tipoDoc)
+        {
+            DataSet dts = new DataSet();
+            cnx.ConnectionString = MiConexion.GetCnx();
+            cmd.Connection = cnx;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "usp_ConsultarClienteTipDoc";
+            cmd.Parameters.Clear();
+            try
+            {
+                //Codifique
+                cmd.Parameters.AddWithValue("@tipoDoc", tipoDoc);
+
+
                 SqlDataAdapter ada = new SqlDataAdapter(cmd);
                 ada.Fill(dts, "tb_Cliente");
 

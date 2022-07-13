@@ -24,33 +24,6 @@ namespace ProySystemAutoServicioWEB_GUI.Mantenimiento.Servicio
         protected global::System.Web.UI.WebControls.DropDownList cboTipoServicio;
 
         /// <summary>
-        /// Control txtFecRegistro.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFecRegistro;
-
-        /// <summary>
-        /// Control txtFecRegistro_CalendarExtender.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender txtFecRegistro_CalendarExtender;
-
-        /// <summary>
-        /// Control RequiredFieldValidator1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
-
-        /// <summary>
         /// Control btnConsultar.
         /// </summary>
         /// <remarks>

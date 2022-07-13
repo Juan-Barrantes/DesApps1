@@ -41,6 +41,28 @@ namespace ProyAutoServicio_BE
             set { mvaridUbi = value; }
         }
 
+        private String mvarDepartamento;
+        public String Departamento
+        {
+            get { return mvarDepartamento; }
+            set { mvarDepartamento = value; }
+        }
+
+        private String mvarProvincia;
+        public String Provincia
+        {
+            get { return mvarProvincia; }
+            set { mvarProvincia = value; }
+        }
+
+        private String mvarDistrito;
+        public String Distrito
+        {
+            get { return mvarDistrito; }
+            set { mvarDistrito = value; }
+        }
+
+
         private String mvardireccion;
         public String direccion
         {

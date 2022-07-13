@@ -30,6 +30,10 @@ namespace ProyAutoServicios_GUI
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGenerar = new System.Windows.Forms.Button();
+            this.listServEleg = new System.Windows.Forms.ListBox();
             this.listServ = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -41,10 +45,6 @@ namespace ProyAutoServicios_GUI
             this.label2 = new System.Windows.Forms.Label();
             this.txtDoc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.listServEleg = new System.Windows.Forms.ListBox();
-            this.btnGenerar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +71,44 @@ namespace ProyAutoServicios_GUI
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Factura";
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(300, 247);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 25;
+            this.btnAgregar.Text = "agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(449, 374);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 24;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnGenerar
+            // 
+            this.btnGenerar.Location = new System.Drawing.Point(554, 374);
+            this.btnGenerar.Name = "btnGenerar";
+            this.btnGenerar.Size = new System.Drawing.Size(75, 23);
+            this.btnGenerar.TabIndex = 23;
+            this.btnGenerar.Text = "Generar";
+            this.btnGenerar.UseVisualStyleBackColor = true;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
+            // 
+            // listServEleg
+            // 
+            this.listServEleg.FormattingEnabled = true;
+            this.listServEleg.ItemHeight = 16;
+            this.listServEleg.Location = new System.Drawing.Point(381, 193);
+            this.listServEleg.Name = "listServEleg";
+            this.listServEleg.Size = new System.Drawing.Size(217, 148);
+            this.listServEleg.TabIndex = 22;
             // 
             // listServ
             // 
@@ -104,9 +142,9 @@ namespace ProyAutoServicios_GUI
             this.lblDireccion.AutoSize = true;
             this.lblDireccion.Location = new System.Drawing.Point(123, 132);
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(130, 17);
+            this.lblDireccion.Size = new System.Drawing.Size(144, 17);
             this.lblDireccion.TabIndex = 18;
-            this.lblDireccion.Text = "direccion de cliente";
+            this.lblDireccion.Text = "_________________";
             // 
             // label4
             // 
@@ -122,9 +160,9 @@ namespace ProyAutoServicios_GUI
             this.lblApe.AutoSize = true;
             this.lblApe.Location = new System.Drawing.Point(123, 102);
             this.lblApe.Name = "lblApe";
-            this.lblApe.Size = new System.Drawing.Size(122, 17);
+            this.lblApe.Size = new System.Drawing.Size(144, 17);
             this.lblApe.TabIndex = 16;
-            this.lblApe.Text = "apellido de cliente";
+            this.lblApe.Text = "_________________";
             // 
             // label3
             // 
@@ -140,9 +178,9 @@ namespace ProyAutoServicios_GUI
             this.lblNombre.AutoSize = true;
             this.lblNombre.Location = new System.Drawing.Point(123, 75);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(121, 17);
+            this.lblNombre.Size = new System.Drawing.Size(144, 17);
             this.lblNombre.TabIndex = 14;
-            this.lblNombre.Text = "nombre de cliente";
+            this.lblNombre.Text = "_________________";
             // 
             // label2
             // 
@@ -169,43 +207,6 @@ namespace ProyAutoServicios_GUI
             this.label1.Size = new System.Drawing.Size(98, 17);
             this.label1.TabIndex = 11;
             this.label1.Text = "N. Documento";
-            // 
-            // listServEleg
-            // 
-            this.listServEleg.FormattingEnabled = true;
-            this.listServEleg.ItemHeight = 16;
-            this.listServEleg.Location = new System.Drawing.Point(381, 193);
-            this.listServEleg.Name = "listServEleg";
-            this.listServEleg.Size = new System.Drawing.Size(217, 148);
-            this.listServEleg.TabIndex = 22;
-            // 
-            // btnGenerar
-            // 
-            this.btnGenerar.Location = new System.Drawing.Point(554, 374);
-            this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(75, 23);
-            this.btnGenerar.TabIndex = 23;
-            this.btnGenerar.Text = "Generar";
-            this.btnGenerar.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(449, 374);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 24;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(300, 247);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 25;
-            this.btnAgregar.Text = "agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // frmFacturaVentas
             // 

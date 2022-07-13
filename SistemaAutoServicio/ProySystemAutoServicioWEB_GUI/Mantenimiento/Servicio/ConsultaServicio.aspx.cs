@@ -15,7 +15,7 @@ namespace ProySystemAutoServicioWEB_GUI.Mantenimiento.Servicio
     {
         //Declaramos instancias
         ServicioBL objServicioBL = new ServicioBL();
-        //FacturaBL objFacturaBL = new FacturaBL();
+        FacturaBL objFacturaBL = new FacturaBL();
         protected void Page_Load(object sender, EventArgs e)
         {
             //Llenamos el combo de servicios
@@ -57,13 +57,12 @@ namespace ProySystemAutoServicioWEB_GUI.Mantenimiento.Servicio
 
         private void CargarDatos()
         {
-            /*
-            DataTable tabla = objFacturaBL.ListarConsultaServicios(cboTipoServicio.SelectedValue.ToString(),
-                            Convert.ToDateTime(txtFecRegistro.Text.Trim()));
+            
+            DataTable tabla = objFacturaBL.ListarConsultaServicios(cboTipoServicio.SelectedValue.ToString());
             grvConsulta.DataSource = tabla;
             grvConsulta.DataBind();
 
-            lblRegistros.Text = "Cantidad de registros: " + tabla.Rows.Count.ToString();  */
+            lblRegistros.Text = "Cantidad de registros: " + tabla.Rows.Count.ToString();  
         }
 
         protected void grvConsulta_PageIndexChanging(object sender, GridViewPageEventArgs e)

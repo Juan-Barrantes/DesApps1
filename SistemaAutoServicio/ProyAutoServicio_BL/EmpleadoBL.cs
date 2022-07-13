@@ -36,5 +36,10 @@ namespace ProyAutoServicio_BL
         {
             return objEmpleadoAdo.ListarEmpleados();
         }
+
+        public DataTable ListarEmpleadosCod(int codEmp)
+        {
+            return objEmpleadoAdo.ListarEmpleadosCod(codEmp);
+        }
     }
 }

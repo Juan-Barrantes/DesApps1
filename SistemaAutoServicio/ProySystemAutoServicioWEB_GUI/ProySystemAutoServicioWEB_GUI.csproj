@@ -131,8 +131,69 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Cliente\ConsultaCliente.aspx" />
+    <Content Include="Images\1.jpg" />
+    <Content Include="Images\2.jpg" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\Aceptar.png" />
+    <Content Include="Images\Agregar.png" />
+    <Content Include="Images\book_blue.png" />
+    <Content Include="Images\Borrar.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\Buscar.png" />
+    <Content Include="Images\cabinet.png" />
+    <Content Include="Images\Calc.png" />
+    <Content Include="Images\calculator.png" />
+    <Content Include="Images\Cancelar.png" />
+    <Content Include="Images\Consultas.jpg" />
+    <Content Include="Images\Control_Panel.png" />
+    <Content Include="Images\DaleU.jpg" />
+    <Content Include="Images\docOC.png" />
+    <Content Include="Images\docRD.png" />
+    <Content Include="Images\docRM.png" />
+    <Content Include="Images\docRP.png" />
+    <Content Include="Images\document_attachment.png" />
+    <Content Include="Images\document_certificate.png" />
+    <Content Include="Images\document_dirty.png" />
+    <Content Include="Images\document_lock.png" />
+    <Content Include="Images\Editar.png" />
+    <Content Include="Images\Estetoscopio.JPG" />
+    <Content Include="Images\fondo.jpg" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\indicator.gif" />
+    <Content Include="Images\InicioSesion.jpg" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\loading2.gif" />
+    <Content Include="Images\Logout.jpg" />
+    <Content Include="Images\Mantenimientos.jpg" />
+    <Content Include="Images\money.png" />
+    <Content Include="Images\moneybag.png" />
+    <Content Include="Images\note_new.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Images\p1.jpg" />
+    <Content Include="Images\p2.jpg" />
+    <Content Include="Images\p3.jpg" />
+    <Content Include="Images\p4.jpg" />
+    <Content Include="Images\p5.jpg" />
+    <Content Include="Images\p6.jpg" />
+    <Content Include="Images\p7.jpg" />
+    <Content Include="Images\Peru.png" />
+    <Content Include="Images\Testeo1.jpg" />
+    <Content Include="Images\Transacciones.jpg" />
+    <Content Include="Images\Ventas.jpg" />
+    <Content Include="Mantenimiento\Consultas.aspx" />
     <Content Include="Mantenimiento\Empleados\MantEmpleados.aspx" />
     <Content Include="Mantenimiento\Empleados\NewFile1.txt" />
+    <Content Include="Mantenimiento\Factura\ConsultaClienteEstado.aspx" />
+    <Content Include="Mantenimiento\Factura\ConsultasFacturas.aspx" />
     <Content Include="Mantenimiento\Servicio\ConsultaServicio.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -202,12 +263,33 @@
     <Compile Include="Cliente\ConsultaCliente.aspx.designer.cs">
       <DependentUpon>ConsultaCliente.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimiento\Consultas.aspx.cs">
+      <DependentUpon>Consultas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Consultas.aspx.designer.cs">
+      <DependentUpon>Consultas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimiento\Empleados\MantEmpleados.aspx.cs">
       <DependentUpon>MantEmpleados.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mantenimiento\Empleados\MantEmpleados.aspx.designer.cs">
       <DependentUpon>MantEmpleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Factura\ConsultaClienteEstado.aspx.cs">
+      <DependentUpon>ConsultaClienteEstado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Factura\ConsultaClienteEstado.aspx.designer.cs">
+      <DependentUpon>ConsultaClienteEstado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Factura\ConsultasFacturas.aspx.cs">
+      <DependentUpon>ConsultasFacturas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Factura\ConsultasFacturas.aspx.designer.cs">
+      <DependentUpon>ConsultasFacturas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Mantenimiento\Servicio\ConsultaServicio.aspx.cs">
       <DependentUpon>ConsultaServicio.aspx</DependentUpon>

@@ -37,5 +37,24 @@ namespace ProyAutoServicio_BL
         {
             return objFacturaADO.ListarComprobante_Cliente_Servicio();
         }
+
+        public DataTable ListarFacturasClienteFechas(String strCod, DateTime fecini, DateTime fecfin)
+        {
+            return objFacturaADO.ListarFacturasClienteFechas(strCod, fecini, fecfin);
+        }
+        public DataTable ListarConsultaServicios(String strtipoServ)
+        {
+            return objFacturaADO.ListarConsultaServicios(strtipoServ);
+        }
+
+        public DataTable ListarFacturas_Paginacion(String strCod_cli, String strEstado, Int16 intNumPag)
+        {
+            return objFacturaADO.ListarFacturas_Paginacion(strCod_cli,  strEstado, intNumPag);
+        }
+
+        public Int16 NumPag_ListarFacturas_Paginacion(String strCod_cli, String strEstado)
+        {
+            return objFacturaADO.NumPag_ListarFacturas_Paginacion(strCod_cli, strEstado);
+        }
     }
 }

@@ -109,12 +109,12 @@ CREATE TABLE tb_Comprobante(
 	codComprobante smallint not null PRIMARY KEY,
 	docIdentidad varchar(15) not null Foreign Key REFERENCES tb_Cliente,
 	--codServicio	smallint not null Foreign Key REFERENCES tb_Servicios,
-	fechaEmision datetime not null,
+	fechaEmision smalldatetime not null,
 	estado int not null,
 	usu_reg varchar(20),
-	fec_reg datetime,
+	fec_reg smalldatetime,
 	usu_ult_mod varchar(20),
-	fech_ult_mod datetime
+	fech_ult_mod smalldatetime
 	);
 create table tb_Detalle_Servicio(
 	docIdentidad varchar(15) not null Foreign Key REFERENCES tb_Cliente,

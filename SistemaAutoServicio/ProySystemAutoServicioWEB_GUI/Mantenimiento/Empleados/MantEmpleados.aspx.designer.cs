@@ -15,22 +15,22 @@ namespace ProySystemAutoServicioWEB_GUI.Mantenimiento
     {
 
         /// <summary>
-        /// Control txtNombre.
+        /// Control txtCod.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombre;
+        protected global::System.Web.UI.WebControls.TextBox txtCod;
 
         /// <summary>
-        /// Control lblTotal.
+        /// Control btnConsultar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTotal;
+        protected global::System.Web.UI.WebControls.Button btnConsultar;
 
         /// <summary>
         /// Control grvEmpleados.
@@ -58,41 +58,5 @@ namespace ProySystemAutoServicioWEB_GUI.Mantenimiento
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
-
-        /// <summary>
-        /// Control btnInsertar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnInsertar;
-
-        /// <summary>
-        /// Control btnActualizar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnActualizar;
-
-        /// <summary>
-        /// Control TextBox1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
-
-        /// <summary>
-        /// Control TextBox1_CalendarExtender.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender TextBox1_CalendarExtender;
     }
 }

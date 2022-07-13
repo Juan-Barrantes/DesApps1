@@ -5,20 +5,32 @@
     <p>&nbsp;</p>
     <table style="width: 80%; height: 279px">
         <tr>
-            <td style="width: 146px">Nombre Usuario</td>
+            <td style="width: 146px">Codigo Empleado</td>
             <td class="modal-sm" style="width: 399px">
-                <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtCod" runat="server"></asp:TextBox>
             </td>
-            <td style="width: 100px">&nbsp;</td>
-            <td style="width: 100px">Total:</td>
+            <td style="width: 100px">
+                <asp:Button ID="btnConsultar" runat="server" OnClick="btnConsultar_Click" Text="Consultar" />
+            </td>
+            <td style="width: 100px">
+                <br />
+            </td>
             <td>
-                <asp:Label ID="lblTotal" runat="server"></asp:Label>
-            </td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td colspan="5" style="height: 187px">
-                <asp:GridView ID="grvEmpleados" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" Width="562px">
+                <asp:GridView ID="grvEmpleados" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" Width="1093px" AutoGenerateColumns="False">
                     <AlternatingRowStyle BackColor="#DCDCDC" />
+                    <Columns>
+                        <asp:BoundField DataField="codEmpleado" HeaderText="Codigo" />
+                        <asp:BoundField DataField="nomEmpleado" HeaderText="Nombre" />
+                        <asp:BoundField DataField="apeEmpleado" HeaderText="Apellidos" />
+                        <asp:BoundField DataField="dirEmpleado" HeaderText="Dirección" />
+                        <asp:BoundField DataField="telefono" HeaderText="Teléfono" />
+                        <asp:BoundField DataField="cargo" HeaderText="Cargo" />
+                        <asp:BoundField DataField="correo" HeaderText="Correo" />
+                    </Columns>
                     <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
                     <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
                     <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
@@ -38,20 +50,15 @@
         </tr>
         <tr>
             <td style="width: 146px; height: 47px">
-                <asp:HyperLink ID="HyperLink1" runat="server">Retornar</asp:HyperLink>
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Mantenimiento/Consultas.aspx">Retornar</asp:HyperLink>
             </td>
             <td class="modal-sm" style="height: 47px; width: 399px">&nbsp;</td>
             <td style="height: 47px; width: 100px">
-                <asp:Button ID="btnInsertar" runat="server" Text="Insertar" />
-            </td>
+                &nbsp;</td>
             <td style="width: 100px; height: 47px">
-                <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" />
-            </td>
+                &nbsp;</td>
             <td style="height: 47px">
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                <ajaxToolkit:CalendarExtender ID="TextBox1_CalendarExtender" runat="server" BehaviorID="TextBox1_CalendarExtender" TargetControlID="TextBox1">
-                </ajaxToolkit:CalendarExtender>
-            </td>
+                &nbsp;</td>
         </tr>
     </table>
 </asp:Content>

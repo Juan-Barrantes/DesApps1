@@ -196,11 +196,39 @@ namespace ProyAutoServicio_ADO
             cmd.Parameters.Clear();
             try
             {
+                
+                
                 //Codifique
                 SqlDataAdapter ada = new SqlDataAdapter(cmd);
                 ada.Fill(dts, "Empleados");
 
                 return dts.Tables["Empleados"];
+
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public DataTable ListarEmpleadosCod(int codEmp)
+        {
+            DataSet dts = new DataSet();
+            cnx.ConnectionString = MiConexion.GetCnx();
+            cmd.Connection = cnx;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "usp_ListarEmpleadoCod";
+            cmd.Parameters.Clear();
+
+            //Agregamos parametros
+            cmd.Parameters.AddWithValue("@codEmp", codEmp);
+            try
+            {
+                //Codifique
+                SqlDataAdapter ada = new SqlDataAdapter(cmd);
+                ada.Fill(dts, "ConsultaServicio");
+
+                return dts.Tables["ConsultaServicio"];
 
             }
             catch (SqlException ex)

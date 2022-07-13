@@ -15,51 +15,6 @@ namespace ProySystemAutoServicioWEB_GUI.Mantenimiento.Cliente
     {
 
         /// <summary>
-        /// Control cbotipoDocumento.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cbotipoDocumento;
-
-        /// <summary>
-        /// Control RequiredFieldValidator1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
-
-        /// <summary>
-        /// Control txtFecRegistro.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFecRegistro;
-
-        /// <summary>
-        /// Control txtFecRegistro_CalendarExtender.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender txtFecRegistro_CalendarExtender;
-
-        /// <summary>
-        /// Control RequiredFieldValidator2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
-
-        /// <summary>
         /// Control btnConsultar.
         /// </summary>
         /// <remarks>

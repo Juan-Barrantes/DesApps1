@@ -42,5 +42,9 @@ namespace ProyAutoServicio_BL
             return objProveedorADO.ListarClienteDocs();
         }
 
+        public DataTable ConsultarClienteTipDoc(String TipoDoc)
+        {
+            return objProveedorADO.ConsultarClienteTipDoc(TipoDoc);
+        }
     }
 }

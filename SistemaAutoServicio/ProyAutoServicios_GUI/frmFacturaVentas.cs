@@ -18,6 +18,7 @@ namespace ProyAutoServicios_GUI
     public partial class frmFacturaVentas : Form
     {
         FacturaBL objFacturaBL = new FacturaBL();
+        FacturaBE objFactureBE = new FacturaBE();
         ClienteBL objClienteBL = new ClienteBL();
         ClienteBE objClienteBE = new ClienteBE();
 
@@ -105,6 +106,58 @@ namespace ProyAutoServicios_GUI
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             listServEleg.Items.Add(listServ.SelectedItem);
+        }
+
+        private void btnGenerar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+
+
+                // generamos el comprobante
+                objFactureBE.doc_ident = txtDoc.Text.Trim();
+                objFactureBE.usu_reg = clsCredenciales.Usuario;
+
+                if (objFacturaBL.InsertarComprobante(objFactureBE) == true)
+                {
+                    this.Close();
+                }
+                else
+                {
+                    throw new Exception("No se generó Factura, comuniquese con IT");
+                }
+
+                // insertamos en tb_Detalle_Servicio
+
+                //en un array añadimos todos los servicios elegidos
+                String[] ServEleg = listServEleg.Items.OfType<String>().ToArray();
+
+                for (int i = 0; i < ServEleg.Length; i++)
+                {
+                    String servicio = ServEleg[i];
+                    objFactureBE.doc_ident = txtDoc.Text.Trim();
+                    objFactureBE.tipo_serv = servicio;
+
+                    if (objFacturaBL.InsertarDetalle_Servicio(objFactureBE) == true)
+                    {
+                        this.Close();
+                    }
+                    else
+                    {
+                        throw new Exception("Lista de servicios no registrados,comuniquese con IT");
+                    }
+                }
+            }
+
+            //pasámos a una pantalla para pagar
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha producido el error: " + ex.Message);
+            }
+
         }
     }
 

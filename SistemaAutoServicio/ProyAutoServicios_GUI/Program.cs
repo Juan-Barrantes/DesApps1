@@ -17,7 +17,7 @@ namespace ProyAutoServicios_GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmFacturaVentas());
+            Application.Run(new frmLogin());
         }
     }
 }

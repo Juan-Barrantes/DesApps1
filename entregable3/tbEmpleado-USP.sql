@@ -242,3 +242,21 @@ select * from VW_VistaEmpleados
 
 -- Borramos los guiones en los numeros telefonicos
 UPDATE tb_Empleado SET telefono = REPLACE(telefono, '-', '')
+go
+
+
+create procedure usp_ListarEmpleadoCod
+@codEmp smallint
+as
+	select codEmpleado,
+	nomEmpleado,
+	apeEmpleado,
+	dirEmpleado,
+	telefono,
+	cargo,
+	correo
+	from tb_Empleado
+	where codEmpleado = @codEmp
+go
+
+select * from tb_Cliente

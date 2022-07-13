@@ -14,6 +14,12 @@ namespace ProyAutoServicio_BE
             get { return mvardoc_ident; }
             set { mvardoc_ident = value; }
         }
+        private String mvartipo_serv;
+        public String tipo_serv
+        {
+            get { return mvartipo_serv; }
+            set { mvartipo_serv = value; }
+        }
 
         private String mvarnombre;
         public String nombre

@@ -13,7 +13,7 @@ namespace ProySystemAutoServicioWEB_GUI.Mantenimiento.Cliente
     public partial class ConsultaCliente : System.Web.UI.Page
     {
         ClienteBL objClienteBL = new ClienteBL();
-        //FacturaBL objFacturaBL = new FacturaBL();
+        FacturaBL objFacturaBL = new FacturaBL();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,12 +21,7 @@ namespace ProySystemAutoServicioWEB_GUI.Mantenimiento.Cliente
             {
                 if (Page.IsPostBack == false)
                 {
-                    cbotipoDocumento.DataSource = objClienteBL.ListarClienteDocs();
-                    cbotipoDocumento.DataValueField = "tipoDocumento";
-                    cbotipoDocumento.DataTextField = "tipoDocumento"; 
-                    cbotipoDocumento.DataBind();
-
-
+                
 
                 }
 
@@ -54,13 +49,12 @@ namespace ProySystemAutoServicioWEB_GUI.Mantenimiento.Cliente
         }
         private void CargarDatos()
         {
-            /*DataTable tabla = objFacturaBL.ListarConsultaServicios(cbotipoDocumento.SelectedValue.ToString(),
-                            Convert.ToDateTime(txtFecRegistro.Text.Trim()));  
+            DataTable tabla = objClienteBL.ListarCliente();  
             grvClientes.DataSource = tabla;
             grvClientes.DataBind();
 
             lblRegistros.Text = "Cantidad de registros: " + tabla.Rows.Count.ToString();
-            */
+            
         }
 
         protected void grvClientes_PageIndexChanging(object sender, GridViewPageEventArgs e)

@@ -112,3 +112,11 @@ exec usp_ServicioPrecio
 select * from tb_usuario
 
 select * from tb_Servicios
+
+
+create procedure usp_ListarConsultaServicios
+@tipoServ varchar(20)
+as
+	select codServicio, tipoServ, precio, tiempoEst
+	from tb_Servicios
+	where tipoServ=@tipoServ

@@ -13,29 +13,22 @@
             <td class="labelContenido" colspan="3">&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style10">Seleccione el tipo de documento(*OBLIGATORIO):</td>
+            <td class="auto-style10">Presione para listar Clientes</td>
             <td class="auto-style5">
-                <asp:DropDownList ID="cbotipoDocumento" runat="server" CssClass="auto-style12" Height="16px" Width="305px">
-                </asp:DropDownList>
+                <asp:Button ID="btnConsultar" runat="server" CssClass="boton-new" Text="Listar" OnClick="btnConsultar_Click" />
             </td>
             <td class="auto-style2">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="cbotipoDocumento" CssClass="labelErrores" ErrorMessage="*"></asp:RequiredFieldValidator>
-            </td>
+                &nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style10">Ingrese fecha de Registro(*, Obligatorio):</td>
+            <td class="auto-style10">&nbsp;</td>
             <td class="auto-style11">
-                <asp:TextBox ID="txtFecRegistro" runat="server" CssClass="TextBox" Width="300px"></asp:TextBox>
-                <ajaxToolkit:CalendarExtender ID="txtFecRegistro_CalendarExtender" runat="server" BehaviorID="TextBox1_CalendarExtender" TargetControlID="txtFecRegistro">
-                </ajaxToolkit:CalendarExtender>
-            </td>
+                &nbsp;</td>
             <td class="auto-style2">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtFecRegistro" CssClass="labelErrores" ErrorMessage="*"></asp:RequiredFieldValidator>
-            </td>
+                &nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style8" colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;<asp:Button ID="btnConsultar" runat="server" CssClass="boton-new" Text="Consultar" OnClick="btnConsultar_Click" />
-            </td>
+            <td class="auto-style8" colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style9" colspan="3">
@@ -44,7 +37,7 @@
         </tr>
         <tr>
             <td class="auto-style9" colspan="3">
-                <asp:HyperLink ID="HyperLink1" runat="server">Retornar</asp:HyperLink>
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Mantenimiento/Consultas.aspx" ViewStateMode="Disabled">Retornar</asp:HyperLink>
             </td>
         </tr>
         
@@ -57,9 +50,7 @@
             <asp:BoundField DataField="tipoDocumento" HeaderText="tipoDocumento" />
             <asp:BoundField DataField="nombre" HeaderText="nombre" />
             <asp:BoundField DataField="apellidos" HeaderText="apellidos" />
-            <asp:BoundField DataField="Departamento" HeaderText="Departamento" />
-            <asp:BoundField DataField="Provincia" HeaderText="Provincia" />
-            <asp:BoundField DataField="fec_ult_mod" HeaderText="fec_ult_mod" />
+            <asp:BoundField DataField="direccion" HeaderText="Dirección" />
         </Columns>
         <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
         <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />

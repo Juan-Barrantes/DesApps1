@@ -124,10 +124,38 @@ namespace ProyAutoServicio_ADO
             }
         }
 
+        public DataTable ListarFacturasClienteFechas(String strCod, DateTime fecini, DateTime fecfin)
+        {
+            DataSet dts = new DataSet();
+            cnx.ConnectionString = MiConexion.GetCnx();
+            cmd.Connection = cnx;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "usp_ListarFacturasClienteFechas";
+            cmd.Parameters.Clear();
 
+            //Agregamos parametros
+            cmd.Parameters.AddWithValue("@docIdentidad", strCod);
+            cmd.Parameters.AddWithValue("@fecIni", fecini);
+            cmd.Parameters.AddWithValue("@fecFin", fecfin);
 
-        //tb_Detalle_Servicio
-        public Boolean InsertarDetalle_Servicio(FacturaBE objFacturaBE)
+            try
+            {
+                //Codifique
+                SqlDataAdapter ada = new SqlDataAdapter(cmd);
+                ada.Fill(dts, "FacturasCliente");
+
+                return dts.Tables["FacturasCliente"];
+
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+        }
+
+            //tb_Detalle_Servicio
+            public Boolean InsertarDetalle_Servicio(FacturaBE objFacturaBE)
         {
             cnx.ConnectionString = MiConexion.GetCnx();
             cmd.Connection = cnx;
@@ -176,7 +204,96 @@ namespace ProyAutoServicio_ADO
             {
                 throw new Exception(x.Message);                
             }
-       
+
+        }
+ 
+        public DataTable ListarConsultaServicios(String strtipoServ)
+        {
+            DataSet dts = new DataSet();
+            cnx.ConnectionString = MiConexion.GetCnx();
+            cmd.Connection = cnx;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "usp_ListarConsultaServicios";
+            cmd.Parameters.Clear();
+
+            //Agregamos parametros
+            cmd.Parameters.AddWithValue("@tipoServ", strtipoServ);            
+            try
+            {
+                //Codifique
+                SqlDataAdapter ada = new SqlDataAdapter(cmd);
+                ada.Fill(dts, "ConsultaServicio");
+
+                return dts.Tables["ConsultaServicio"];
+
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+
+        }
+
+        public DataTable ListarFacturas_Paginacion(String strCod_cli,  String strEstado, Int16 intNumPag)
+        {
+            DataSet dts = new DataSet();
+            cnx.ConnectionString = MiConexion.GetCnx();
+            cmd.Connection = cnx;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "usp_ListarFacturas_Paginacion";
+            cmd.Parameters.Clear();
+
+            //Agregamos parametros  
+            cmd.Parameters.AddWithValue("@docIdentidad", strCod_cli);            
+            cmd.Parameters.AddWithValue("@estado", strEstado);
+            cmd.Parameters.AddWithValue("@NumPag", intNumPag);
+
+            try
+            {
+                //Codifique
+                SqlDataAdapter ada = new SqlDataAdapter(cmd);
+                ada.Fill(dts, "FacturasPaginacion");
+
+                return dts.Tables["FacturasPaginacion"];
+
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+
+        }
+
+        public Int16 NumPag_ListarFacturas_Paginacion(String strCod_cli,  String strEstado)
+        {
+            try
+            {
+
+                cnx.ConnectionString = MiConexion.GetCnx();
+                cmd.Connection = cnx;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "usp_NumPag_ListarFacturas_Paginacion";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@docIdentidad", strCod_cli);                
+                cmd.Parameters.AddWithValue("@estado", strEstado);
+                
+                // Parametro de salida que devolvera la cantidad de registros de la consulta filtrada por
+                // cliente, vendedor y estado
+                cmd.Parameters.Add("@NumReg", SqlDbType.Int);
+                cmd.Parameters["@NumReg"].Direction = ParameterDirection.Output;
+                cnx.Open();
+                cmd.ExecuteScalar();
+                Int16 NumReg = Convert.ToInt16(cmd.Parameters["@NumReg"].Value);
+                return NumReg;
+            }
+            catch (SqlException ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+
         }
     }
 }
