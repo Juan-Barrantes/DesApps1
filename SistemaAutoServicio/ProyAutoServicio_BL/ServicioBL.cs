@@ -36,6 +36,11 @@ namespace ProyAutoServicio_BL
             return objServicioADO.ListarServicios();
         }
 
+        public DataTable ServicioPrecio()
+        {
+            return objServicioADO.ServicioPrecio();
+        }
+
     }
 
 }

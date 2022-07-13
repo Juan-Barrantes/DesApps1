@@ -133,9 +133,10 @@ exec usp_ActualizarComprobante @codComprob=1001, @estado=1,@usu_ult_mod='testing
 go
 
 --consultar comprobante
+--drop procedure usp_ConsultarComprobante
 create procedure usp_ConsultarComprobante
-	@codCompr smallint,
-	@estado int
+	@codCompr smallint
+	--@estado int
 as
 	select
 	codComprobante,
@@ -145,9 +146,9 @@ as
 	fechaEmision,
 	estado
 	from VW_Comprobante
-	where codComprobante=@codCompr and estado=@estado
+	where codComprobante=@codCompr 
 go
-exec usp_ConsultarComprobante @codCompr=1001, @estado=1
+exec usp_ConsultarComprobante @codCompr=1001
 
 create trigger tg_ComprobanteDetalle
 on tb_Detalle_Servicio after update

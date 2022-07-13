@@ -117,11 +117,28 @@ go
 exec usp_InsertarCliente '3215405411', 'Pasaporte','Ramirez','Jhonatan','140120','calle Carpenter 1501','897654321', 'testing2',1
 go
 
-exec usp_InsertarCliente @docIdentidad='73986561', @tipoDocumento='DNI',@apellidos='Fernandez Aguirre',
-	@nombre='Carla', @Id_Ubigeo= '140121',  @direccion='av. Flores 1533', @telefono='951753622', @usu_reg= 'testing2',
+exec usp_InsertarCliente @docIdentidad='73986561', @tipoDocumento='Cedula de Identidad',@apellidos='Helera Aguirre',
+	@nombre='Maria', @Id_Ubigeo= '140121',  @direccion='av.rosas 1533', @telefono='654321870', @usu_reg= 'testing2',
 	@estado_cli=1
 go
-select * from tb_Cliente
+
+create procedure usp_ListarTipoDocs
+as
+select tipoDocumento from tb_Cliente group by tipoDocumento
+go
+
+
+create procedure usp_EstadoCliente
+as
+	select
+		CASE estado_cli
+		when '0' then 'inactivo'
+		when '1'then 'activo'
+		else 'No encontrado'
+		end as 'Estado'
+	from tb_cliente
+	group by estado_cli	
+go
 
 --listar clientes
 create procedure usp_ListarClientes

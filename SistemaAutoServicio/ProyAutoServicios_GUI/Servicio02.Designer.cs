@@ -30,6 +30,10 @@ namespace ProyAutoServicios_GUI
         private void InitializeComponent()
         {
             this.grpDatos = new System.Windows.Forms.GroupBox();
+            this.cboAgencia = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.mskTiempoServ = new System.Windows.Forms.MaskedTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.txtPrecio = new System.Windows.Forms.TextBox();
@@ -41,6 +45,10 @@ namespace ProyAutoServicios_GUI
             // 
             // grpDatos
             // 
+            this.grpDatos.Controls.Add(this.cboAgencia);
+            this.grpDatos.Controls.Add(this.label4);
+            this.grpDatos.Controls.Add(this.mskTiempoServ);
+            this.grpDatos.Controls.Add(this.label1);
             this.grpDatos.Controls.Add(this.btnCancelar);
             this.grpDatos.Controls.Add(this.btnGrabar);
             this.grpDatos.Controls.Add(this.txtPrecio);
@@ -51,14 +59,48 @@ namespace ProyAutoServicios_GUI
             this.grpDatos.Margin = new System.Windows.Forms.Padding(4);
             this.grpDatos.Name = "grpDatos";
             this.grpDatos.Padding = new System.Windows.Forms.Padding(4);
-            this.grpDatos.Size = new System.Drawing.Size(414, 338);
+            this.grpDatos.Size = new System.Drawing.Size(414, 346);
             this.grpDatos.TabIndex = 1;
             this.grpDatos.TabStop = false;
             this.grpDatos.Text = "Datos";
             // 
+            // cboAgencia
+            // 
+            this.cboAgencia.FormattingEnabled = true;
+            this.cboAgencia.Location = new System.Drawing.Point(160, 170);
+            this.cboAgencia.Name = "cboAgencia";
+            this.cboAgencia.Size = new System.Drawing.Size(172, 24);
+            this.cboAgencia.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(34, 170);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 17);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Agencia";
+            // 
+            // mskTiempoServ
+            // 
+            this.mskTiempoServ.Location = new System.Drawing.Point(160, 134);
+            this.mskTiempoServ.Mask = "99";
+            this.mskTiempoServ.Name = "mskTiempoServ";
+            this.mskTiempoServ.Size = new System.Drawing.Size(49, 22);
+            this.mskTiempoServ.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 134);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(116, 17);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Tiempo estimado";
+            // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(253, 243);
+            this.btnCancelar.Location = new System.Drawing.Point(297, 289);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 28);
@@ -69,7 +111,7 @@ namespace ProyAutoServicios_GUI
             // 
             // btnGrabar
             // 
-            this.btnGrabar.Location = new System.Drawing.Point(253, 165);
+            this.btnGrabar.Location = new System.Drawing.Point(297, 211);
             this.btnGrabar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(100, 28);
@@ -80,7 +122,7 @@ namespace ProyAutoServicios_GUI
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(160, 110);
+            this.txtPrecio.Location = new System.Drawing.Point(160, 90);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(80, 22);
@@ -89,7 +131,7 @@ namespace ProyAutoServicios_GUI
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 110);
+            this.label3.Location = new System.Drawing.Point(31, 90);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 17);
@@ -121,10 +163,11 @@ namespace ProyAutoServicios_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(456, 372);
+            this.ClientSize = new System.Drawing.Size(466, 376);
             this.Controls.Add(this.grpDatos);
             this.Name = "Servicio02";
             this.Text = "Insertar Servicio";
+            this.Load += new System.EventHandler(this.Servicio02_Load);
             this.grpDatos.ResumeLayout(false);
             this.grpDatos.PerformLayout();
             this.ResumeLayout(false);
@@ -140,5 +183,9 @@ namespace ProyAutoServicios_GUI
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboTipoServicio;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cboAgencia;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.MaskedTextBox mskTiempoServ;
+        private System.Windows.Forms.Label label1;
     }
 }

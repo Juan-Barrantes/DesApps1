@@ -8,8 +8,8 @@ namespace ProyAutoServicio_BE
 {
     public class ServicioBE
     {
-        private String mvarcodServicio;
-        public String codServicio
+        private int mvarcodServicio;
+        public int codServicio
         {
             get { return mvarcodServicio; }
             set { mvarcodServicio = value; }
@@ -20,8 +20,16 @@ namespace ProyAutoServicio_BE
             get { return mvartipoServ; }
             set { mvartipoServ = value; }
         }
-        private String mvarprecio;
-        public String precio
+
+        private String mvardir_ag;
+        public String dir_ag
+        {
+            get { return mvardir_ag; }
+            set { mvardir_ag = value; }
+        }
+
+        private int mvarprecio;
+        public int precio
         {
             get { return mvarprecio; }
             set { mvarprecio = value; }
@@ -31,6 +39,20 @@ namespace ProyAutoServicio_BE
         public String usureg {
             get { return mvarusureg; }
             set { mvarusureg = value; }
+        }
+
+        private int mvarcodag;
+        public int codag
+        {
+            get { return mvarcodag; }
+            set { mvarcodag = value; }
+        }
+
+        private int mvartiempServ;
+        public int temposerv
+        {
+            get { return mvartiempServ; }
+            set { mvartiempServ = value; }
         }
 
         private String mvarusu_ultMod;

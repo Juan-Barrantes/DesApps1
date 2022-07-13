@@ -25,3 +25,5 @@ C:\Users\BSJF\OneDrive\Escritorio\2022\ISIL\III CICLO\desarrollo apss I\S8\entre
 C:\Users\BSJF\OneDrive\Escritorio\2022\ISIL\III CICLO\desarrollo apss I\S8\entregable2\SistemaAutoServicio\ProyAutoServicios_GUI\obj\Debug\ProyAutoServicios_GUI.Servicio02.resources
 C:\Users\BSJF\OneDrive\Escritorio\2022\ISIL\III CICLO\desarrollo apss I\S8\entregable2\SistemaAutoServicio\ProyAutoServicios_GUI\obj\Debug\ProyAutoServicios_GUI.Servicio03.resources
 C:\Users\BSJF\OneDrive\Escritorio\2022\ISIL\III CICLO\desarrollo apss I\S8\entregable2\SistemaAutoServicio\ProyAutoServicios_GUI\obj\Debug\ProyAutoServicio_GUI.frmLogin.resources
+C:\Users\BSJF\OneDrive\Escritorio\2022\ISIL\III CICLO\desarrollo apss I\S8\entregable2\SistemaAutoServicio\ProyAutoServicios_GUI\obj\Debug\ProyAutoServicios_GUI.FacturaConsulta.resources
+C:\Users\BSJF\OneDrive\Escritorio\2022\ISIL\III CICLO\desarrollo apss I\S8\entregable2\SistemaAutoServicio\ProyAutoServicios_GUI\obj\Debug\ProyAutoServicios_GUI.frmFacturaVentas.resources

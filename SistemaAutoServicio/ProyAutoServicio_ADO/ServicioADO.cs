@@ -34,6 +34,8 @@ namespace ProyAutoServicio_ADO
                 
                 cmd.Parameters.AddWithValue("@tipoServ", objServicioBE.tipoServ);
                 cmd.Parameters.AddWithValue("@precio", objServicioBE.precio);
+                cmd.Parameters.AddWithValue("@tiempoEst", objServicioBE.tipoServ);
+                cmd.Parameters.AddWithValue("@codAg", objServicioBE.codag);
                 cmd.Parameters.AddWithValue("@usu_reg", objServicioBE.usureg);
 
                 // Abro la conexion y ejecutamos....
@@ -74,6 +76,8 @@ namespace ProyAutoServicio_ADO
                 cmd.Parameters.AddWithValue("@codServicio", objServicioBE.codServicio);
                 cmd.Parameters.AddWithValue("@tipoServ", objServicioBE.tipoServ);
                 cmd.Parameters.AddWithValue("@precio", objServicioBE.precio);
+                cmd.Parameters.AddWithValue("@tiempoEst", objServicioBE.temposerv);
+                cmd.Parameters.AddWithValue("@codAg", objServicioBE.codag);
                 cmd.Parameters.AddWithValue("@usu_ult_mod", objServicioBE.Usu_UltMod);
                 // Abro la conexion y ejecutamos....
                 cnx.Open();
@@ -153,10 +157,11 @@ namespace ProyAutoServicio_ADO
                 {
                     dtr.Read();
 
-                    objServicioBE.codServicio = dtr["codServicio"].ToString();
+                    objServicioBE.codServicio =Convert.ToInt16( dtr["codServicio"].ToString());
                     objServicioBE.tipoServ = dtr["tipoServ"].ToString();
-                    objServicioBE.precio = dtr["precio"].ToString();
-
+                    objServicioBE.precio =Convert.ToInt16( dtr["precio"].ToString());
+                    objServicioBE.tipoServ = dtr["tiempoEst"].ToString();
+                    objServicioBE.dir_ag = dtr["direccion"].ToString();
 
                 }
                 dtr.Close();
@@ -185,6 +190,39 @@ namespace ProyAutoServicio_ADO
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "usp_ListarServicios";
             cmd.Parameters.Clear();
+            try
+            {
+                //Codifique
+                SqlDataAdapter ada = new SqlDataAdapter(cmd);
+                ada.Fill(dts, "tb_Servicios");
+
+                return dts.Tables["tb_Servicios"];
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+        }
+
+        public DataTable ServicioPrecio()
+        {
+            
+
+            DataSet dts = new DataSet();
+            cnx.ConnectionString = MiConexion.GetCnx();
+            cmd.Connection = cnx;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "usp_ServicioPrecio";
+            cmd.Parameters.Clear();
+            dtr = cmd.ExecuteReader();
+            while (dtr.Read())
+            {
+
+            }
+
+
+
             try
             {
                 //Codifique

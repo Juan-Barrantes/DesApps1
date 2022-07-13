@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MantEmpleados.aspx.cs" Inherits="ProySystemAutoServicioWEB_GUI.Mantenimiento.MantEmpleados" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="ajaxToolkit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h3>Mantenimiento Tabla Empleados</h3>
     <p>&nbsp;</p>
@@ -46,7 +47,11 @@
             <td style="width: 100px; height: 47px">
                 <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" />
             </td>
-            <td style="height: 47px">&nbsp;</td>
+            <td style="height: 47px">
+                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <ajaxToolkit:CalendarExtender ID="TextBox1_CalendarExtender" runat="server" BehaviorID="TextBox1_CalendarExtender" TargetControlID="TextBox1">
+                </ajaxToolkit:CalendarExtender>
+            </td>
         </tr>
     </table>
 </asp:Content>

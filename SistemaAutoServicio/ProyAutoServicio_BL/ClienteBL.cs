@@ -37,5 +37,10 @@ namespace ProyAutoServicio_BL
             return objProveedorADO.ListarCliente();
         }
 
+        public DataTable ListarClienteDocs()
+        {
+            return objProveedorADO.ListarClienteDocs();
+        }
+
     }
 }

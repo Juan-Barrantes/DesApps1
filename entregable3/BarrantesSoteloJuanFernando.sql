@@ -2,6 +2,7 @@ CREATE DATABASE bd_NegocioAutosA1;
 
 --drop database bd_NegocioAutosA1
 
+
 Use bd_NegocioAutosA1;
 --delete from tb_Ubigeo
 
@@ -36,13 +37,14 @@ CREATE TABLE tb_Servicios(
 	codServicio smallint not null PRIMARY KEY,
 	tipoServ varchar(50) not null,
 	precio money not null,
-	--editando
+	tiempoEst int,
+	codAgencia smallint not null Foreign Key REFERENCES tb_Agencia,
 	usu_reg varchar(20),
 	fec_reg datetime,
 	usu_ult_mod varchar(20),
 	fec_ult_mod datetime
 	);
-	
+
 
 Create Table tb_Cochera( --cochera dentro de una agencia, borramos direccion
 	codCochera smallint not null PRIMARY KEY,
@@ -2084,6 +2086,22 @@ Insert Into tb_Servicios (codServicio,tipoServ,precio)
 	('10004','Servicio de Dirección Asistida','275'),
 	(10005,'Alquiler de Auto','200');
 go
+
+Insert Into tb_Servicios (codServicio, tipoServ, precio,tiempoEst, codAgencia, usu_reg,fec_reg,usu_ult_mod,fec_ult_mod)
+	Values('10008','Servicio Completo de Afinación','3000',6,1,NULL,NULL,NULL,NULL),
+		  ('10010','Servicio de Grua','1200',10,2,NULL,NULL,NULL,NULL),
+		  ('10011','Revision de luces','600',3,3,NULL,NULL,NULL,NULL),
+		  ('10012','Nivelar la batería','800',3,4,NULL,NULL,NULL,NULL),
+		  ('10013','Cambio de aceite y filtro','400',2,5,NULL,NULL,NULL,NULL),
+		  ('10014','Cambio de bujías','600',3,6,NULL,NULL,NULL,NULL),
+		  ('10015','Revisión de los frenos y el tren delantero','700',4,7,NULL,NULL,NULL,NULL),
+		  ('10016','Cambio del refrigerante','200',5,8,NULL,NULL,NULL,NULL),
+		  ('10017','Cambio del filtro de gasolina y aire','900', 5 ,9, NULL,NULL,NULL,NULL),
+		  ('10018','Revisión de clutch','300',2,10,NULL,NULL,NULL,NULL),
+		  ('10019','Borner','400',5,11,NULL,NULL,NULL,NULL),
+		  ('10020','Cambio de la faja del alternador','500',8,12,NULL,NULL,NULL,NULL);
+select * from tb_Servicios
+
 
 Insert Into tb_Cochera
 	Values

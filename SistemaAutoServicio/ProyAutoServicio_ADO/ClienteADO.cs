@@ -221,5 +221,29 @@ namespace ProyAutoServicio_ADO
             
         }
 
+        public DataTable ListarClienteDocs()
+        {
+            DataSet dts = new DataSet();
+            cnx.ConnectionString = MiConexion.GetCnx();
+            cmd.Connection = cnx;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "usp_ListarTipoDocs";
+            cmd.Parameters.Clear();
+            try
+            {
+                //Codifique
+                SqlDataAdapter ada = new SqlDataAdapter(cmd);
+                ada.Fill(dts, "tb_Cliente");
+
+                return dts.Tables["tb_Cliente"];
+
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+        }
+
     }
 }
