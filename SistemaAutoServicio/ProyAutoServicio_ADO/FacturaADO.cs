@@ -31,9 +31,12 @@ namespace ProyAutoServicio_ADO
 
             try
             {
-                cmd.Parameters.AddWithValue("@docIdent", objFacturaBE.doc_ident);
+                cmd.Parameters.AddWithValue("@docIdentidad", objFacturaBE.doc_ident);
                 cmd.Parameters.AddWithValue("@usu_reg", objFacturaBE.usu_reg);
 
+                // abrir conexion y ejecutar:
+                cnx.Open();
+                cmd.ExecuteNonQuery();
                 return true;
             }
             catch (SqlException x)
@@ -166,7 +169,10 @@ namespace ProyAutoServicio_ADO
             try
             {
                 cmd.Parameters.AddWithValue("@docIdent", objFacturaBE.doc_ident);
-                cmd.Parameters.AddWithValue("@codServ", objFacturaBE.cod_serv);
+                cmd.Parameters.AddWithValue("@tipoServ", objFacturaBE.tipo_serv);
+                // abrir conexion y ejecutar:
+                cnx.Open();
+                cmd.ExecuteNonQuery();
 
                 return true;
             }
@@ -181,6 +187,28 @@ namespace ProyAutoServicio_ADO
                 {
                     cnx.Close();
                 }
+            }
+        }
+
+        public DataTable ultFactura()
+        {
+            DataSet dts = new DataSet();
+            cnx.ConnectionString = MiConexion.GetCnx();
+            cmd.Connection = cnx;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "usp_ultFactura";
+            cmd.Parameters.Clear();
+
+            try
+            {
+                SqlDataAdapter ada = new SqlDataAdapter(cmd);
+                ada.Fill(dts, "ulFact");
+
+                return dts.Tables["ulFact"];
+            }
+            catch (Exception x)
+            {
+                throw new Exception(x.Message);
             }
         }
 

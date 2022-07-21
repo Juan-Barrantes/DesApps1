@@ -55,11 +55,9 @@ namespace ProyAutoServicios_GUI
             this.grpDatos.Controls.Add(this.label3);
             this.grpDatos.Controls.Add(this.cboTipoServicio);
             this.grpDatos.Controls.Add(this.label2);
-            this.grpDatos.Location = new System.Drawing.Point(13, 13);
-            this.grpDatos.Margin = new System.Windows.Forms.Padding(4);
+            this.grpDatos.Location = new System.Drawing.Point(10, 11);
             this.grpDatos.Name = "grpDatos";
-            this.grpDatos.Padding = new System.Windows.Forms.Padding(4);
-            this.grpDatos.Size = new System.Drawing.Size(414, 346);
+            this.grpDatos.Size = new System.Drawing.Size(343, 234);
             this.grpDatos.TabIndex = 1;
             this.grpDatos.TabStop = false;
             this.grpDatos.Text = "Datos";
@@ -67,43 +65,46 @@ namespace ProyAutoServicios_GUI
             // cboAgencia
             // 
             this.cboAgencia.FormattingEnabled = true;
-            this.cboAgencia.Location = new System.Drawing.Point(160, 170);
+            this.cboAgencia.Location = new System.Drawing.Point(133, 135);
+            this.cboAgencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboAgencia.Name = "cboAgencia";
-            this.cboAgencia.Size = new System.Drawing.Size(172, 24);
+            this.cboAgencia.Size = new System.Drawing.Size(130, 21);
             this.cboAgencia.TabIndex = 10;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(34, 170);
+            this.label4.Location = new System.Drawing.Point(26, 138);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 17);
+            this.label4.Size = new System.Drawing.Size(51, 15);
             this.label4.TabIndex = 9;
             this.label4.Text = "Agencia";
             // 
             // mskTiempoServ
             // 
-            this.mskTiempoServ.Location = new System.Drawing.Point(160, 134);
+            this.mskTiempoServ.Location = new System.Drawing.Point(133, 109);
+            this.mskTiempoServ.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mskTiempoServ.Mask = "99";
             this.mskTiempoServ.Name = "mskTiempoServ";
-            this.mskTiempoServ.Size = new System.Drawing.Size(49, 22);
+            this.mskTiempoServ.Size = new System.Drawing.Size(38, 20);
             this.mskTiempoServ.TabIndex = 8;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 134);
+            this.label1.Location = new System.Drawing.Point(26, 109);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 17);
+            this.label1.Size = new System.Drawing.Size(103, 15);
             this.label1.TabIndex = 7;
             this.label1.Text = "Tiempo estimado";
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(297, 289);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Location = new System.Drawing.Point(120, 171);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(100, 28);
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -111,10 +112,9 @@ namespace ProyAutoServicios_GUI
             // 
             // btnGrabar
             // 
-            this.btnGrabar.Location = new System.Drawing.Point(297, 211);
-            this.btnGrabar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGrabar.Location = new System.Drawing.Point(223, 171);
             this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(100, 28);
+            this.btnGrabar.Size = new System.Drawing.Size(75, 23);
             this.btnGrabar.TabIndex = 5;
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.UseVisualStyleBackColor = true;
@@ -122,19 +122,17 @@ namespace ProyAutoServicios_GUI
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(160, 90);
-            this.txtPrecio.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPrecio.Location = new System.Drawing.Point(133, 73);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(80, 22);
+            this.txtPrecio.Size = new System.Drawing.Size(61, 20);
             this.txtPrecio.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 90);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(23, 73);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 17);
+            this.label3.Size = new System.Drawing.Size(45, 15);
             this.label3.TabIndex = 3;
             this.label3.Text = "Precio:";
             // 
@@ -143,29 +141,29 @@ namespace ProyAutoServicios_GUI
             this.cboTipoServicio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.cboTipoServicio.DropDownWidth = 280;
             this.cboTipoServicio.FormattingEnabled = true;
-            this.cboTipoServicio.Location = new System.Drawing.Point(160, 49);
-            this.cboTipoServicio.Margin = new System.Windows.Forms.Padding(4);
+            this.cboTipoServicio.Location = new System.Drawing.Point(133, 40);
             this.cboTipoServicio.Name = "cboTipoServicio";
-            this.cboTipoServicio.Size = new System.Drawing.Size(172, 25);
+            this.cboTipoServicio.Size = new System.Drawing.Size(130, 21);
             this.cboTipoServicio.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 49);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(23, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 17);
+            this.label2.Size = new System.Drawing.Size(80, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tipo Servicio:";
             // 
             // Servicio02
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 376);
+            this.ClientSize = new System.Drawing.Size(365, 257);
             this.Controls.Add(this.grpDatos);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Servicio02";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Insertar Servicio";
             this.Load += new System.EventHandler(this.Servicio02_Load);
             this.grpDatos.ResumeLayout(false);

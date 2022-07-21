@@ -22,20 +22,6 @@ namespace ProyAutoServicios_GUI
             this.Refresh();
         }
 
-        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form1 obj01 = new Form1();
-            obj01.MdiParent = this;
-            obj01.Show();
-        }
-
-        private void serviciosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form1 obj03 = new Form1();
-            obj03.MdiParent = this;
-            obj03.Show();
-        }
-
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -75,7 +61,9 @@ namespace ProyAutoServicios_GUI
                 salirToolStripMenuItem.Visible = true;
             }else if(clsCredenciales.Nivel == 2)
             {
-                mantenimientosToolStripMenuItem.Visible = false;
+                mantenimientosToolStripMenuItem.Visible = true;
+                empleadosToolStripMenuItem.Visible = false;
+                serviciosToolStripMenuItem.Visible = false;
                 reportesToolStripMenuItem.Visible = true;
                 salirToolStripMenuItem.Visible = true;
             }
@@ -100,6 +88,20 @@ namespace ProyAutoServicios_GUI
         private void MDIMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFacturaVentas objFact01 = new frmFacturaVentas();
+            objFact01.MdiParent = this;
+            objFact01.Show();
+        }
+
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultaFacturas objFact02 = new ConsultaFacturas();
+            objFact02.MdiParent = this;
+            objFact02.Show();
         }
     }
 }

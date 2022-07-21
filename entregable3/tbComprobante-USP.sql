@@ -12,6 +12,7 @@ use bd_NegocioAutosA1
 -- se va a la pantalla de pago y actualiza tb_Comprobante
 select * from tb_Comprobante
 select * from tb_Cliente
+select * from tb_usuario
 go
 --Vista de Comprobante
 --drop view VW_Comprobante
@@ -78,27 +79,32 @@ go
 create procedure usp_InsertarDetalle_Servicio
   --@codComprob smallint,
 	@docIdent varchar(15),
-	--@tipoServ varchar(20),
-	@codServ smallint
+	@tipoServ varchar(20)
+	--@codServ smallint
 as
 	declare @codComprob smallint
 	set @codComprob = (select top 1 codComprobante from tb_Comprobante order by codComprobante DESC)
 
-	/*declare @codServ smallint
-	set @codServ = (select codServicio from tb_Servicios where tipoServ=@tipoServ)*/
+	declare @codServ smallint
+	set @codServ = (select codServicio from tb_Servicios where tipoServ=@tipoServ)
 
 	insert into tb_Detalle_Servicio
 		(docIdentidad, codComprobante, codServicio)
 	values
 		(@docIdent, @codComprob, @codServ)
 go
-exec usp_InsertarDetalle_Servicio @docIdent='73986561', @codServ=10010
+exec usp_InsertarDetalle_Servicio @docIdent='32165487', @codServ=10015
 
-select * from tb_Detalle_Servicio
+select * from tb_Detalle_Servicio  where docIdentidad=3215405411
 select * from tb_Comprobante
 select * from tb_Cliente
 select * from tb_Servicios
+go
 
+create procedure usp_ultFactura
+as
+	select top 1 codComprobante
+	from tb_Comprobante order by codComprobante DeSC
 go
 
 --drop view VW_Comprobante_Cliente_Servicio
@@ -130,6 +136,18 @@ as
 go
 exec usp_ListarComprobante_Cliente_Servicio
 go
+
+create procedure usp_ListarServicios_ClienteComprob
+	@docIdent varchar(15),
+	@codComprob smallint
+as
+	select docIdentidad,codComprobante,tipoServ,precio,
+	estado
+	 from VW_Comprobante_Cliente_Servicio
+	 where estado=0
+	 where docIdentidad=@docIdent and codComprobante=@codComprob
+go
+
 
 --actualizar comprobante
 create procedure usp_ActualizarComprobante
@@ -212,12 +230,12 @@ CREATE  PROCEDURE usp_ListarFacturas_Paginacion
 AS
 DECLARE @NUMREG INT
 DECLARE @PAGESIZE INT
-SET @PAGESIZE=50 --Tamaño de pagina
+SET @PAGESIZE=10 --Tamaño de pagina
 
 IF @docIdentidad=''  AND  @estado='' 
     BEGIN
             -- Si los valores de los parametros son cadenas en blanco , se obtienen los primeros 50 registros
-               SELECT top 50  codComprobante,docIdentidad,codServicio, tipoServ, EstadoActual
+               SELECT top 10  codComprobante,docIdentidad,codServicio, tipoServ, EstadoActual
                 FROM vw_VistaFacturas1
                ORDER BY codComprobante DESC
 
@@ -235,7 +253,7 @@ ELSE
                      SET @docIdentidad='%'
 
 
-               SELECT top 50  codComprobante,docIdentidad,codServicio, tipoServ, EstadoActual
+               SELECT top 10 codComprobante,docIdentidad,codServicio, tipoServ, EstadoActual
                from
 
          ( SELECT codComprobante,docIdentidad,codServicio, tipoServ, EstadoActual,
@@ -255,7 +273,7 @@ select * from tb_Comprobante
 
 exec usp_ListarFacturas_Paginacion @docIdentidad='', @estado='Cancelada', @NumPag=0
 
-
+--drop procedure usp_NumPag_ListarFacturas_Paginacion
 CREATE  PROCEDURE usp_NumPag_ListarFacturas_Paginacion
 @docIdentidad varchar(20),
 @estado varchar(10),
@@ -268,8 +286,8 @@ AS
         BEGIN
         DECLARE @CONTADOR INT
         SET @CONTADOR=(SELECT COUNT (*)   from vw_VistaFacturas1)
-        IF  @CONTADOR>=50
-            SET @NUMREG=50
+        IF  @CONTADOR>=2
+            SET @NUMREG=2
         ELSE
             SET @NUMREG=@CONTADOR
         END
@@ -320,4 +338,9 @@ exec usp_ListarFacturasClienteFechas @docIdentidad='32165487', @fecIni='2022-07-
 
 select * from tb_Comprobante
 
-select * from tb_Servicios
+select * from tb_Cliente
+
+exec usp_ListarClientes
+
+select * from tb_Cliente
+select * from tb_usuario

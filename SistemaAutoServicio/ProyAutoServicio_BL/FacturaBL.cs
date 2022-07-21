@@ -32,6 +32,10 @@ namespace ProyAutoServicio_BL
         {
             return objFacturaADO.InsertarDetalle_Servicio(objFacturaBE);
         }
+        public DataTable UltFactura()
+        {
+            return objFacturaADO.ultFactura();
+        }
 
         public DataTable ListarComprobante_Cliente_Servicio()
         {

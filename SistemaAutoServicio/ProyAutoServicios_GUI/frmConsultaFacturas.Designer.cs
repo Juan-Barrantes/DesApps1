@@ -43,6 +43,12 @@ namespace ProyAutoServicios_GUI
             this.label5 = new System.Windows.Forms.Label();
             this.txtCod = new System.Windows.Forms.TextBox();
             this.dtgFacturas = new System.Windows.Forms.DataGridView();
+            this.Num_fac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fec_fac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Est = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblRegistros = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnConsultar = new System.Windows.Forms.Button();
@@ -51,12 +57,6 @@ namespace ProyAutoServicios_GUI
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Num_fac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fec_fac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Est = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgFacturas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,7 +159,7 @@ namespace ProyAutoServicios_GUI
             // 
             this.txtCod.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCod.Location = new System.Drawing.Point(221, 16);
-            this.txtCod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCod.Margin = new System.Windows.Forms.Padding(4);
             this.txtCod.MaxLength = 20;
             this.txtCod.Name = "txtCod";
             this.txtCod.Size = new System.Drawing.Size(103, 22);
@@ -183,7 +183,7 @@ namespace ProyAutoServicios_GUI
             this.Est,
             this.Precio});
             this.dtgFacturas.Location = new System.Drawing.Point(29, 258);
-            this.dtgFacturas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgFacturas.Margin = new System.Windows.Forms.Padding(4);
             this.dtgFacturas.Name = "dtgFacturas";
             this.dtgFacturas.ReadOnly = true;
             this.dtgFacturas.RowHeadersVisible = false;
@@ -191,87 +191,6 @@ namespace ProyAutoServicios_GUI
             this.dtgFacturas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgFacturas.Size = new System.Drawing.Size(1129, 246);
             this.dtgFacturas.TabIndex = 27;
-            // 
-            // lblRegistros
-            // 
-            this.lblRegistros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblRegistros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblRegistros.Location = new System.Drawing.Point(1093, 513);
-            this.lblRegistros.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblRegistros.Name = "lblRegistros";
-            this.lblRegistros.Size = new System.Drawing.Size(65, 28);
-            this.lblRegistros.TabIndex = 29;
-            this.lblRegistros.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(999, 513);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 17);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "Registros:";
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.Location = new System.Drawing.Point(788, 194);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(157, 44);
-            this.btnConsultar.TabIndex = 26;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
-            // 
-            // dtpFecFin
-            // 
-            this.dtpFecFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecFin.Location = new System.Drawing.Point(548, 204);
-            this.dtpFecFin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dtpFecFin.Name = "dtpFecFin";
-            this.dtpFecFin.Size = new System.Drawing.Size(168, 22);
-            this.dtpFecFin.TabIndex = 25;
-            // 
-            // dtpFecIni
-            // 
-            this.dtpFecIni.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecIni.Location = new System.Drawing.Point(197, 204);
-            this.dtpFecIni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dtpFecIni.Name = "dtpFecIni";
-            this.dtpFecIni.Size = new System.Drawing.Size(168, 22);
-            this.dtpFecIni.TabIndex = 23;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(420, 204);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 17);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Fecha de Fin:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 204);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 17);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Fecha de Inicio:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 22);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 17);
-            this.label1.TabIndex = 42;
-            this.label1.Text = "Ingrese el Nro de Documento:";
             // 
             // Num_fac
             // 
@@ -327,6 +246,87 @@ namespace ProyAutoServicios_GUI
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
             // 
+            // lblRegistros
+            // 
+            this.lblRegistros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblRegistros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblRegistros.Location = new System.Drawing.Point(1093, 513);
+            this.lblRegistros.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRegistros.Name = "lblRegistros";
+            this.lblRegistros.Size = new System.Drawing.Size(65, 28);
+            this.lblRegistros.TabIndex = 29;
+            this.lblRegistros.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(999, 513);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 17);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "Registros:";
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.Location = new System.Drawing.Point(788, 194);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(157, 44);
+            this.btnConsultar.TabIndex = 26;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
+            // dtpFecFin
+            // 
+            this.dtpFecFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecFin.Location = new System.Drawing.Point(548, 204);
+            this.dtpFecFin.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpFecFin.Name = "dtpFecFin";
+            this.dtpFecFin.Size = new System.Drawing.Size(168, 22);
+            this.dtpFecFin.TabIndex = 25;
+            // 
+            // dtpFecIni
+            // 
+            this.dtpFecIni.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecIni.Location = new System.Drawing.Point(197, 204);
+            this.dtpFecIni.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpFecIni.Name = "dtpFecIni";
+            this.dtpFecIni.Size = new System.Drawing.Size(168, 22);
+            this.dtpFecIni.TabIndex = 23;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(420, 204);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(94, 17);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Fecha de Fin:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(44, 204);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 17);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Fecha de Inicio:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 22);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(197, 17);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "Ingrese el Nro de Documento:";
+            // 
             // ConsultaFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -352,8 +352,9 @@ namespace ProyAutoServicios_GUI
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ConsultaFacturas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConsultaFacturas";
             this.Load += new System.EventHandler(this.ConsultaFacturas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgFacturas)).EndInit();

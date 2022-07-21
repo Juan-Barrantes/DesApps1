@@ -48,8 +48,8 @@ namespace ProyAutoServicio_BE
             set { mvarusu_reg = value; }
         }
 
-        private int mvarcod_serv;
-        public int cod_serv
+        private String mvarcod_serv;
+        public String cod_serv
         {
             get { return mvarcod_serv; }
             set { mvarcod_serv = value; }

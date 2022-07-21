@@ -45,11 +45,13 @@ namespace ProyAutoServicios_GUI
             this.label2 = new System.Windows.Forms.Label();
             this.txtDoc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnQuitar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnQuitar);
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.btnGenerar);
@@ -74,19 +76,20 @@ namespace ProyAutoServicios_GUI
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(300, 247);
+            this.btnAgregar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnAgregar.Location = new System.Drawing.Point(306, 224);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(75, 33);
             this.btnAgregar.TabIndex = 25;
             this.btnAgregar.Text = "agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(449, 374);
+            this.btnCancelar.Location = new System.Drawing.Point(436, 374);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(88, 23);
             this.btnCancelar.TabIndex = 24;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -105,7 +108,7 @@ namespace ProyAutoServicios_GUI
             // 
             this.listServEleg.FormattingEnabled = true;
             this.listServEleg.ItemHeight = 16;
-            this.listServEleg.Location = new System.Drawing.Point(381, 193);
+            this.listServEleg.Location = new System.Drawing.Point(412, 194);
             this.listServEleg.Name = "listServEleg";
             this.listServEleg.Size = new System.Drawing.Size(217, 148);
             this.listServEleg.TabIndex = 22;
@@ -208,6 +211,17 @@ namespace ProyAutoServicios_GUI
             this.label1.TabIndex = 11;
             this.label1.Text = "N. Documento";
             // 
+            // btnQuitar
+            // 
+            this.btnQuitar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnQuitar.Location = new System.Drawing.Point(306, 281);
+            this.btnQuitar.Name = "btnQuitar";
+            this.btnQuitar.Size = new System.Drawing.Size(75, 29);
+            this.btnQuitar.TabIndex = 26;
+            this.btnQuitar.Text = "quitar";
+            this.btnQuitar.UseVisualStyleBackColor = false;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
+            // 
             // frmFacturaVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -215,6 +229,7 @@ namespace ProyAutoServicios_GUI
             this.ClientSize = new System.Drawing.Size(698, 475);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmFacturaVentas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmFacturaVentas";
             this.Load += new System.EventHandler(this.frmFacturaVentas_Load);
             this.groupBox1.ResumeLayout(false);
@@ -241,5 +256,6 @@ namespace ProyAutoServicios_GUI
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGenerar;
         private System.Windows.Forms.ListBox listServEleg;
+        private System.Windows.Forms.Button btnQuitar;
     }
 }

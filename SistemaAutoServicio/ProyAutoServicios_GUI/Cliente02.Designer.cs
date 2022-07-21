@@ -30,6 +30,7 @@ namespace ProyAutoServicios_GUI
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkEstado = new System.Windows.Forms.CheckBox();
             this.mskTelf = new System.Windows.Forms.MaskedTextBox();
             this.cboDistrito = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@ namespace ProyAutoServicios_GUI
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.chkEstado = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,6 +85,16 @@ namespace ProyAutoServicios_GUI
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
+            // 
+            // chkEstado
+            // 
+            this.chkEstado.AutoSize = true;
+            this.chkEstado.Location = new System.Drawing.Point(581, 210);
+            this.chkEstado.Name = "chkEstado";
+            this.chkEstado.Size = new System.Drawing.Size(74, 21);
+            this.chkEstado.TabIndex = 20;
+            this.chkEstado.Text = "Estado";
+            this.chkEstado.UseVisualStyleBackColor = true;
             // 
             // mskTelf
             // 
@@ -268,16 +278,6 @@ namespace ProyAutoServicios_GUI
             this.button2.Text = "Cancelar";
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // chkEstado
-            // 
-            this.chkEstado.AutoSize = true;
-            this.chkEstado.Location = new System.Drawing.Point(581, 210);
-            this.chkEstado.Name = "chkEstado";
-            this.chkEstado.Size = new System.Drawing.Size(74, 21);
-            this.chkEstado.TabIndex = 20;
-            this.chkEstado.Text = "Estado";
-            this.chkEstado.UseVisualStyleBackColor = true;
-            // 
             // Cliente02
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -285,7 +285,8 @@ namespace ProyAutoServicios_GUI
             this.ClientSize = new System.Drawing.Size(817, 442);
             this.Controls.Add(this.groupBox1);
             this.Name = "Cliente02";
-            this.Text = "Insertal Cliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Insertar Cliente";
             this.Load += new System.EventHandler(this.Cliente02_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

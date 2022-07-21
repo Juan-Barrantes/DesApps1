@@ -51,7 +51,7 @@
             // txtLogin
             // 
             this.txtLogin.Location = new System.Drawing.Point(140, 31);
-            this.txtLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLogin.Margin = new System.Windows.Forms.Padding(4);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(132, 22);
             this.txtLogin.TabIndex = 0;
@@ -69,7 +69,7 @@
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(140, 63);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(132, 22);
@@ -78,7 +78,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Location = new System.Drawing.Point(312, 33);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(101, 30);
             this.btnAceptar.TabIndex = 2;
@@ -89,7 +89,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(312, 70);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(101, 30);
             this.btnCancelar.TabIndex = 3;
@@ -114,9 +114,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLogin";

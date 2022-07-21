@@ -241,6 +241,7 @@ namespace ProyAutoServicios_GUI
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.label1);
             this.Name = "Empleado01";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento Empleados";
             this.Load += new System.EventHandler(this.Empleado01_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgEmpleado)).EndInit();

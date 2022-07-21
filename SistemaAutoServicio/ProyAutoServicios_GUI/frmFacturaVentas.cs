@@ -106,30 +106,58 @@ namespace ProyAutoServicios_GUI
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             listServEleg.Items.Add(listServ.SelectedItem);
+
+
+            //Permitir q solo se agregue a la lista una vez
+            //tomar un valor y preguntar si ya está en la otra lista
+            /*
+            String[] ServEleg = listServEleg.Items.OfType<String>().ToArray();
+            String valueEleg = listServ.SelectedItem.ToString();
+
+            if(ServEleg.Length==0)
+            {
+                listServEleg.Items.Add(listServ.SelectedItem);
+                MessageBox.Show("se agregó - 1" + listServ.SelectedItem);
+            }
+            else
+            {
+                for (int i = 0; i < ServEleg.Length; i++)
+                {
+                    String valueListEleg = ServEleg[i];
+                    if (valueEleg == valueListEleg)
+                    {
+                        MessageBox.Show("El servicio - 2" + valueEleg + " ya ha sido elegido");
+                    }
+                    else
+                    {
+                        listServEleg.Items.Add(listServ.SelectedItem);
+                        MessageBox.Show("se agregó - 3" + valueListEleg);
+                    }
+                }
+            }
+            */
+
+            
         }
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
             try
             {
-
-
-
-
                 // generamos el comprobante
                 objFactureBE.doc_ident = txtDoc.Text.Trim();
                 objFactureBE.usu_reg = clsCredenciales.Usuario;
 
                 if (objFacturaBL.InsertarComprobante(objFactureBE) == true)
                 {
-                    this.Close();
+                    MessageBox.Show("Comprobante generado");
                 }
                 else
                 {
                     throw new Exception("No se generó Factura, comuniquese con IT");
                 }
 
-                // insertamos en tb_Detalle_Servicio
+            // insertamos en tb_Detalle_Servicio
 
                 //en un array añadimos todos los servicios elegidos
                 String[] ServEleg = listServEleg.Items.OfType<String>().ToArray();
@@ -142,13 +170,17 @@ namespace ProyAutoServicios_GUI
 
                     if (objFacturaBL.InsertarDetalle_Servicio(objFactureBE) == true)
                     {
-                        this.Close();
+                        MessageBox.Show("Servicios registrados: "+servicio);
                     }
                     else
                     {
                         throw new Exception("Lista de servicios no registrados,comuniquese con IT");
                     }
                 }
+
+                String ultFact = objFacturaBL.UltFactura().ToString();
+                MessageBox.Show("Factura N° "+ultFact+" generada, pase a caja a pagar", "Factura");
+
             }
 
             //pasámos a una pantalla para pagar
@@ -158,6 +190,33 @@ namespace ProyAutoServicios_GUI
                 MessageBox.Show("Se ha producido el error: " + ex.Message);
             }
 
+        }
+
+        private void btnQuitar_Click(object sender, EventArgs e)
+        {
+            listServEleg.SelectionMode = SelectionMode.MultiExtended;
+            
+            if(listServEleg.SelectedIndex > -1)
+            {
+                for(int i=0; i<listServEleg.SelectedItems.Count; i++)
+                {
+                    listServEleg.Items.Remove(listServEleg.SelectedItems[i].ToString());
+                    i--;
+                }
+
+                //1001Arnaldo
+                /*for (int i = listServEleg.SelectedIndices.Count - 1; i >= 0; i--)
+                {
+                    listServEleg.Items.RemoveAt(listServEleg.SelectedIndices[i]);
+                } */
+            }
+            else
+            {
+                MessageBox.Show("Lista de servicios vacía");
+            }
+
+            
+            
         }
     }
 

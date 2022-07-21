@@ -35,12 +35,17 @@ namespace ProyAutoServicios_GUI
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoServ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tiempoEst = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(475, 549);
+            this.btnSalir.Location = new System.Drawing.Point(540, 445);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(100, 28);
@@ -51,7 +56,7 @@ namespace ProyAutoServicios_GUI
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(277, 549);
+            this.btnActualizar.Location = new System.Drawing.Point(342, 445);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(100, 28);
@@ -62,7 +67,7 @@ namespace ProyAutoServicios_GUI
             // 
             // btnInsertar
             // 
-            this.btnInsertar.Location = new System.Drawing.Point(96, 549);
+            this.btnInsertar.Location = new System.Drawing.Point(161, 445);
             this.btnInsertar.Margin = new System.Windows.Forms.Padding(4);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(100, 28);
@@ -73,14 +78,26 @@ namespace ProyAutoServicios_GUI
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(112, 145);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.tipoServ,
+            this.precio,
+            this.tiempoEst,
+            this.direccion});
+            this.dataGridView1.Location = new System.Drawing.Point(37, 64);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(463, 319);
+            this.dataGridView1.Size = new System.Drawing.Size(751, 319);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
@@ -103,11 +120,51 @@ namespace ProyAutoServicios_GUI
             this.label1.TabIndex = 8;
             this.label1.Text = "Ingrese iniciales de servicios:";
             // 
+            // Codigo
+            // 
+            this.Codigo.DataPropertyName = "codServicio";
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.MinimumWidth = 6;
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // tipoServ
+            // 
+            this.tipoServ.DataPropertyName = "tipoServ";
+            this.tipoServ.HeaderText = "Servicio";
+            this.tipoServ.MinimumWidth = 6;
+            this.tipoServ.Name = "tipoServ";
+            this.tipoServ.ReadOnly = true;
+            // 
+            // precio
+            // 
+            this.precio.DataPropertyName = "precio";
+            this.precio.HeaderText = "Precio";
+            this.precio.MinimumWidth = 6;
+            this.precio.Name = "precio";
+            this.precio.ReadOnly = true;
+            // 
+            // tiempoEst
+            // 
+            this.tiempoEst.DataPropertyName = "tiempoEst";
+            this.tiempoEst.HeaderText = "Horas estm";
+            this.tiempoEst.MinimumWidth = 6;
+            this.tiempoEst.Name = "tiempoEst";
+            this.tiempoEst.ReadOnly = true;
+            // 
+            // direccion
+            // 
+            this.direccion.DataPropertyName = "direccion";
+            this.direccion.HeaderText = "Oficina";
+            this.direccion.MinimumWidth = 6;
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
+            // 
             // Servicio01
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(661, 621);
+            this.ClientSize = new System.Drawing.Size(821, 509);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnInsertar);
@@ -115,6 +172,7 @@ namespace ProyAutoServicios_GUI
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.label1);
             this.Name = "Servicio01";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimineto Servicio";
             this.Load += new System.EventHandler(this.Servicio01_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -131,5 +189,10 @@ namespace ProyAutoServicios_GUI
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoServ;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tiempoEst;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
     }
 }

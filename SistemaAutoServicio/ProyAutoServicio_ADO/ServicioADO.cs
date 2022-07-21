@@ -157,10 +157,10 @@ namespace ProyAutoServicio_ADO
                 {
                     dtr.Read();
 
-                    objServicioBE.codServicio =Convert.ToInt16( dtr["codServicio"].ToString());
+                    objServicioBE.codServicio =Convert.ToInt16( dtr["codServicio"]);
                     objServicioBE.tipoServ = dtr["tipoServ"].ToString();
-                    objServicioBE.precio =Convert.ToInt16( dtr["precio"].ToString());
-                    objServicioBE.tipoServ = dtr["tiempoEst"].ToString();                    
+                    objServicioBE.precio =Convert.ToDouble( dtr["precio"].ToString());
+                    objServicioBE.temposerv =Convert.ToInt16(dtr["tiempoEst"]);
                     objServicioBE.codag = Convert.ToInt16(dtr["codAgencia"]);
 
 

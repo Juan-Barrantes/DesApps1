@@ -67,8 +67,8 @@ namespace ProyAutoServicios_GUI
             try
             {
                 objServicioBE.tipoServ = txtTipoServ.Text.Trim();
-                objServicioBE.precio = Convert.ToInt16(mskPrecio);
-                objServicioBE.temposerv = Convert.ToInt16(mskTiempoEst);
+                objServicioBE.precio = Convert.ToInt16(mskPrecio.Text.Trim());
+                objServicioBE.temposerv = Convert.ToInt16(mskTiempoEst.Text.ToString());
                 objServicioBE.codag = cboAgencia.SelectedIndex + 1;
                 objServicioBE.Usu_UltMod = clsCredenciales.Usuario;
 

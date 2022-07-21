@@ -17,7 +17,12 @@ select
 
 --Creamos SP
 --Actualizar Servicio
+select * from VW_Servicios
+select * from tb_Servicios
+
 drop procedure usp_ActualizarServicio
+
+
 select * from tb_Servicios where codServicio=10008
 
 create procedure usp_ActualizarServicio
@@ -39,7 +44,7 @@ exec usp_ActualizarServicio @codServicio =10008, @tipoServ='Alquiler de Auto - e
 	@precio=250,@usu_ult_mod='testing2', @tiempoEst=24, @codAg = 5
 
 --Consultar servicio
---drop procedure usp_ConsultarServicio
+drop procedure usp_ConsultarServicio
 create procedure usp_ConsultarServicio
 	@codServ smallint
 as
@@ -48,8 +53,8 @@ as
 	tipoServ,
 	precio,
 	tiempoEst,
-	direccion
-	from VW_Servicios
+	codAgencia
+	from tb_Servicios
 	where codServicio=@codServ
 go
 exec usp_ConsultarServicio @codServ=''

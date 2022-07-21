@@ -29,6 +29,7 @@ namespace ProyAutoServicios_GUI
 
         private void Servicio01_Load(object sender, EventArgs e)
         {
+            dataGridView1.RowHeadersVisible = false;
             try
             {
                 dtv = new DataView(objServiciosBL.ListarServicios());

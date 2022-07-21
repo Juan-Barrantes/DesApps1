@@ -28,8 +28,8 @@ namespace ProyAutoServicio_BE
             set { mvardir_ag = value; }
         }
 
-        private int mvarprecio;
-        public int precio
+        private double mvarprecio;
+        public double precio
         {
             get { return mvarprecio; }
             set { mvarprecio = value; }

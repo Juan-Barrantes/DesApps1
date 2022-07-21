@@ -160,3 +160,17 @@ go
 exec usp_ListarClientes
 
 select * from tb_usuario
+
+create procedure usp_ConsultarClienteTipDoc
+@tipoDoc varchar(15)
+as
+	select 
+	docIdentidad,
+	tipoDocumento,
+	apellidos,
+	nombre,
+	direccion,
+	telefono
+	from tb_Cliente
+
+	select * from tb_Comprobante

@@ -125,7 +125,7 @@ namespace ProyAutoServicios_GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgCliente.Location = new System.Drawing.Point(68, 72);
+            this.dtgCliente.Location = new System.Drawing.Point(78, 71);
             this.dtgCliente.Margin = new System.Windows.Forms.Padding(4);
             this.dtgCliente.Name = "dtgCliente";
             this.dtgCliente.ReadOnly = true;
@@ -150,7 +150,8 @@ namespace ProyAutoServicios_GUI
             this.Controls.Add(this.btnInsertar);
             this.Controls.Add(this.dtgCliente);
             this.Name = "Cliente01";
-            this.Text = "Cliente01";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Clientes";
             this.Load += new System.EventHandler(this.Cliente01_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgCliente)).EndInit();
             this.ResumeLayout(false);
