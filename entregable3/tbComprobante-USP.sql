@@ -102,6 +102,8 @@ select * from tb_Servicios
 select * from tb_usuario
 go
 
+
+
 create procedure usp_ultFactura
 as
 	select top 1 codComprobante
