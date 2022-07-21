@@ -99,6 +99,7 @@ select * from tb_Detalle_Servicio  where docIdentidad=3215405411
 select * from tb_Comprobante
 select * from tb_Cliente
 select * from tb_Servicios
+select * from tb_usuario
 go
 
 create procedure usp_ultFactura

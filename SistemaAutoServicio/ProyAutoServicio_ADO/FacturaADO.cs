@@ -173,7 +173,7 @@ namespace ProyAutoServicio_ADO
                 // abrir conexion y ejecutar:
                 cnx.Open();
                 cmd.ExecuteNonQuery();
-
+                cnx.Close();
                 return true;
             }
             catch (SqlException x)
