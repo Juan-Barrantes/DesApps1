@@ -51,6 +51,16 @@ namespace ProyAutoServicio_BL
             return objFacturaADO.ListarConsultaServicios(strtipoServ);
         }
 
+        public DataTable ListarFacturasPendientes()
+        {
+            return objFacturaADO.ListarFacturasPendientes();
+        }
+
+        public FacturaBE ConsultarFacturaPendiente(int strCodFact, string strDocIden)
+        {
+            return objFacturaADO.ConsultarFacturaPendiente(strCodFact, strDocIden);
+        }
+
         public DataTable ListarFacturas_Paginacion(String strCod_cli, String strEstado, Int16 intNumPag)
         {
             return objFacturaADO.ListarFacturas_Paginacion(strCod_cli,  strEstado, intNumPag);
@@ -60,5 +70,7 @@ namespace ProyAutoServicio_BL
         {
             return objFacturaADO.NumPag_ListarFacturas_Paginacion(strCod_cli, strEstado);
         }
+
+        
     }
 }

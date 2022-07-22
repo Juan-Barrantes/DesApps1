@@ -63,10 +63,11 @@ namespace ProyAutoServicio_ADO
 
             try
             {
-                cmd.Parameters.AddWithValue("@codComprob", objFacturaBE.cod_compr);
-                cmd.Parameters.AddWithValue("@estado", objFacturaBE.estado);
+                cmd.Parameters.AddWithValue("@codComprob", objFacturaBE.cod_compr);                
                 cmd.Parameters.AddWithValue("@usu_ult_mod", objFacturaBE.usu_ult_mod);
 
+                cnx.Open();
+                cmd.ExecuteNonQuery();
                 return true;
             }
             catch (SqlException x)
@@ -163,13 +164,13 @@ namespace ProyAutoServicio_ADO
             cnx.ConnectionString = MiConexion.GetCnx();
             cmd.Connection = cnx;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "usp_InsertarDetalle_Servicio";
+            cmd.CommandText = "usp_InsertarListaServiciosxCliente";
             cmd.Parameters.Clear();
 
             try
             {
-                cmd.Parameters.AddWithValue("@docIdent", objFacturaBE.doc_ident);
-                cmd.Parameters.AddWithValue("@tipoServ", objFacturaBE.tipo_serv);
+                cmd.Parameters.AddWithValue("@docIdente", objFacturaBE.doc_ident);
+                cmd.Parameters.AddWithValue("@listaServ", objFacturaBE.lista_serv);
                 // abrir conexion y ejecutar:
                 cnx.Open();
                 cmd.ExecuteNonQuery();
@@ -323,5 +324,104 @@ namespace ProyAutoServicio_ADO
             }
 
         }
+
+        public Boolean InsertarServiciosCliente(FacturaBE objFacturaBE)
+        {
+            cnx.ConnectionString = MiConexion.GetCnx();
+            cmd.Connection = cnx;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "usp_InsertarListaServiciosxCliente";
+            cmd.Parameters.Clear();
+
+            try
+            {
+                cmd.Parameters.AddWithValue("@", objFacturaBE.doc_ident);
+                cmd.Parameters.AddWithValue("@listaServ", objFacturaBE.lista_serv);
+
+                // abrir conexion y ejecutar:
+                cnx.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (SqlException x)
+            {
+                throw new Exception(x.Message);
+                return false;
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+            }
+        }
+
+        public DataTable ListarFacturasPendientes()
+        {
+            DataSet dts = new DataSet();
+            cnx.ConnectionString = MiConexion.GetCnx();
+            cmd.Connection = cnx;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "usp_ListarFacturasPendientes";
+            cmd.Parameters.Clear();
+
+            try
+            {
+                SqlDataAdapter ada = new SqlDataAdapter(cmd);
+                ada.Fill(dts, "ListFactPend");
+
+                return dts.Tables["ListFactPend"];
+            }
+            catch (SqlException x)
+            {
+                throw new Exception(x.Message);
+            }
+        }
+
+        public FacturaBE ConsultarFacturaPendiente(int strCodFact, string strDocIden)
+        {
+            FacturaBE objFacturaBE = new FacturaBE();
+            cnx.ConnectionString = MiConexion.GetCnx();
+            cmd.Connection = cnx;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "usp_ConsultarFacturasPendientes";
+            cmd.Parameters.Clear();
+
+            try
+            {
+                cmd.Parameters.AddWithValue("@docIdent", strDocIden);
+                cmd.Parameters.AddWithValue("@codFact", strCodFact);
+                
+
+                //abrir conexion
+                cnx.Open();
+                dtr = cmd.ExecuteReader();
+
+                if (dtr.HasRows == true)
+                {
+                    dtr.Read();
+                    objFacturaBE.cod_compr = Convert.ToInt16(dtr["codComprobante"]);
+                    objFacturaBE.doc_ident = dtr["docIdentidad"].ToString();
+                    objFacturaBE.nomcli_compl = dtr["cliente"].ToString();
+                    objFacturaBE.precio = Convert.ToInt16(dtr["precio"]);
+                }
+                dtr.Close();
+                return objFacturaBE;
+            }
+            catch (SqlException x)
+            {
+                throw new Exception(x.Message);
+
+            }
+            finally
+            {
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+            }
+        }
+
     }
 }

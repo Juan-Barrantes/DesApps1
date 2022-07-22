@@ -135,7 +135,7 @@ namespace ProyAutoServicios_GUI
             this.departamento,
             this.Provincia,
             this.distrito});
-            this.dtgEmpleado.Location = new System.Drawing.Point(13, 86);
+            this.dtgEmpleado.Location = new System.Drawing.Point(13, 97);
             this.dtgEmpleado.Margin = new System.Windows.Forms.Padding(4);
             this.dtgEmpleado.Name = "dtgEmpleado";
             this.dtgEmpleado.ReadOnly = true;

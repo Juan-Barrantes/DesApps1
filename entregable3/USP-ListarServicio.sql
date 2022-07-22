@@ -40,15 +40,14 @@ go
 		
 go
 
-
+--drop procedure usp_InsertarListaServiciosxCliente
 create procedure usp_InsertarListaServiciosxCliente
 	@docIdente varchar(15),
 	@listaServ varchar(500)	
 as
 	--obtenemos cantidad de vueltas para el while (que hará de for)
 	declare @cantVueltas int
-	set @cantVueltas = ( select count(*) value from String_Split(  @listaServ , ','))-1
-	
+	set @cantVueltas = ( select count(*) value from String_Split(  @listaServ , ','))-1	
 	--hacemos una tabla en memoria y e iteramos por cada elemento	
 	declare @i int = 1
 	declare @ItemServicio varchar(50)	
@@ -73,26 +72,91 @@ as
 	end
 go
 
-declare @listServ table (indice int , itemServicio varchar(50))
-insert into @listServ
-values
-(1, 'lavado')
-select * from @listServ
+exec usp_InsertarListaServiciosxCliente @docIdente=72446128 , @listaServ='Nivelar la batería,Revision de luces,'
 
-set @nada = (
-	--select top 1 nombre from tb_cliente 
-	with tab1 as (
-		select  ROW_NUMBER() OVER(order by value desc) as indice,
-		value 
-		from String_Split('lavar auto, cambio aceite, alquilar auto,', ',')			
-		)
-		select value 
-		from tab1
-		where indice=3
-	);
-print @nada
 
+
+select * from tb_Detalle_Servicio order by codComprobante DESC
+select * from tb_Servicios
+--
+SELECT tipoServ,
+       count(*) AS c
+FROM tb_Servicios
+GROUP BY tipoServ
+HAVING c > 1
+ORDER BY c DESC
+
+
+select * from tb_Cliente
+select * from tb_Comprobante
+select * from tb_usuario
+
+--select para ver comprobante, cliente, servicios, precio
+select C.codComprobante, D.docIdentidad, S.codServicio,
+tipoServ, S.precio, C.estado
+from tb_Comprobante as C inner join tb_Detalle_Servicio as D
+	on C.codComprobante=D.codComprobante
+	inner join tb_Servicios as S
+	on D.codServicio = S.codServicio
+where C.codComprobante=1012 and D.docIdentidad='72446128'
+---------
+select C.codComprobante, D.docIdentidad,Cl.nombre+', '+Cl.apellidos as cliente,
+	SUM(S.precio) as precio, C.estado
+from tb_Comprobante as C inner join tb_Detalle_Servicio as D
+	on C.codComprobante=D.codComprobante
+	inner join tb_Servicios as S
+	on D.codServicio = S.codServicio
+	inner join tb_Cliente as Cl
+	on D.docIdentidad=Cl.docIdentidad
+--where C.codComprobante=1012 and D.docIdentidad='72446128'  and C.estado=0
+where C.estado=0
+group by  C.codComprobante, D.docIdentidad,Cl.nombre,Cl.apellidos,C.estado
+order by C.estado
 go
+
+--drop procedure usp_ListarFacturasPendientes
+create procedure usp_ListarFacturasPendientes
+as
+	select C.codComprobante, D.docIdentidad,Cl.nombre+', '+Cl.apellidos as cliente,
+		SUM(S.precio) as precio
+	from tb_Comprobante as C inner join tb_Detalle_Servicio as D
+		on C.codComprobante=D.codComprobante
+		inner join tb_Servicios as S
+		on D.codServicio = S.codServicio
+		inner join tb_Cliente as Cl
+		on D.docIdentidad=Cl.docIdentidad
+	--where C.codComprobante=1012 and D.docIdentidad='72446128'  and C.estado=0
+	where C.estado=0
+	group by  C.codComprobante, D.docIdentidad,Cl.nombre,Cl.apellidos,C.estado
+	order by C.estado
+go
+exec usp_ListarFacturasPendientes
+go
+
+--drop procedure usp_ConsultarFacturasPendientes
+create procedure usp_ConsultarFacturasPendientes
+	@docIdent varchar(15),
+	@codFact smallint
+as
+	select C.codComprobante, D.docIdentidad,Cl.nombre+', '+Cl.apellidos as cliente,
+		SUM(S.precio) as precio
+	from tb_Comprobante as C inner join tb_Detalle_Servicio as D
+		on C.codComprobante=D.codComprobante
+		inner join tb_Servicios as S
+		on D.codServicio = S.codServicio
+		inner join tb_Cliente as Cl
+		on D.docIdentidad=Cl.docIdentidad
+	--where C.codComprobante=1012 and D.docIdentidad='72446128'  and C.estado=0
+	where C.estado=0 and D.docIdentidad=@docIdent and C.codComprobante=@codFact
+	group by  C.codComprobante, D.docIdentidad,Cl.nombre,Cl.apellidos,C.estado
+	order by C.estado
+go
+exec usp_ConsultarFacturasPendientes @docIdent='72346051', @codFact=1010
+
+
+exec usp_ActualizarComprobante @codComprob=1012,@usu_ult_mod='testing2'
+
+
 
 DECLARE @ListOWeekDays TABLE(DyNumber INT,DayAbb VARCHAR(40) , WeekName VARCHAR(40))
  
@@ -109,30 +173,4 @@ SELECT * FROM @ListOWeekDays
 go
 
 
-
-------------------------------
-CREATE FUNCTION [dbo].[fnSplitString] 
-( 
-    @string NVARCHAR(MAX), 
-    @delimiter CHAR(1) 
-) 
-RETURNS @output TABLE(splitdata NVARCHAR(MAX) 
-) 
-BEGIN 
-    DECLARE @start INT, @end INT 
-    SELECT @start = 1, @end = CHARINDEX(@delimiter, @string) 
-    WHILE @start < LEN(@string) + 1 BEGIN 
-        IF @end = 0  
-            SET @end = LEN(@string) + 1
-
-        INSERT INTO @output (splitdata)  
-        VALUES(SUBSTRING(@string, @start, @end - @start)) 
-        SET @start = @end + 1 
-        SET @end = CHARINDEX(@delimiter, @string, @start)
-
-    END 
-    RETURN 
-END
-
-
-
+select * from tb_usuario

@@ -48,6 +48,13 @@ namespace ProyAutoServicio_BE
             set { mvarusu_reg = value; }
         }
 
+        private String mvarlistaserv;
+        public String lista_serv
+        {
+            get { return mvarlistaserv; }
+            set { mvarlistaserv = value; }
+        }
+
         private String mvarcod_serv;
         public String cod_serv
         {
@@ -74,6 +81,19 @@ namespace ProyAutoServicio_BE
         {
             get { return mvarusu_ult_mod; }
             set { mvarusu_ult_mod = value; }
+        }
+
+        private String mvarnom_cli_completo;
+        public String nomcli_compl
+        {
+            get { return mvarnom_cli_completo; }
+            set { mvarnom_cli_completo = value; }
+        }
+        private double mvar_precio;
+        public double precio
+        {
+            get { return mvar_precio; }
+            set { mvar_precio = value; }
         }
     }
 }

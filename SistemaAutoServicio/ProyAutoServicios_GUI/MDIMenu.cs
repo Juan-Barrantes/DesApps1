@@ -103,5 +103,12 @@ namespace ProyAutoServicios_GUI
             objFact02.MdiParent = this;
             objFact02.Show();
         }
+
+        private void pendientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPagoFacturas objFact02 = new frmPagoFacturas();
+            objFact02.MdiParent = this;
+            objFact02.Show();
+        }
     }
 }

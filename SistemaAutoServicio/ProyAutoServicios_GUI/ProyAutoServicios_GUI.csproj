@@ -101,6 +101,18 @@
     <Compile Include="frmLogin.designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPagoFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPagoFacturas.Designer.cs">
+      <DependentUpon>frmPagoFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPagoFacturas02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPagoFacturas02.Designer.cs">
+      <DependentUpon>frmPagoFacturas02.cs</DependentUpon>
+    </Compile>
     <Compile Include="MDIMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +165,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPagoFacturas.resx">
+      <DependentUpon>frmPagoFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPagoFacturas02.resx">
+      <DependentUpon>frmPagoFacturas02.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDIMenu.resx">
       <DependentUpon>MDIMenu.cs</DependentUpon>

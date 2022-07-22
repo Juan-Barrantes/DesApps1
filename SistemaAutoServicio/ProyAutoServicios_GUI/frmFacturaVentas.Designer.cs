@@ -30,6 +30,7 @@ namespace ProyAutoServicios_GUI
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnQuitar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGenerar = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@ namespace ProyAutoServicios_GUI
             this.label2 = new System.Windows.Forms.Label();
             this.txtDoc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnQuitar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,14 +74,25 @@ namespace ProyAutoServicios_GUI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Factura";
             // 
+            // btnQuitar
+            // 
+            this.btnQuitar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnQuitar.Location = new System.Drawing.Point(306, 281);
+            this.btnQuitar.Name = "btnQuitar";
+            this.btnQuitar.Size = new System.Drawing.Size(75, 29);
+            this.btnQuitar.TabIndex = 26;
+            this.btnQuitar.Text = "<<";
+            this.btnQuitar.UseVisualStyleBackColor = false;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
+            // 
             // btnAgregar
             // 
-            this.btnAgregar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnAgregar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnAgregar.Location = new System.Drawing.Point(306, 224);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 33);
+            this.btnAgregar.Size = new System.Drawing.Size(82, 33);
             this.btnAgregar.TabIndex = 25;
-            this.btnAgregar.Text = "agregar";
+            this.btnAgregar.Text = ">>";
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -211,17 +222,6 @@ namespace ProyAutoServicios_GUI
             this.label1.TabIndex = 11;
             this.label1.Text = "N. Documento";
             // 
-            // btnQuitar
-            // 
-            this.btnQuitar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnQuitar.Location = new System.Drawing.Point(306, 281);
-            this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(75, 29);
-            this.btnQuitar.TabIndex = 26;
-            this.btnQuitar.Text = "quitar";
-            this.btnQuitar.UseVisualStyleBackColor = false;
-            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
-            // 
             // frmFacturaVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -230,7 +230,7 @@ namespace ProyAutoServicios_GUI
             this.Controls.Add(this.groupBox1);
             this.Name = "frmFacturaVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmFacturaVentas";
+            this.Text = "Generar Factura";
             this.Load += new System.EventHandler(this.frmFacturaVentas_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

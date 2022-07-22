@@ -71,7 +71,7 @@ insert into tb_Comprobante
 	values	
 	(1000, '451487945', getdate(), 0 , 'testing', getdate())
 
-exec usp_InsertarComprobante @docIdentidad='451487945', @usu_reg='testing'
+exec usp_InsertarComprobante @docIdentidad='72446128', @usu_reg='testing2'
 go
 --Detalle servicio
 --USP
@@ -93,10 +93,16 @@ as
 	values
 		(@docIdent, @codComprob, @codServ)
 go
+
+select codServicio, tipoServ from tb_Servicios where tipoServ='Nivelar la batería'
+
 exec usp_InsertarDetalle_Servicio @docIdent='32165487', @codServ=10015
+
+
 
 select * from tb_Detalle_Servicio  where docIdentidad=3215405411
 select * from tb_Comprobante
+--delete  from tb_Comprobante where codComprobante >1011
 select * from tb_Cliente
 select * from tb_Servicios
 select * from tb_usuario
@@ -153,14 +159,14 @@ go
 
 
 --actualizar comprobante
+--
 create procedure usp_ActualizarComprobante
-	@codComprob smallint,
-	@estado int,
+	@codComprob smallint,	
 	@usu_ult_mod varchar(20)
 as
 	update tb_Comprobante
 	set
-		estado=@estado, fech_ult_mod=getdate()
+		estado=1, fech_ult_mod=getdate()
 	where codComprobante=@codComprob
 go
 exec usp_ActualizarComprobante @codComprob=1000, @estado=1,@usu_ult_mod='testing2'

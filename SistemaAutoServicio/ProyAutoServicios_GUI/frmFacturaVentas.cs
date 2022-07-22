@@ -143,7 +143,7 @@ namespace ProyAutoServicios_GUI
         private void btnGenerar_Click(object sender, EventArgs e)
         {
             try
-            {/*
+            {
                 // generamos el comprobante
                 objFactureBE.doc_ident = txtDoc.Text.Trim();
                 objFactureBE.usu_reg = clsCredenciales.Usuario;
@@ -155,7 +155,7 @@ namespace ProyAutoServicios_GUI
                 else
                 {
                     throw new Exception("No se generó Factura, comuniquese con IT");
-                }*/
+                }
 
             // insertamos en tb_Detalle_Servicio
 
@@ -167,7 +167,21 @@ namespace ProyAutoServicios_GUI
                 {
                     ListaServ = ListaServ+"" + ServEleg[i]+",";
                 }
-                MessageBox.Show("Array ServEleg: " + ListaServ);
+//                MessageBox.Show("Array ServEleg: " + ListaServ);
+
+                objFactureBE.lista_serv = ListaServ;
+                objFactureBE.doc_ident = txtDoc.Text.Trim();
+
+                if (objFacturaBL.InsertarDetalle_Servicio(objFactureBE) == true)
+                {
+                    MessageBox.Show("Servicios registrados: " + ListaServ);
+                }
+                else
+                {
+                    throw new Exception("Lista de servicios no registrados,comuniquese con IT");
+                }
+
+
                 /*
                 for (int i = 0; i < ServEleg.Length; i++)
                 {
@@ -188,9 +202,7 @@ namespace ProyAutoServicios_GUI
                 //String ultFact = objFacturaBL.UltFactura().ToString();
                 //MessageBox.Show("Factura N° "+ultFact+" generada, pase a caja a pagar", "Factura");
 
-            }
-
-            //pasámos a una pantalla para pagar
+            }            
 
             catch (Exception ex)
             {
