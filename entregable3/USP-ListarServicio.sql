@@ -132,6 +132,23 @@ as
 go
 exec usp_ListarFacturasPendientes
 go
+select C.codComprobante, D.docIdentidad,Cl.nombre+', '+Cl.apellidos as cliente,
+		SUM(S.precio) as precio, C.estado
+	from tb_Comprobante as C inner join tb_Detalle_Servicio as D
+		on C.codComprobante=D.codComprobante
+		inner join tb_Servicios as S
+		on D.codServicio = S.codServicio
+		inner join tb_Cliente as Cl
+		on D.docIdentidad=Cl.docIdentidad
+	--where C.codComprobante=1012 and D.docIdentidad='72446128'  and C.estado=0
+	where C.estado=0
+	group by  C.codComprobante, D.docIdentidad,Cl.nombre,Cl.apellidos,C.estado
+	order by C.estado
+go
+select * from tb_comprobante
+
+
+
 
 --drop procedure usp_ConsultarFacturasPendientes
 create procedure usp_ConsultarFacturasPendientes
