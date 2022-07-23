@@ -14,7 +14,7 @@ namespace ProyAutoServicios_GUI
 {
     public partial class Servicio02 : Form
     {
-        ServicioBL objProveedorBL = new ServicioBL();
+        ServicioBL objServicioBL = new ServicioBL();
         ServicioBE objServicioBE = new ServicioBE();
 
         public Servicio02()
@@ -30,26 +30,42 @@ namespace ProyAutoServicios_GUI
             {
                 //Codifique
                 // Cargamos las propiedades de la entidad de negocios...
-                
-                objServicioBE.tipoServ = cboTipoServicio.Text.Trim();
-                objServicioBE.precio = Convert.ToInt16( txtPrecio.Text.Trim());
-                objServicioBE.codag = cboAgencia.SelectedIndex + 1;
-                objServicioBE.temposerv = Convert.ToInt16( mskTiempoServ);
-                objServicioBE.usureg = clsCredenciales.Usuario;
-                
 
-                if (objProveedorBL.InsertarServicios(objServicioBE) == true)
-                {
-                    this.Close();
-                }
-                else
-                {
-                    throw new Exception("No se inserto registro. Contacte con IT.");
-                }
+                objServicioBE.tipoServ = txtServicio.Text.ToString();
+                objServicioBE.precio = Convert.ToDouble( txtPrecio.Text.Trim());
+                objServicioBE.codag = Convert.ToInt16(cboAgencia.SelectedIndex + 1);
+                objServicioBE.temposerv = Convert.ToInt16( mskTiempoServ.Text.ToString());
+                objServicioBE.usureg = clsCredenciales.Usuario;
+
+              /* MessageBox.Show("tipo servicio:" + txtServicio.Text.ToString() + "\n precio: " + txtPrecio.Text.Trim() +
+                    "\n cod agencia: " + cboAgencia.SelectedIndex + 1 +
+                    "\n tiempo servicio: " + mskTiempoServ.Text.ToString() +
+                    "\n usuario :" + clsCredenciales.Usuario);
+
+                MessageBox.Show(objServicioBE.tipoServ + "\n " + objServicioBE.precio + "\n " + objServicioBE.temposerv +
+                    "\n " + objServicioBE.codag + "\n " + objServicioBE.usureg);  */
+
+                Console.WriteLine("tipo servicio: "+objServicioBE.tipoServ.GetType());
+                Console.WriteLine("precio: " + objServicioBE.precio.GetType());
+                Console.WriteLine("cod agencia: " + objServicioBE.codag.GetType());
+                Console.WriteLine("tiempo servicio: " + objServicioBE.temposerv.GetType());
+                Console.WriteLine("usuario q registra: " + objServicioBE.usureg.GetType());
+
+                if (objServicioBL.InsertarServicios(objServicioBE) ==true)
+                  {
+                      this.Close();
+                  }
+                  else
+                  {
+                      throw new Exception("Registro NO insertado, comuniquese con IT");
+                  }
+                 
+
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Se ha producido el error: " + ex.Message);
+                MessageBox.Show("Se ha producido el error --> : " + ex.Message);
             }
         }
 

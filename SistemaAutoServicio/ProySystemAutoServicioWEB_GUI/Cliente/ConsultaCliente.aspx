@@ -7,13 +7,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <link href="CSS/DemoCSS.css" rel="stylesheet" type="text/css" />
 
-    <p class="tituloForm">Consulta de Clientes</p>
+    <p class="tituloForm">Listar Facturas Pendientes</p>
     <table class="auto-style1">
         <tr>
             <td class="labelContenido" colspan="3">&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style10">Presione para listar Clientes</td>
+            <td class="auto-style10">Presione para listar Facturas</td>
             <td class="auto-style5">
                 <asp:Button ID="btnConsultar" runat="server" CssClass="boton-new" Text="Listar" OnClick="btnConsultar_Click" />
             </td>
@@ -46,11 +46,10 @@
     <asp:GridView ID="grvClientes" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="#FFFF99" CellPadding="4" ForeColor="#333333" GridLines="None" PageSize="5" Width="1100px" OnPageIndexChanging="grvClientes_PageIndexChanging">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
+            <asp:BoundField DataField="codComprobante" HeaderText="N° Factura" />
             <asp:BoundField DataField="docIdentidad" HeaderText="docIdentidad" />
-            <asp:BoundField DataField="tipoDocumento" HeaderText="tipoDocumento" />
-            <asp:BoundField DataField="nombre" HeaderText="nombre" />
-            <asp:BoundField DataField="apellidos" HeaderText="apellidos" />
-            <asp:BoundField DataField="direccion" HeaderText="Dirección" />
+            <asp:BoundField DataField="cliente" HeaderText="Cliente" />
+            <asp:BoundField DataField="precio" HeaderText="Deuda" />
         </Columns>
         <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
         <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />

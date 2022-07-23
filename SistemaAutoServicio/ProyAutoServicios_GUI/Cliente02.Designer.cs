@@ -130,6 +130,7 @@ namespace ProyAutoServicios_GUI
             this.cboProvincia.Name = "cboProvincia";
             this.cboProvincia.Size = new System.Drawing.Size(203, 24);
             this.cboProvincia.TabIndex = 16;
+            this.cboProvincia.SelectionChangeCommitted += new System.EventHandler(this.cboProvincia_SelectionChangeCommitted);
             // 
             // label2
             // 
@@ -148,6 +149,7 @@ namespace ProyAutoServicios_GUI
             this.cboDepartamento.Name = "cboDepartamento";
             this.cboDepartamento.Size = new System.Drawing.Size(203, 24);
             this.cboDepartamento.TabIndex = 14;
+            this.cboDepartamento.SelectionChangeCommitted += new System.EventHandler(this.cboDepartamento_SelectionChangeCommitted);
             // 
             // label1
             // 

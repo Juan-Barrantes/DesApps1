@@ -34,7 +34,7 @@ namespace ProyAutoServicio_ADO
                 
                 cmd.Parameters.AddWithValue("@tipoServ", objServicioBE.tipoServ);
                 cmd.Parameters.AddWithValue("@precio", objServicioBE.precio);
-                cmd.Parameters.AddWithValue("@tiempoEst", objServicioBE.tipoServ);
+                cmd.Parameters.AddWithValue("@tiempoEst", objServicioBE.temposerv);
                 cmd.Parameters.AddWithValue("@codAg", objServicioBE.codag);
                 cmd.Parameters.AddWithValue("@usu_reg", objServicioBE.usureg);
 

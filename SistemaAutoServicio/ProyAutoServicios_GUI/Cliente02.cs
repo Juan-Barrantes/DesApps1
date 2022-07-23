@@ -119,6 +119,14 @@ namespace ProyAutoServicios_GUI
 
         }
 
-      
+        private void cboDepartamento_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            CargarUbigeo(cboDepartamento.SelectedValue.ToString(), "01", "01");
+        }
+
+        private void cboProvincia_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            CargarUbigeo(cboDepartamento.SelectedValue.ToString(), cboProvincia.SelectedValue.ToString(), "01");
+        }
     }
 }

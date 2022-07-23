@@ -30,7 +30,6 @@ namespace ProyAutoServicios_GUI
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblDir = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lblEstado = new System.Windows.Forms.Label();
@@ -43,12 +42,6 @@ namespace ProyAutoServicios_GUI
             this.label5 = new System.Windows.Forms.Label();
             this.txtCod = new System.Windows.Forms.TextBox();
             this.dtgFacturas = new System.Windows.Forms.DataGridView();
-            this.Num_fac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fec_fac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Est = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblRegistros = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnConsultar = new System.Windows.Forms.Button();
@@ -57,6 +50,11 @@ namespace ProyAutoServicios_GUI
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.Num_fac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fec_fac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Est = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgFacturas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -178,7 +176,6 @@ namespace ProyAutoServicios_GUI
             this.dtgFacturas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Num_fac,
             this.Fec_fac,
-            this.Total,
             this.Estado,
             this.Est,
             this.Precio});
@@ -191,60 +188,6 @@ namespace ProyAutoServicios_GUI
             this.dtgFacturas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgFacturas.Size = new System.Drawing.Size(1129, 246);
             this.dtgFacturas.TabIndex = 27;
-            // 
-            // Num_fac
-            // 
-            this.Num_fac.DataPropertyName = "codComprobante";
-            this.Num_fac.HeaderText = "Nro. Factura";
-            this.Num_fac.MinimumWidth = 6;
-            this.Num_fac.Name = "Num_fac";
-            this.Num_fac.ReadOnly = true;
-            // 
-            // Fec_fac
-            // 
-            this.Fec_fac.DataPropertyName = "fechaEmision";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "d";
-            this.Fec_fac.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Fec_fac.HeaderText = "Fec. Facturacion";
-            this.Fec_fac.MinimumWidth = 6;
-            this.Fec_fac.Name = "Fec_fac";
-            this.Fec_fac.ReadOnly = true;
-            // 
-            // Total
-            // 
-            this.Total.DataPropertyName = "fech_ult_mod";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "n2";
-            this.Total.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Total.HeaderText = "Fec. Cancelado";
-            this.Total.MinimumWidth = 6;
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "docIdentidad";
-            this.Estado.HeaderText = "N. Documento";
-            this.Estado.MinimumWidth = 6;
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            // 
-            // Est
-            // 
-            this.Est.DataPropertyName = "Estado";
-            this.Est.HeaderText = "Estado";
-            this.Est.MinimumWidth = 6;
-            this.Est.Name = "Est";
-            this.Est.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            this.Precio.DataPropertyName = "precio";
-            this.Precio.HeaderText = "Precio";
-            this.Precio.MinimumWidth = 6;
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
             // 
             // lblRegistros
             // 
@@ -327,6 +270,49 @@ namespace ProyAutoServicios_GUI
             this.label1.TabIndex = 42;
             this.label1.Text = "Ingrese el Nro de Documento:";
             // 
+            // Num_fac
+            // 
+            this.Num_fac.DataPropertyName = "codComprobante";
+            this.Num_fac.HeaderText = "Nro. Factura";
+            this.Num_fac.MinimumWidth = 6;
+            this.Num_fac.Name = "Num_fac";
+            this.Num_fac.ReadOnly = true;
+            // 
+            // Fec_fac
+            // 
+            this.Fec_fac.DataPropertyName = "fechaEmision";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "d";
+            this.Fec_fac.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Fec_fac.HeaderText = "Fec. Facturacion";
+            this.Fec_fac.MinimumWidth = 6;
+            this.Fec_fac.Name = "Fec_fac";
+            this.Fec_fac.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "docIdentidad";
+            this.Estado.HeaderText = "N. Documento";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // Est
+            // 
+            this.Est.DataPropertyName = "Estado";
+            this.Est.HeaderText = "Estado";
+            this.Est.MinimumWidth = 6;
+            this.Est.Name = "Est";
+            this.Est.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.DataPropertyName = "precio";
+            this.Precio.HeaderText = "Precio";
+            this.Precio.MinimumWidth = 6;
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
             // ConsultaFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -386,7 +372,6 @@ namespace ProyAutoServicios_GUI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Num_fac;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fec_fac;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Est;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;

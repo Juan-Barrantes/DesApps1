@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MantEmpleados.aspx.cs" Inherits="ProySystemAutoServicioWEB_GUI.Mantenimiento.MantEmpleados" %>
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="ajaxToolkit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h3>Mantenimiento Tabla Empleados</h3>
+    <h3>Consulta Empleados</h3>
     <p>&nbsp;</p>
     <table style="width: 80%; height: 279px">
         <tr>

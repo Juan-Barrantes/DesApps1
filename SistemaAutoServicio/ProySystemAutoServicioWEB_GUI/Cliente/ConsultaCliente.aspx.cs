@@ -49,7 +49,7 @@ namespace ProySystemAutoServicioWEB_GUI.Mantenimiento.Cliente
         }
         private void CargarDatos()
         {
-            DataTable tabla = objClienteBL.ListarCliente();  
+            DataTable tabla = objFacturaBL.ListarFacturasPendientes();  
             grvClientes.DataSource = tabla;
             grvClientes.DataBind();
 
